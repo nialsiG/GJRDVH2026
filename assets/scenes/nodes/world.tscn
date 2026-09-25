@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b4gwwfr8sqpbn"]
+
+[ext_resource type="PackedScene" uid="uid://bawfnu7r00qaq" path="res://assets/scenes/controls/overlay.tscn" id="1_wm7ve"]
+[ext_resource type="PackedScene" uid="uid://rbxd7ihf4e8m" path="res://assets/scenes/controls/main.tscn" id="2_evynp"]
+
+[node name="World" type="Node" unique_id=1656867005]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=856952432]
+
+[node name="Overlay" parent="CanvasLayer" unique_id=244840642 instance=ExtResource("1_wm7ve")]
+
+[node name="Main" parent="CanvasLayer" unique_id=158894493 instance=ExtResource("2_evynp")]
