@@ -7,3 +7,9 @@ enum EPhase {
     Animal,
     Leader,
 }
+
+enum EKarma {
+    Neutral,
+    Wise,
+    Evil,
+}

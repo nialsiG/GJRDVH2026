@@ -24,6 +24,7 @@ PhaseManager="*uid://c53w58pg3c2fw"
 MusicManager="*uid://d0wuf4mkwcbk5"
 SoundManager="*uid://b5k4gjh0klwcs"
 DialogueManager="*uid://bsdt8xq3aw5a2"
+KarmaManager="*uid://dbbtot1by7jd"
 
 [display]
 
