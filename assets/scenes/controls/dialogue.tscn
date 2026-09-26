@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://whfr47ef8l2y"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_qg05v"]
+[ext_resource type="Resource" uid="uid://bh5iqtwcfi3rh" path="res://assets/Resources/dialogues/placeholder.tres" id="2_el3px"]
+
+[node name="Dialogue" type="Control" unique_id=1091926319]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_qg05v")
+dialogue_resource = ExtResource("2_el3px")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=923616453]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
