@@ -4,10 +4,14 @@
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="1_sak0p"]
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_6o5hp"]
 [ext_resource type="Texture2D" uid="uid://cj5co2h1ny8ne" path="res://assets/art/map/forest.png" id="2_yigge"]
+[ext_resource type="Texture2D" uid="uid://xvstdbqy8sph" path="res://icon.svg" id="3_lx4av"]
+[ext_resource type="Texture2D" uid="uid://1uvfmwicdrth" path="res://assets/art/cursor/photo_cursor_full.png" id="4_0n6yk"]
 
 [sub_resource type="Resource" id="Resource_o4kb5"]
 script = ExtResource("2_6o5hp")
 loc_key = "Coucou !"
+narrator_begin_texture = ExtResource("3_lx4av")
+narrator_end_texture = ExtResource("4_0n6yk")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_x1u1r"]
