@@ -8,18 +8,18 @@ enum State {
 }
 
 @onready var panel: Panel = $Panel
-@onready var label: RichTextLabel = $Panel/RichTextLabel
+@onready var label: RichTextLabel = $Panel/MarginContainer/RichTextLabel
 @onready var timer: Timer = $Timer
-var current_state: State = State.Defiling
+var current_state: State = State.Ended
 
-@export var dialogue_resource: DialogueResource:
+@export var dialogue_res: DialogueResource:
 	set(new_resource):
-		if dialogue_resource != null and dialogue_resource.changed.has_connections():
-			dialogue_resource.changed.disconnect(OnResourceChange)
-		dialogue_resource = new_resource
+		if dialogue_res != null and dialogue_res.changed.has_connections():
+			dialogue_res.changed.disconnect(OnResourceChange)
+		dialogue_res = new_resource
 		OnResourceChange()
-		if dialogue_resource != null:
-			dialogue_resource.changed.connect(OnResourceChange)
+		if dialogue_res != null:
+			dialogue_res.changed.connect(OnResourceChange)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,22 +31,21 @@ func _ready() -> void:
 
 func OnStarted():
 	panel.visible = true
+	dialogue_res = DialogueManager.curr_dialogue_res
 	print("Dialogue: OnStarted")
 
 func OnEnded():
 	panel.visible = false
 	print("Dialogue: OnEnded")
 	
-
 func OnNextDialogue():
-	dialogue_resource = DialogueManager.curr_dialogue_resource
-	print("Dialogue: OnNextDialogue")
+	dialogue_res = DialogueManager.curr_dialogue_res
 
 func OnResourceChange():
-	if !label or !dialogue_resource:
+	if !label:
 		return
 	label.clear()
-	var loc_str = tr(dialogue_resource.loc_key)
+	var loc_str = tr(dialogue_res.loc_key)
 	label.append_text(loc_str)
 	StartDefiling()
 
@@ -57,6 +56,7 @@ func _on_defiling_timer_timeout() -> void:
 		StopDefiling()
 
 func StartDefiling():
+	print("Started defiling")
 	current_state = State.Defiling
 	label.visible_characters = 0
 	timer.start()
