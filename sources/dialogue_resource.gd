@@ -19,3 +19,9 @@ class_name DialogueResource
 	set(new_setting):
 		narrator_end_texture = new_setting
 		changed.emit()
+
+@export_category("Data")
+@export var sound: AudioStream:
+	set(new_setting):
+		sound = new_setting
+		changed.emit()
