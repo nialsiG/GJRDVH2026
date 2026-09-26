@@ -32,8 +32,14 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
+"res://assets/": "yellow",
+"res://assets/Resources/": "orange",
+"res://assets/art/": "yellow",
+"res://assets/scenes/": "green",
 "res://assets/scenes/controls/": "green",
+"res://assets/scenes/nodes/": "gray",
 "res://assets/scenes/nodes2D/": "blue",
+"res://assets/shaders/": "purple",
 "res://sources/": "red"
 }
 
