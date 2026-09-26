@@ -6,10 +6,10 @@ uid="uid://bkkro6ny1gsn5"
 
 [deps]
 
-files=["res://assets/art/text/placeholder. french.translation", "res://assets/art/text/placeholder. english.translation"]
+files=["res://assets/art/text/placeholder. fr.translation", "res://assets/art/text/placeholder. en.translation"]
 
 source_file="res://assets/art/text/placeholder.csv"
-dest_files=["res://assets/art/text/placeholder. french.translation", "res://assets/art/text/placeholder. english.translation"]
+dest_files=["res://assets/art/text/placeholder. fr.translation", "res://assets/art/text/placeholder. en.translation"]
 
 [params]
 
