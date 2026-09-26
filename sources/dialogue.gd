@@ -1,5 +1,5 @@
 @tool
-extends CanvasLayer
+extends Control
 class_name Dialogue
 
 enum State {
@@ -31,12 +31,16 @@ func _ready() -> void:
 
 func OnStarted():
 	panel.visible = true
+	print("Dialogue: OnStarted")
 
 func OnEnded():
 	panel.visible = false
+	print("Dialogue: OnEnded")
+	
 
 func OnNextDialogue():
 	dialogue_resource = DialogueManager.curr_dialogue_resource
+	print("Dialogue: OnNextDialogue")
 
 func OnResourceChange():
 	if !label or !dialogue_resource:

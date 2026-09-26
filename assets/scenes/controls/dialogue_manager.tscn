@@ -1,10 +1,6 @@
 [gd_scene format=3 uid="uid://cp6arj43yqgvp"]
 
 [ext_resource type="Script" uid="uid://bsdt8xq3aw5a2" path="res://sources/dialogue_manager.gd" id="1_o4kb5"]
-[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_50b1h"]
-[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="2_x1u1r"]
-[ext_resource type="Resource" uid="uid://bh5iqtwcfi3rh" path="res://assets/Resources/dialogues/placeholder.tres" id="3_w8fu1"]
-[ext_resource type="Resource" uid="uid://cpclmy286t8c4" path="res://assets/Resources/dialogues/placeholder2.tres" id="4_1s54o"]
 
 [node name="DialogueManager" type="Control" unique_id=392518505]
 layout_mode = 3
@@ -13,8 +9,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_o4kb5")
-dialogues = Array[ExtResource("2_50b1h")]([ExtResource("3_w8fu1"), ExtResource("4_1s54o")])
 metadata/_edit_use_anchors_ = true
 
 [node name="Dialogue" type="Control" parent="." unique_id=267224285]
@@ -28,7 +24,6 @@ offset_right = -488.0
 offset_bottom = -259.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_x1u1r")
 metadata/_custom_type_script = "uid://bxtfgu7yon538"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -10,8 +10,14 @@ var curr_dialogue_resource: DialogueResource:
 
 func _ready() -> void:
 	SignalManager.PlayerClickedOnDialogue.connect(OnPlayerClickedOnDialogue)
+	SignalManager.NewDialogueArray.connect(NewDialogueArray)
 	if dialogues_idx < dialogues.size():
 		curr_dialogue_resource = dialogues.get(dialogues_idx)
+	#StartDialogue()
+
+func NewDialogueArray(array: Array[DialogueResource]):
+	print("DialogueManager: array=", array)
+	dialogues = array
 	StartDialogue()
 
 func StartDialogue():
