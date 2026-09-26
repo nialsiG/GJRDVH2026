@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalManager="*uid://d0t83px0lai0u"
 EnumCollection="*uid://pj644pktvlrq"
+PhaseManager="*uid://c53w58pg3c2fw"
 
 [display]
 
