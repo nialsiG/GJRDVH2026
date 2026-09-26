@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://desy0lgw0pa8s"]
+
+[ext_resource type="Shader" uid="uid://td1hu4l5gjdd" path="res://assets/shaders/outline_shader.gdshader" id="1_15ym0"]
+
+[resource]
+shader = ExtResource("1_15ym0")
+shader_parameter/thickness = 5.0000002375
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.96320504, 0.44656384, 0.12722051, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = true

@@ -20,8 +20,20 @@ texture = ExtResource("1_6co5q")
 position = Vector2(1185, 658)
 map_object_resource = ExtResource("5_1shj3")
 
+[node name="IdleMapObject2" parent="NonInteractable" unique_id=874411022 instance=ExtResource("2_bv7h8")]
+position = Vector2(1554, 430)
+map_object_resource = ExtResource("5_1shj3")
+
 [node name="Interactables" type="Node2D" parent="." unique_id=1049042489]
 
 [node name="InteractableMapObject" parent="Interactables" unique_id=954149279 instance=ExtResource("4_ycnly")]
-position = Vector2(468, 355)
+position = Vector2(587, 336)
 map_object_resource = ExtResource("3_wry2v")
+
+[node name="InteractableMapObject2" parent="Interactables" unique_id=1471992982 instance=ExtResource("4_ycnly")]
+position = Vector2(345, 698)
+map_object_resource = ExtResource("3_wry2v")
+
+[node name="InteractableMapObject3" parent="Interactables" unique_id=2037134544 instance=ExtResource("4_ycnly")]
+position = Vector2(823, 544)
+map_object_resource = ExtResource("5_1shj3")
