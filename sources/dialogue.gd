@@ -16,71 +16,74 @@ var current_state: State = State.Ended
 @export var dialogue_res: DialogueResource:
 	set(new_resource):
 		if dialogue_res != null and dialogue_res.changed.has_connections():
-			dialogue_res.changed.disconnect(OnResourceChange)
+			dialogue_res.changed.disconnect(_OnResourceChanged)
 		dialogue_res = new_resource
-		OnResourceChange()
+		_OnResourceChanged()
 		if dialogue_res != null:
-			dialogue_res.changed.connect(OnResourceChange)
+			dialogue_res.changed.connect(_OnResourceChanged)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	panel.visible = false
 	narrator_sprite_2d.visible = false
-	SignalManager.DialogueStarted.connect(OnStarted)
-	SignalManager.DialogueEnded.connect(OnEnded)
-	SignalManager.NextDialogue.connect(OnNextDialogue)
+	SignalManager.DialogueStarted.connect(_OnDialogueStarted)
+	SignalManager.DialogueEnded.connect(_OnDialogueEnded)
+	SignalManager.NextDialogue.connect(_OnNextDialogue)
 
-func OnStarted():
+# --- OnDialogue handlers -----------------------------------------------------
+func _OnDialogueStarted():
 	panel.visible = true
 	dialogue_res = DialogueManager.curr_dialogue_res
-	print("Dialogue: OnStarted")
+	print("Dialogue: _OnDialogueStarted")
 
-func OnEnded():
+func _OnDialogueEnded():
 	panel.visible = false
-	print("Dialogue: OnEnded")
+	print("Dialogue: _OnDialogueEnded")
 	
-func OnNextDialogue():
+func _OnNextDialogue():
 	dialogue_res = DialogueManager.curr_dialogue_res
 
-func OnResourceChange():
+
+# --- Handle text defiling ----------------------------------------------------
+func _on_defiling_timer_timeout() -> void:
+	if label.visible_characters < label.get_parsed_text().length():
+		label.visible_characters += 1
+	else:
+		_StopDefiling()
+
+func _StartDefiling():
+	print("Started defiling")
+	current_state = State.Defiling
+	label.visible_characters = 0
+	timer.start()
+	_ChangeNarratorTexture(dialogue_res.narrator_begin_texture)
+
+func _StopDefiling():
+	current_state = State.Ended
+	label.visible_characters = -1
+	timer.stop()
+	_ChangeNarratorTexture(dialogue_res.narrator_end_texture)
+
+# --- When text is clicked ----------------------------------------------------
+func _on_rich_text_label_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		if current_state == State.Defiling:
+			_StopDefiling()
+		else:
+			SignalManager.PlayerClickedOnDialogue.emit()
+
+
+# --- Helpers -----------------------------------------------------------------
+func _ChangeNarratorTexture(new_texture: Texture2D):
+	narrator_sprite_2d.texture = new_texture
+	narrator_sprite_2d.visible = new_texture != null
+
+# When dialogue_res is set
+func _OnResourceChanged():
 	if !label:
 		return
 	label.clear()
 	var loc_str = tr(dialogue_res.loc_key)
 	label.append_text(loc_str)
-	StartDefiling()
-
-func _on_defiling_timer_timeout() -> void:
-	if label.visible_characters < label.get_parsed_text().length():
-		label.visible_characters += 1
-	else:
-		StopDefiling()
-
-func StartDefiling():
-	print("Started defiling")
-	current_state = State.Defiling
-	label.visible_characters = 0
-	timer.start()
-	_change_narrator_texture(dialogue_res.narrator_begin_texture)
-
-func StopDefiling():
-	current_state = State.Ended
-	label.visible_characters = -1
-	timer.stop()
-	_change_narrator_texture(dialogue_res.narrator_end_texture)
-
-func _on_rich_text_label_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
-		if current_state == State.Defiling:
-			StopDefiling()
-		else:
-			SignalManager.PlayerClickedOnDialogue.emit()
-
-func _change_narrator_texture(new_texture: Texture2D):
-	if new_texture:
-		narrator_sprite_2d.texture = new_texture
-		narrator_sprite_2d.visible = true
-	else:
-		narrator_sprite_2d.texture = null
-		narrator_sprite_2d.visible = false
+	_StartDefiling()
