@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bfuy2iwlq61ya"]
+
+[ext_resource type="Texture2D" uid="uid://d4ima7bs6iia8" path="res://assets/art/map/map_background.png" id="1_6co5q"]
+[ext_resource type="PackedScene" uid="uid://bh8jnsuucavyc" path="res://assets/scenes/nodes2D/map_objects/map_object_variants/idle_map_object.tscn" id="2_bv7h8"]
+[ext_resource type="Resource" uid="uid://c4vjkqhg3vr4" path="res://assets/Resources/interactables/forest.tres" id="3_wry2v"]
+[ext_resource type="PackedScene" uid="uid://ddrgqwcmkp3bj" path="res://assets/scenes/nodes2D/map_objects/map_object_variants/interactable_map_object.tscn" id="4_ycnly"]
+[ext_resource type="Resource" uid="uid://ct7q268xxo3yd" path="res://assets/Resources/interactables/hill.tres" id="5_1shj3"]
+
+[node name="Environment" type="Node2D" unique_id=185568254]
+
+[node name="Background" type="Node2D" parent="." unique_id=2082908965]
+
+[node name="MapGround" type="Sprite2D" parent="Background" unique_id=684075070]
+position = Vector2(960, 540)
+texture = ExtResource("1_6co5q")
+
+[node name="NonInteractable" type="Node2D" parent="." unique_id=2004574950]
+
+[node name="IdleMapObject" parent="NonInteractable" unique_id=42803688 instance=ExtResource("2_bv7h8")]
+position = Vector2(1185, 658)
+map_object_resource = ExtResource("5_1shj3")
+
+[node name="Interactables" type="Node2D" parent="." unique_id=1049042489]
+
+[node name="InteractableMapObject" parent="Interactables" unique_id=954149279 instance=ExtResource("4_ycnly")]
+position = Vector2(468, 355)
+map_object_resource = ExtResource("3_wry2v")

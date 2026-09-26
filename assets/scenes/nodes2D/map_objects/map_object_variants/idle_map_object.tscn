@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bh8jnsuucavyc"]
+
+[ext_resource type="PackedScene" uid="uid://bwpxf5xmthjqf" path="res://assets/scenes/nodes2D/map_objects/map_object.tscn" id="1_oyrlx"]
+
+[node name="IdleMapObject" unique_id=42803688 instance=ExtResource("1_oyrlx")]

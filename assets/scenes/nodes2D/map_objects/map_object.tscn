@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bwpxf5xmthjqf"]
+
+[ext_resource type="Script" uid="uid://citis2ct0o84g" path="res://sources/map_object.gd" id="1_y1og6"]
+
+[node name="MapObject" type="Node2D" unique_id=42803688]
+script = ExtResource("1_y1og6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1630606672]
+unique_name_in_owner = true

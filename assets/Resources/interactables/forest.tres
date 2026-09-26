@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://c4vjkqhg3vr4"]
+
+[ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="1_sak0p"]
+[ext_resource type="Texture2D" uid="uid://cj5co2h1ny8ne" path="res://assets/art/map/forest.png" id="2_yigge"]
+
+[resource]
+script = ExtResource("1_sak0p")
+texture = ExtResource("2_yigge")
+metadata/_custom_type_script = "uid://chtllnhtbq4jb"
