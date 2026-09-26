@@ -10,6 +10,7 @@ enum State {
 @onready var panel: Panel = $Panel
 @onready var label: RichTextLabel = $Panel/MarginContainer/RichTextLabel
 @onready var timer: Timer = $Timer
+@onready var narrator_sprite_2d: Sprite2D = $Panel/NarratorSprite2D
 var current_state: State = State.Ended
 
 @export var dialogue_res: DialogueResource:
@@ -25,6 +26,7 @@ var current_state: State = State.Ended
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	panel.visible = false
+	narrator_sprite_2d.visible = false
 	SignalManager.DialogueStarted.connect(OnStarted)
 	SignalManager.DialogueEnded.connect(OnEnded)
 	SignalManager.NextDialogue.connect(OnNextDialogue)
@@ -60,11 +62,13 @@ func StartDefiling():
 	current_state = State.Defiling
 	label.visible_characters = 0
 	timer.start()
+	_change_narrator_texture(dialogue_res.narrator_begin_texture)
 
 func StopDefiling():
 	current_state = State.Ended
 	label.visible_characters = -1
 	timer.stop()
+	_change_narrator_texture(dialogue_res.narrator_end_texture)
 
 func _on_rich_text_label_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
@@ -72,3 +76,11 @@ func _on_rich_text_label_gui_input(event: InputEvent) -> void:
 			StopDefiling()
 		else:
 			SignalManager.PlayerClickedOnDialogue.emit()
+
+func _change_narrator_texture(new_texture: Texture2D):
+	if new_texture:
+		narrator_sprite_2d.texture = new_texture
+		narrator_sprite_2d.visible = true
+	else:
+		narrator_sprite_2d.texture = null
+		narrator_sprite_2d.visible = false

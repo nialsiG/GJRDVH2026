@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://whfr47ef8l2y"]
 
 [ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_qg05v"]
+[ext_resource type="Texture2D" uid="uid://xvstdbqy8sph" path="res://icon.svg" id="2_el3px"]
 
 [node name="Dialogue" type="Control" unique_id=293240120]
 layout_mode = 3
@@ -20,6 +21,10 @@ anchor_bottom = 1.0
 offset_top = 781.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="NarratorSprite2D" type="Sprite2D" parent="Panel" unique_id=1326365728]
+position = Vector2(107, -74)
+texture = ExtResource("2_el3px")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2113243911]
 layout_mode = 1
