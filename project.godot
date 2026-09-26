@@ -57,7 +57,7 @@ interact={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://assets/art/text/placeholder. french.translation", "res://assets/art/text/placeholder. english.translation")
+locale/translations=PackedStringArray("res://assets/art/text/placeholder. en.translation", "res://assets/art/text/placeholder. fr.translation")
 
 [physics]
 
