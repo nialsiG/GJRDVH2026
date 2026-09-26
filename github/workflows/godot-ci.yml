@@ -10,7 +10,7 @@ env:
 
 jobs:
   export_windows:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted]
     container: dunkelgrau/godot:4.7.2
     steps:
       - name: Create symbolic link for export templates
