@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bawfnu7r00qaq"]
+
+[ext_resource type="Script" uid="uid://chua0i0a6vda6" path="res://sources/overlay.gd" id="1_mc74m"]
+
+[node name="Overlay" type="Control" unique_id=244840642]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mc74m")
+
+[node name="Label" type="Label" parent="." unique_id=665856434]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Bonjour [b]world[/b]"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=509101909]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 242.0
+offset_right = 928.0
+offset_bottom = 378.0
+bbcode_enabled = true
+text = "Bonjour [b]world[/b]"
+
+[node name="MainButton" type="Button" parent="." unique_id=713189594]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -15.5
+offset_right = 62.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu principal"
+
+[connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]
