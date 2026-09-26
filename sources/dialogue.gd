@@ -25,17 +25,12 @@ func _ready() -> void:
     OnResourceChange()
 
 func OnResourceChange():
-    if !label:
+    if !label or !dialogue_resource:
         return
     label.clear()
     var loc_str = tr(dialogue_resource.loc_key)
     label.append_text(loc_str)
     StartDefiling()
-
-
-func _on_gui_input(event: InputEvent) -> void:
-    if event.is_action_pressed("interact"):
-        pass
 
 func _on_defiling_timer_timeout() -> void:
     if label.visible_characters < label.get_parsed_text().length():
@@ -52,3 +47,10 @@ func StopDefiling():
     current_state = State.Ended
     label.visible_characters = -1
     timer.stop()
+
+func _on_rich_text_label_gui_input(event: InputEvent) -> void:
+    if event.is_action_pressed("interact"):
+        if current_state == State.Defiling:
+            StopDefiling()
+        else:
+            SignalManager.PlayerClickedOnDialogue.emit()

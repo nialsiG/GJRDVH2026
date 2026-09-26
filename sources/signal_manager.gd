@@ -6,3 +6,4 @@ extends Node
 @warning_ignore("unused_signal") signal OnNextPhase(phase: EnumCollection.EPhase)
 @warning_ignore("unused_signal") signal PlayerIsNotIdle()
 @warning_ignore("unused_signal") signal PlayerIsIdle()
+@warning_ignore("unused_signal") signal PlayerClickedOnDialogue()
