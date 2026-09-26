@@ -14,6 +14,7 @@ mouse_filter = 2
 script = ExtResource("1_qg05v")
 
 [node name="Panel" type="Panel" parent="." unique_id=287894469]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,6 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NarratorSprite2D" type="Sprite2D" parent="Panel" unique_id=1326365728]
+visible = false
 position = Vector2(107, -74)
 texture = ExtResource("2_el3px")
 
@@ -48,5 +50,5 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="." unique_id=141432316]
 wait_time = 0.1
 
-[connection signal="gui_input" from="Panel/MarginContainer/RichTextLabel" to="." method="_on_rich_text_label_gui_input"]
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_defiling_timer_timeout"]

@@ -66,7 +66,7 @@ func _StopDefiling():
 	_ChangeNarratorTexture(dialogue_res.narrator_end_texture)
 
 # --- When text is clicked ----------------------------------------------------
-func _on_rich_text_label_gui_input(event: InputEvent) -> void:
+func _on_panel_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if current_state == State.Defiling:
 			_StopDefiling()
