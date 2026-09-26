@@ -22,7 +22,6 @@ enum State {
 var current_state: State = State.Defiling
 
 func _ready() -> void:
-    SignalManager.PlayerIsIdle.connect(OnPlayerIsIdle)
     OnResourceChange()
 
 func OnResourceChange():
@@ -33,17 +32,10 @@ func OnResourceChange():
     label.append_text(loc_str)
     StartDefiling()
 
-func OnPlayerIsIdle():
-    if !label:
-        return
-    label.clear()
-    var loc_str = tr(dialogue_resource.bark_loc_key)
-    label.append_text(loc_str)
 
 func _on_gui_input(event: InputEvent) -> void:
     if event.is_action_pressed("interact"):
         pass
-
 
 func _on_defiling_timer_timeout() -> void:
     if label.visible_characters < label.get_parsed_text().length():
