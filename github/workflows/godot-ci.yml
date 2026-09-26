@@ -3,7 +3,7 @@ name: Godot CI/CD
 on:
   push:
     branches:
-      - release
+      - 3-ci/cd-add-runner-to-build-executable-on-main-branch
 
 env:
   EXPORT_NAME: MyGodotGame
