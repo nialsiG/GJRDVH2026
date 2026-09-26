@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b5k4gjh0klwcs"]
+
+[ext_resource type="Script" uid="uid://baucoq0qxvkum" path="res://sources/sound_manager.gd" id="1_1ylbi"]
+
+[node name="SoundManager" type="Node" unique_id=1678395668 node_paths=PackedStringArray("sound_queue")]
+script = ExtResource("1_1ylbi")
+sound_queue = [NodePath("SoundQueue/SoundAudioStreamPlayer"), NodePath("SoundQueue/SoundAudioStreamPlayer2"), NodePath("SoundQueue/SoundAudioStreamPlayer3")]
+
+[node name="SoundQueue" type="Node" parent="." unique_id=1042246309]
+
+[node name="SoundAudioStreamPlayer" type="AudioStreamPlayer" parent="SoundQueue" unique_id=1394719940]
+
+[node name="SoundAudioStreamPlayer2" type="AudioStreamPlayer" parent="SoundQueue" unique_id=694026827]
+
+[node name="SoundAudioStreamPlayer3" type="AudioStreamPlayer" parent="SoundQueue" unique_id=438437696]
+
+[node name="AmbianceAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1818565173]
+unique_name_in_owner = true

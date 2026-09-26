@@ -21,6 +21,8 @@ SignalManager="*uid://d0t83px0lai0u"
 MouseManager="*uid://cogk30ekinqdo"
 EnumCollection="*uid://pj644pktvlrq"
 PhaseManager="*uid://c53w58pg3c2fw"
+MusicManager="*uid://d0wuf4mkwcbk5"
+SoundManager="*uid://b5k4gjh0klwcs"
 
 [display]
 
@@ -35,6 +37,7 @@ folder_colors={
 "res://assets/": "yellow",
 "res://assets/Resources/": "orange",
 "res://assets/art/": "yellow",
+"res://assets/audio/": "pink",
 "res://assets/scenes/": "green",
 "res://assets/scenes/controls/": "green",
 "res://assets/scenes/nodes/": "gray",

@@ -62,6 +62,7 @@ func ChangeTexture(new_texture: Texture2D):
 func OnMapObjectHovered():
 	MouseManager.ChangeCursor(MouseManager.CURSOR2)
 	sprite_2d.material = OUTLINE_SHADER_MATERIAL
+	SoundManager.PlaySound(SoundManager.sound.HOVER)
 
 func OnMapObjectExited():
 	MouseManager.ChangeCursor(MouseManager.CURSOR1)
@@ -71,4 +72,5 @@ func OnMapObjectClicked():
 	Deactivate()
 	if map_object_resource.new_texture:
 		ChangeTexture(map_object_resource.new_texture)
+	SoundManager.PlaySound(SoundManager.sound.CLICK)
 	SignalManager.PlayerClickedOnMe.emit(self)
