@@ -70,7 +70,12 @@ func OnMapObjectExited():
 
 func OnMapObjectClicked():
 	Deactivate()
+	# Changes on click
 	if map_object_resource.new_texture:
 		ChangeTexture(map_object_resource.new_texture)
+	if map_object_resource.on_click_dialogue_array:
+		SignalManager.NewDialogueArray.emit(map_object_resource.on_click_dialogue_array)
+		print("MapObject: map_object_resource.on_click_dialogue_array=", map_object_resource.on_click_dialogue_array)
+	# Feedback
 	SoundManager.PlaySound(SoundManager.sound.CLICK)
-	SignalManager.PlayerClickedOnMe.emit(self)
+	#SignalManager.PlayerClickedOnMe.emit(self)

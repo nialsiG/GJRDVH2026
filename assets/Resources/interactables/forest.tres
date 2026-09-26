@@ -2,10 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://cl8sbx1kmnfd4" path="res://assets/art/map/hill.png" id="1_3wnlt"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="1_sak0p"]
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_6o5hp"]
 [ext_resource type="Texture2D" uid="uid://cj5co2h1ny8ne" path="res://assets/art/map/forest.png" id="2_yigge"]
+
+[sub_resource type="Resource" id="Resource_o4kb5"]
+script = ExtResource("2_6o5hp")
+loc_key = "Coucou !"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[sub_resource type="Resource" id="Resource_x1u1r"]
+script = ExtResource("2_6o5hp")
+loc_key = "Ceci est une forêt, tu peux la changer en colline !"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("1_sak0p")
 texture = ExtResource("2_yigge")
 new_texture = ExtResource("1_3wnlt")
+on_click_dialogue_array = Array[ExtResource("2_6o5hp")]([SubResource("Resource_o4kb5"), SubResource("Resource_x1u1r")])
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"

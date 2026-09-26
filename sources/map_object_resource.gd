@@ -13,3 +13,9 @@ class_name MapObjectResource
 	set(new_setting):
 		new_texture = new_setting
 		changed.emit()
+
+
+@export var on_click_dialogue_array: Array[DialogueResource]:
+	set(new_setting):
+		on_click_dialogue_array = new_setting
+		changed.emit()

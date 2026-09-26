@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bkkro6ny1gsn5"
+
+[deps]
+
+files=["res://assets/art/text/placeholder. fr.translation", "res://assets/art/text/placeholder. en.translation"]
+
+source_file="res://assets/art/text/placeholder.csv"
+dest_files=["res://assets/art/text/placeholder. fr.translation", "res://assets/art/text/placeholder. en.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
