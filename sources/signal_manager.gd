@@ -7,3 +7,6 @@ extends Node
 @warning_ignore("unused_signal") signal PlayerIsNotIdle()
 @warning_ignore("unused_signal") signal PlayerIsIdle()
 @warning_ignore("unused_signal") signal PlayerClickedOnDialogue()
+@warning_ignore("unused_signal") signal DialogueStarted()
+@warning_ignore("unused_signal") signal DialogueEnded()
+@warning_ignore("unused_signal") signal NextDialogue()

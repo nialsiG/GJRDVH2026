@@ -3,19 +3,18 @@
 [ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_qg05v"]
 [ext_resource type="Resource" uid="uid://bh5iqtwcfi3rh" path="res://assets/Resources/dialogues/placeholder.tres" id="2_el3px"]
 
-[node name="Dialogue" type="Control" unique_id=1091926319]
-layout_mode = 3
+[node name="Dialogue" type="CanvasLayer" unique_id=1769203096]
+script = ExtResource("1_qg05v")
+dialogue_resource = ExtResource("2_el3px")
+
+[node name="Panel" type="Panel" parent="." unique_id=287894469]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-script = ExtResource("1_qg05v")
-dialogue_resource = ExtResource("2_el3px")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=923616453]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=923616453]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,12 +24,9 @@ grow_vertical = 2
 bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Timer" type="Timer" parent="." unique_id=141432316]
 wait_time = 0.1
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="gui_input" from="RichTextLabel" to="." method="_on_rich_text_label_gui_input"]
+[connection signal="gui_input" from="Panel/RichTextLabel" to="." method="_on_rich_text_label_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_defiling_timer_timeout"]
