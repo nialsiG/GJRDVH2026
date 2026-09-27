@@ -71,7 +71,7 @@ map_object_resource = SubResource("Resource_kbw8x")
 
 [node name="Choice2VillageA" parent="Interactables" unique_id=552423023 instance=ExtResource("4_ycnly")]
 position = Vector2(1874, 325)
-map_object_resource = ExtResource("6_wry2v")
+map_object_resource = ExtResource("7_ycnly")
 
 [node name="CollisionShape2D" parent="Interactables/Choice2VillageA/Area2D" parent_id_path=PackedInt32Array(552423023, 365844650) index="0" unique_id=1860196079]
 position = Vector2(-110, -13)
@@ -80,11 +80,11 @@ shape = SubResource("CircleShape2D_6yfuc")
 [node name="Sprite2D" parent="Interactables/Choice2VillageA" index="1" unique_id=1630606672]
 position = Vector2(-105, -11.999997)
 scale = Vector2(0.66610557, 0.66610545)
-texture = ExtResource("8_evran")
+texture = ExtResource("10_ppa74")
 
 [node name="Choice2VillageB" parent="Interactables" unique_id=1956382867 instance=ExtResource("4_ycnly")]
 position = Vector2(472, 36)
-map_object_resource = ExtResource("7_ycnly")
+map_object_resource = ExtResource("6_wry2v")
 
 [node name="CollisionShape2D" parent="Interactables/Choice2VillageB/Area2D" parent_id_path=PackedInt32Array(1956382867, 365844650) index="0" unique_id=1860196079]
 position = Vector2(106, -4)
@@ -93,7 +93,7 @@ shape = SubResource("CircleShape2D_evran")
 [node name="Sprite2D" parent="Interactables/Choice2VillageB" index="1" unique_id=1630606672]
 position = Vector2(121.15294, 59)
 scale = Vector2(0.7019608, 0.7019608)
-texture = ExtResource("10_ppa74")
+texture = ExtResource("8_evran")
 
 [node name="Choice3Fig" parent="Interactables" unique_id=1829900192 instance=ExtResource("4_ycnly")]
 position = Vector2(990, 536)
