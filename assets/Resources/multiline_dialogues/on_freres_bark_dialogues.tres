@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MultilineDialogResource" format=3 uid="uid://ck6sx4o4pg8lp"]
+
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_vsyja"]
+[ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_vuxg0"]
+
+[sub_resource type="Resource" id="Resource_j237o"]
+script = ExtResource("1_vsyja")
+loc_key = "freres_bark"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[resource]
+script = ExtResource("2_vuxg0")
+dialog_resources = Array[ExtResource("1_vsyja")]([SubResource("Resource_j237o")])
+metadata/_custom_type_script = "uid://ckqgiaso4q1n4"

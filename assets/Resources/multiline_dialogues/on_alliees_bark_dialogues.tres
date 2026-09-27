@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MultilineDialogResource" format=3 uid="uid://21wk2mhwraxa"]
+
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_h3tmv"]
+[ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_lhi0h"]
+
+[sub_resource type="Resource" id="Resource_x6jbd"]
+script = ExtResource("1_h3tmv")
+loc_key = "alliees_bark"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[resource]
+script = ExtResource("2_lhi0h")
+dialog_resources = Array[ExtResource("1_h3tmv")]([SubResource("Resource_x6jbd")])
+metadata/_custom_type_script = "uid://ckqgiaso4q1n4"
