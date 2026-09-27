@@ -1,6 +1,146 @@
 [gd_scene format=3 uid="uid://bawfnu7r00qaq"]
 
 [ext_resource type="Script" uid="uid://chua0i0a6vda6" path="res://sources/overlay.gd" id="1_mc74m"]
+[ext_resource type="Texture2D" uid="uid://f1qywtwkwh54" path="res://assets/art/ASSETS GRAPHIQUES/UI_Bouton_Rouecrantée.png" id="2_jwfuj"]
+[ext_resource type="Texture2D" uid="uid://c3j6yo6f65m32" path="res://assets/art/ASSETS GRAPHIQUES/Ui_BG_Choix.png" id="2_namfy"]
+[ext_resource type="PackedScene" uid="uid://besndmljtwcj1" path="res://assets/scenes/controls/panel_choice_button.tscn" id="4_07il0"]
+[ext_resource type="Resource" uid="uid://dqb507gwjy6wt" path="res://assets/Resources/map_objects/choice_5_romulus.tres" id="4_64nt8"]
+[ext_resource type="Resource" uid="uid://ct7q268xxo3yd" path="res://assets/Resources/map_objects/choice_1_land.tres" id="4_wwy55"]
+[ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="5_621us"]
+[ext_resource type="Resource" uid="uid://dyb7vketv5ivr" path="res://assets/Resources/map_objects/choice_5_remus.tres" id="5_jlok2"]
+[ext_resource type="Resource" uid="uid://c4vjkqhg3vr4" path="res://assets/Resources/map_objects/choice_1_river.tres" id="5_jlrlr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f61wl"]
+texture = ExtResource("2_namfy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h704a"]
+texture = ExtResource("2_jwfuj")
+
+[sub_resource type="Animation" id="Animation_wwy55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChoicePanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChoicePanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChoicePanel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_621us"]
+resource_name = "on_choice_display"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChoicePanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0.55478483, 2.2973976, 1),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(0, -200), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChoicePanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChoicePanel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jlrlr"]
+resource_name = "on_choice_hide"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChoicePanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 2.2973971),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChoicePanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChoicePanel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wwy55"]
+_data = {
+&"RESET": SubResource("Animation_wwy55"),
+&"on_choice_display": SubResource("Animation_621us"),
+&"on_choice_hide": SubResource("Animation_jlrlr")
+}
 
 [node name="Overlay" type="Control" unique_id=244840642]
 layout_mode = 3
@@ -11,15 +151,63 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_mc74m")
+colline_choice_1_text = "Ils devraient s'installer près du Tibre"
+colline_choice_2_text = "Ils devraient s'installer dans les terres"
+colline_choice_1_map_resource = ExtResource("5_jlrlr")
+colline_choice_2_map_resource = ExtResource("4_wwy55")
+brother_choice_1_text = "Sauver Romulus"
+brother_choice_2_text = "Sauver Rémus"
+brother_choice_1_map_resource = ExtResource("4_64nt8")
+brother_choice_2_map_resource = ExtResource("5_jlok2")
+
+[node name="ChoicePanel" type="Panel" parent="." unique_id=2128567700]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -0.0009765625
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f61wl")
+
+[node name="MarginContainer" type="MarginContainer" parent="ChoicePanel" unique_id=1714116882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 385
+theme_override_constants/margin_right = 480
+theme_override_constants/margin_bottom = 420
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ChoicePanel/MarginContainer" unique_id=1099606935]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="PanelChoiceButton1" parent="ChoicePanel/MarginContainer/HBoxContainer" unique_id=1696534639 instance=ExtResource("4_07il0")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelChoiceButton2" parent="ChoicePanel/MarginContainer/HBoxContainer" unique_id=319942932 instance=ExtResource("4_07il0")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="MainButton" type="Button" parent="." unique_id=713189594]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -125.0
-offset_bottom = 31.0
+offset_left = -163.62964
+offset_right = 1.0
+offset_bottom = 127.0
 grow_horizontal = 0
-text = "Menu principal"
+theme_override_styles/normal = SubResource("StyleBoxTexture_h704a")
+script = ExtResource("5_621us")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=69513696]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_wwy55")
 
 [connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]
