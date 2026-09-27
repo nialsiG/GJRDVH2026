@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MultilineDialogResource" format=3 uid="uid://d3apeedp848o4"]
+
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_6leuo"]
+[ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_8s2rs"]
+
+[sub_resource type="Resource" id="Resource_fhkna"]
+script = ExtResource("1_6leuo")
+loc_key = "colline_start_1"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[sub_resource type="Resource" id="Resource_ynnry"]
+script = ExtResource("1_6leuo")
+loc_key = "colline_start_2"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[resource]
+script = ExtResource("2_8s2rs")
+dialog_resources = Array[ExtResource("1_6leuo")]([SubResource("Resource_fhkna"), SubResource("Resource_ynnry")])
+metadata/_custom_type_script = "uid://ckqgiaso4q1n4"

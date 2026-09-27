@@ -39,8 +39,9 @@ func _OnDialogueStarted():
 	print("Dialogue: _OnDialogueStarted")
 
 func _OnDialogueEnded():
-	panel.visible = false
 	print("Dialogue: _OnDialogueEnded")
+	panel.visible = false
+	PhaseManager.OnDialogueIsEnded()
 	
 func _OnNextDialogue():
 	dialogue_res = DialogueManager.curr_dialogue_res
@@ -66,6 +67,7 @@ func _StopDefiling():
 	label.visible_characters = -1
 	timer.stop()
 	_ChangeNarratorTexture(dialogue_res.narrator_end_texture)
+	print("Stop defiling")
 
 # --- When text is clicked ----------------------------------------------------
 func _unhandled_input(event: InputEvent) -> void:
