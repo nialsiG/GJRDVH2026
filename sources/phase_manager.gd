@@ -77,6 +77,7 @@ func NextState():
 
 func OnChoiceIsMade(_choice: EnumCollection.EChoice):
 	print("end_phase = true")
+	barked = true
 	end_phase = true
 
 func OnDialogueIsEnded():
