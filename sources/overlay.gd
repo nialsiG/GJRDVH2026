@@ -33,7 +33,7 @@ func _ready():
 	panel_choice_button_1.pressed.connect(HideChoice)
 	panel_choice_button_2.pressed.connect(HideChoice)
 	SignalManager.NextPhaseState.connect(OnNextPhaseState)
-	SignalManager.NewGame.connect(HideChoice)
+	SignalManager.NewGame.connect(hide)
 
 
 func OnChoiceDisplay(resource_1: MapObjectResource, resource_2: MapObjectResource, choice_text_1: String, choice_text_2: String):
@@ -47,6 +47,7 @@ func OnChoiceDisplay(resource_1: MapObjectResource, resource_2: MapObjectResourc
 	DisplayChoice()
 
 func DisplayChoice():
+	show()
 	animation_player.play("on_choice_display")
 
 func HideChoice():

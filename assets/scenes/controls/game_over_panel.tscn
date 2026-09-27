@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvq20ke34eb57" path="res://sources/game_over_panel.gd" id="1_pujjd"]
 [ext_resource type="Theme" uid="uid://cfe5gu70cpkkw" path="res://assets/themes/menu_button_theme.tres" id="2_8kn2v"]
+[ext_resource type="Theme" uid="uid://c5ui40y4yps16" path="res://assets/themes/rich_text_theme.tres" id="2_ussah"]
 [ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="3_ussah"]
 
 [node name="GameOverPanel" type="Control" unique_id=506389171]
@@ -42,6 +43,9 @@ offset_right = 349.0
 offset_bottom = 157.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_ussah")
+text = "this is a test test te
+test"
 
 [node name="BackToMainButton" type="Button" parent="." unique_id=710657030]
 custom_minimum_size = Vector2(0, 60)

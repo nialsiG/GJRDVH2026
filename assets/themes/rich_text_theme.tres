@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://c5ui40y4yps16"]
+
+[ext_resource type="FontFile" uid="uid://cmy3k58gp5015" path="res://assets/art/font/Aetherius.ttf" id="1_3v1ty"]
+
+[resource]
+RichTextLabel/font_sizes/normal_font_size = 28
+RichTextLabel/fonts/normal_font = ExtResource("1_3v1ty")
