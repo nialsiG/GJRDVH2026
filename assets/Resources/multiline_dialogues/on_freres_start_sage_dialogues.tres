@@ -1,16 +1,22 @@
 [gd_resource type="Resource" script_class="MultilineDialogResource" format=3 uid="uid://cgv63p7x8wae5"]
 
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_rcd1h"]
+[ext_resource type="Texture2D" uid="uid://b1omd8mj74ye2" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_tristesse.png" id="2_jamdd"]
 [ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_txvcq"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="3_uk0r2"]
 
 [sub_resource type="Resource" id="Resource_j237o"]
 script = ExtResource("1_rcd1h")
 loc_key = "freres_start"
+narrator_begin_texture = ExtResource("2_jamdd")
+narrator_end_texture = ExtResource("2_jamdd")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_rcd1h"]
 script = ExtResource("1_rcd1h")
-loc_key = "freres_start_chaos"
+loc_key = "freres_start_sage"
+narrator_begin_texture = ExtResource("3_uk0r2")
+narrator_end_texture = ExtResource("3_uk0r2")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]

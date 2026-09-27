@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_iyaon"]
 [ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_4gmt4"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="2_6f55m"]
 
 [sub_resource type="Resource" id="Resource_j237o"]
 script = ExtResource("1_iyaon")
 loc_key = "animal_start_sage"
+narrator_begin_texture = ExtResource("2_6f55m")
+narrator_end_texture = ExtResource("2_6f55m")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]

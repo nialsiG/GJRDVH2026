@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_bhu06"]
 [ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_et13a"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="2_rx7wv"]
+[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="3_yf6o0"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="4_pyhr7"]
 
 [sub_resource type="Resource" id="Resource_b0yku"]
 script = ExtResource("1_bhu06")
@@ -11,31 +14,43 @@ metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 [sub_resource type="Resource" id="Resource_x0fat"]
 script = ExtResource("1_bhu06")
 loc_key = "start_start_2"
+narrator_begin_texture = ExtResource("2_rx7wv")
+narrator_end_texture = ExtResource("2_rx7wv")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_y33ub"]
 script = ExtResource("1_bhu06")
 loc_key = "start_start_3"
+narrator_begin_texture = ExtResource("3_yf6o0")
+narrator_end_texture = ExtResource("3_yf6o0")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_xqnoa"]
 script = ExtResource("1_bhu06")
 loc_key = "start_start_4"
+narrator_begin_texture = ExtResource("4_pyhr7")
+narrator_end_texture = ExtResource("2_rx7wv")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_8xyk5"]
 script = ExtResource("1_bhu06")
 loc_key = "start_start_5"
+narrator_begin_texture = ExtResource("4_pyhr7")
+narrator_end_texture = ExtResource("2_rx7wv")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_vfn78"]
 script = ExtResource("1_bhu06")
 loc_key = "start_start_6"
+narrator_begin_texture = ExtResource("3_yf6o0")
+narrator_end_texture = ExtResource("3_yf6o0")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_fhkna"]
 script = ExtResource("1_bhu06")
 loc_key = "start_start_7"
+narrator_begin_texture = ExtResource("4_pyhr7")
+narrator_end_texture = ExtResource("2_rx7wv")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
