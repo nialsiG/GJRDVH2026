@@ -39,7 +39,7 @@ offset_top = 458.0
 offset_right = 1713.0
 offset_bottom = 585.0
 theme = ExtResource("3_psi6a")
-text = "START"
+text = "JOUER"
 script = ExtResource("3_gqqrf")
 
 [node name="CreditButton" type="Button" parent="Panel" unique_id=460629558]
