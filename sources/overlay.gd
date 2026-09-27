@@ -33,6 +33,7 @@ func _ready():
 	panel_choice_button_2.pressed.connect(HideChoice)
 	SignalManager.NextPhaseState.connect(OnNextPhaseState)
 
+
 func OnChoiceDisplay(resource_1: MapObjectResource, resource_2: MapObjectResource, choice_text_1: String, choice_text_2: String):
 	panel_choice_button_1.text = choice_text_1
 	panel_choice_button_1.map_object_resource = resource_1
