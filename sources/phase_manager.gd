@@ -55,6 +55,10 @@ func _process(delta: float) -> void:
 		bark_timer += delta
 
 func Reset():
+	bark_timer = 0.0
+	barked = false
+	end_phase = true
+	current_state = EPhaseState.START
 	_ChangePhase(EnumCollection.EPhase.START)
 
 func NextPhase():
