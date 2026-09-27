@@ -32,6 +32,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_l4xlb")
 
 [node name="NarratorSprite2D" type="TextureRect" parent="Panel" unique_id=752256303]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,6 +64,7 @@ theme_override_constants/margin_bottom = 20
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer" unique_id=923616453]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("4_07ddm")
 bbcode_enabled = true
 text = "testetretee ezt te(ryrth"
@@ -98,6 +100,7 @@ offset_top = -196.0
 offset_right = -376.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 1
 script = ExtResource("6_ks6fi")
 
 [connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]

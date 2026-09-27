@@ -44,6 +44,7 @@ func OnGameOver():
 	var text: String = ""
 	match current_fin:
 		played.SAGE:
+			MusicManager.PlayMusic(MusicManager.music.GOOD_ENDING)
 			text += tr(fin_conclusion_sage)
 			text += "\n"
 			match current_played:
@@ -52,6 +53,7 @@ func OnGameOver():
 				fin.CHAOS:
 					text += tr(fin_sage_but_playedchaos)
 		played.CHAOS:
+			MusicManager.PlayMusic(MusicManager.music.BAD_ENDING)
 			text += tr(fin_conclusion_chaos)
 			text += "\n"
 			match current_played:
