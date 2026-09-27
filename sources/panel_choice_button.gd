@@ -2,17 +2,7 @@
 extends Button
 class_name PanelChoiceButton
 
-@export var map_object_resource: MapObjectResource:
-	set(new_resource):
-		if map_object_resource != null and map_object_resource.changed.has_connections():
-			map_object_resource.changed.disconnect(_OnResourceChanged)
-		map_object_resource = new_resource
-		_OnResourceChanged()
-		if map_object_resource != null:
-			map_object_resource.changed.connect(_OnResourceChanged)
-
-func _OnResourceChanged():
-	pass
+@export var map_object_resource: MapObjectResource
 
 func _GetDialoguesFromRes() -> Array[DialogueResource]:
 	if KarmaManager.state == EnumCollection.EKarma.WISE:

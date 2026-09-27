@@ -2,13 +2,9 @@
 
 [ext_resource type="Script" uid="uid://da4mm0wp7h1ge" path="res://sources/interactable.gd" id="1_ti6mm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c6adr"]
-radius = 81.154175
-
 [node name="Area2D" type="Area2D" unique_id=365844650]
 script = ExtResource("1_ti6mm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1860196079]
-shape = SubResource("CircleShape2D_c6adr")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

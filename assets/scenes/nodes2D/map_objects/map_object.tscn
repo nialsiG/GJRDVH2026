@@ -4,6 +4,7 @@
 
 [node name="MapObject" type="Node2D" unique_id=42803688]
 script = ExtResource("1_y1og6")
+radius = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1630606672]
 unique_name_in_owner = true

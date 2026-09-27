@@ -102,8 +102,8 @@ func OnMapObjectClicked():
 	KarmaManager.add_evil_points(map_object_resource.evil_points)
 
 func OnChoiceIsMade(choice: EnumCollection.EChoice):
-	if choice == EnumCollection.EChoice.LAND || choice == EnumCollection.EChoice.RIVER:
-		position = Vector2(960, 540)
+	#if choice == EnumCollection.EChoice.LAND || choice == EnumCollection.EChoice.RIVER:
+		#position = Vector2(960, 540)
 	if map_object_resource.remove_if_choice_is_made == choice:
 		self.hide()
 
