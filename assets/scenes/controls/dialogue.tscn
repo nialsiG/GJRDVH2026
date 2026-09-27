@@ -77,7 +77,7 @@ mouse_filter = 2
 texture = ExtResource("4_54ihs")
 
 [node name="Timer" type="Timer" parent="." unique_id=141432316]
-wait_time = 0.1
+wait_time = 0.05
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1754954341]
 unique_name_in_owner = true
