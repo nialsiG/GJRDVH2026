@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3kvrh8m4k1b4"
-path="res://.godot/imported/Logoicone.png-f3ba24d1ab7107c69485625ea141ca3b.ctex"
+uid="uid://d13a1um04dnxp"
+path="res://.godot/imported/UI_TextNarratif_Venus.png-518a3706517956f142ccaf6f17be07ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ASSETS GRAPHIQUES/Logoicone.png"
-dest_files=["res://.godot/imported/Logoicone.png-f3ba24d1ab7107c69485625ea141ca3b.ctex"]
+source_file="res://assets/art/ASSETS GRAPHIQUES/UI_TextNarratif_Venus.png"
+dest_files=["res://.godot/imported/UI_TextNarratif_Venus.png-518a3706517956f142ccaf6f17be07ae.ctex"]
 
 [params]
 
