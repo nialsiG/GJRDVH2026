@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci7mc4njkybvj"
+path="res://.godot/imported/Bonus ambiance tension.mp3-2d1958cfa10bf9995aeb9c69733bea31.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Bonus ambiance tension.mp3"
+dest_files=["res://.godot/imported/Bonus ambiance tension.mp3-2d1958cfa10bf9995aeb9c69733bea31.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
