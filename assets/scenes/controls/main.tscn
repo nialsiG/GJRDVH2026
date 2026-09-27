@@ -4,12 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://r5u3jyotjfhq" path="res://assets/art/ASSETS GRAPHIQUES/Menuex.png" id="2_psi6a"]
 [ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="3_gqqrf"]
 [ext_resource type="Theme" uid="uid://cfe5gu70cpkkw" path="res://assets/themes/menu_button_theme.tres" id="3_psi6a"]
+[ext_resource type="Texture2D" uid="uid://cogoiye78chb7" path="res://assets/art/ASSETS GRAPHIQUES/CreditdefIn.png" id="5_oo7b1"]
+[ext_resource type="Theme" uid="uid://bw5tdablfnphv" path="res://assets/themes/exit_button_theme.tres" id="6_tuu3d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwy55"]
 texture = ExtResource("2_psi6a")
 
 [sub_resource type="LabelSettings" id="LabelSettings_f61wl"]
 font_size = 60
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f61wl"]
+texture = ExtResource("5_oo7b1")
 
 [node name="Main" type="Control" unique_id=158894493]
 layout_mode = 3
@@ -58,4 +63,37 @@ theme = ExtResource("3_psi6a")
 text = "START"
 script = ExtResource("3_gqqrf")
 
+[node name="CreditButton" type="Button" parent="Panel" unique_id=460629558]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 0
+offset_left = 1273.0
+offset_top = 506.0
+offset_right = 1802.0
+offset_bottom = 633.0
+theme = ExtResource("3_psi6a")
+text = "CREDITS"
+script = ExtResource("3_gqqrf")
+
+[node name="CreditPanel" type="Panel" parent="." unique_id=666950107]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_f61wl")
+
+[node name="CloseCreditButton" type="Button" parent="CreditPanel" unique_id=1091690007]
+layout_mode = 0
+offset_left = 1656.7537
+offset_top = 896.0
+offset_right = 1884.0
+offset_bottom = 1064.0
+theme = ExtResource("6_tuu3d")
+script = ExtResource("3_gqqrf")
+
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="CreditPanel/CloseCreditButton" to="." method="_on_close_credit_button_pressed"]

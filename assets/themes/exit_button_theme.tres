@@ -1,0 +1,30 @@
+[gd_resource type="Theme" format=3 uid="uid://bw5tdablfnphv"]
+
+[ext_resource type="Texture2D" uid="uid://bpqsughg2isnc" path="res://assets/art/ASSETS GRAPHIQUES/UI_Bouton_EXIT.png" id="1_tonao"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tonao"]
+load_path = "res://.godot/imported/UI_Bouton_EXIT.png-fcc2938f0a4e7446defdd5dfc92d70d4.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hni84"]
+texture = SubResource("CompressedTexture2D_tonao")
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+modulate_color = Color(1, 0.92156863, 0.92156863, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q45j3"]
+texture = ExtResource("1_tonao")
+modulate_color = Color(0.9, 0.828, 0.828, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8yb5i"]
+load_path = "res://.godot/imported/UI_Bouton_EXIT.png-fcc2938f0a4e7446defdd5dfc92d70d4.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ev78"]
+texture = SubResource("CompressedTexture2D_8yb5i")
+modulate_color = Color(0.9, 0.828, 0.828, 1)
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_hni84")
+Button/styles/normal = SubResource("StyleBoxTexture_q45j3")
+Button/styles/pressed = SubResource("StyleBoxTexture_0ev78")

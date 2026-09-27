@@ -43,6 +43,11 @@ class_name MapObjectResource
 		remove_if_choice_is_made = new_setting
 		changed.emit()
 
+@export var is_map_with_river: bool = false:
+	set(new_setting):
+		is_map_with_river = new_setting
+		changed.emit()
+
 ## On which phase the object is INTERACTABLE
 @export_group("Phase System")
 @export var interactable_on_phase: EnumCollection.EPhase:
