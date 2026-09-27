@@ -70,6 +70,7 @@ map_object_resource = ExtResource("7_ycnly")
 [node name="CollisionShape2D" parent="Interactables/Choice2VillageA/Area2D" parent_id_path=PackedInt32Array(552423023, 365844650) index="0" unique_id=1860196079]
 position = Vector2(-110, -13)
 shape = SubResource("CircleShape2D_6yfuc")
+disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice2VillageA" index="1" unique_id=1630606672]
 position = Vector2(-105, -11.999997)
@@ -84,6 +85,7 @@ map_object_resource = ExtResource("6_wry2v")
 [node name="CollisionShape2D" parent="Interactables/Choice2VillageB/Area2D" parent_id_path=PackedInt32Array(1956382867, 365844650) index="0" unique_id=1860196079]
 position = Vector2(106, -4)
 shape = SubResource("CircleShape2D_evran")
+disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice2VillageB" index="1" unique_id=1630606672]
 position = Vector2(121.15294, 59)
@@ -96,6 +98,7 @@ map_object_resource = ExtResource("8_1shj3")
 
 [node name="CollisionShape2D" parent="Interactables/Choice3Fig/Area2D" parent_id_path=PackedInt32Array(1829900192, 365844650) index="0" unique_id=1860196079]
 shape = SubResource("CircleShape2D_jetj4")
+disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice3Fig" index="1" unique_id=1630606672]
 texture = ExtResource("12_6yfuc")
@@ -106,6 +109,7 @@ map_object_resource = ExtResource("9_5m40c")
 
 [node name="CollisionShape2D" parent="Interactables/Choice3Olive/Area2D" parent_id_path=PackedInt32Array(1037148313, 365844650) index="0" unique_id=1860196079]
 shape = SubResource("CircleShape2D_y33ub")
+disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice3Olive" index="1" unique_id=1630606672]
 texture = ExtResource("14_jetj4")
@@ -116,6 +120,7 @@ map_object_resource = ExtResource("10_asd6t")
 
 [node name="CollisionShape2D" parent="Interactables/Choice4Sheep/Area2D" parent_id_path=PackedInt32Array(1335726705, 365844650) index="0" unique_id=1860196079]
 shape = SubResource("CircleShape2D_kbw8x")
+disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice4Sheep" index="1" unique_id=1630606672]
 texture = ExtResource("16_caus4")
@@ -126,6 +131,7 @@ map_object_resource = ExtResource("11_8d0p4")
 
 [node name="CollisionShape2D" parent="Interactables/Choice4Wolf/Area2D" parent_id_path=PackedInt32Array(522295635, 365844650) index="0" unique_id=1860196079]
 shape = SubResource("CircleShape2D_caus4")
+disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice4Wolf" index="1" unique_id=1630606672]
 texture = ExtResource("18_i3aq8")
