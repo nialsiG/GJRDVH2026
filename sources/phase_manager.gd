@@ -72,48 +72,60 @@ func _ChangePhase(phase: EnumCollection.EPhase):
 	SignalManager.OnNextPhase.emit(phase)
 
 func _GetDialoguesFromPhaseAndState() -> Array[DialogueResource]:
-	if current_phase == EnumCollection.EPhase.START:
-		print("start_dialogues")
-		return ON_START_DIALOGUE.dialog_resources
-	elif current_phase == EnumCollection.EPhase.COLLINE:
-		if current_state == EPhaseState.START:
-			print("colline_start_dialogues")
-			return COLLINE_START_DIALOGUES.dialog_resources
-		elif current_state == EPhaseState.CHOICE:
-			print("colline_choice_dialogues")
-			return COLLINE_CHOICE_DIALOGUES.dialog_resources
-	elif current_phase == EnumCollection.EPhase.ALLIES:
-		print("alliees_phase_dialogues")
-		if current_state == EPhaseState.START:
-			print("alliees_phase_start_dialogues")
-			if KarmaManager.state == EnumCollection.EKarma.WISE:
-				return ALLIEES_START_DIALOGUES_SAGE.dialog_resources
-			else:
-				return ALLIEES_START_DIALOGUES_CHAOS.dialog_resources
-		elif current_state == EPhaseState.CHOICE:
-			return ALLIEES_CHOICE_DIALOGUES.dialog_resources
-	elif current_phase == EnumCollection.EPhase.ARBRE:
-		if current_state == EPhaseState.START:
-			if KarmaManager.state == EnumCollection.EKarma.WISE:
-				return ARBRE_START_DIALOGUES_SAGE.dialog_resources
-			else:
-				return ARBRE_START_DIALOGUES_CHAOS.dialog_resources
-		elif current_state == EPhaseState.CHOICE:
-			return ARBRE_CHOICE_DIALOGUES.dialog_resources
-	elif current_phase == EnumCollection.EPhase.ANIMAL:
-		if current_state == EPhaseState.START:
-			if KarmaManager.state == EnumCollection.EKarma.WISE:
-				return ANIMAL_START_DIALOGUES_SAGE.dialog_resources
-			else:
-				return ANIMAL_START_DIALOGUES_CHAOS.dialog_resources
-		elif current_state == EPhaseState.CHOICE:
-			return ANIMAL_CHOICE_DIALOGUES.dialog_resources
-	elif current_phase == EnumCollection.EPhase.FRERES:
-		if current_state == EPhaseState.START:
-			if KarmaManager.state == EnumCollection.EKarma.WISE:
-				return FRERES_START_DIALOGUES_SAGE.dialog_resources
-			else:
-				return FRERES_START_DIALOGUES_CHAOS.dialog_resources
-		elif current_state == EPhaseState.CHOICE:
-			return FRERES_CHOICE_DIALOGUES.dialog_resources
+	match current_phase:
+		EnumCollection.EPhase.START:
+			match current_state:
+				EPhaseState.START:
+					return ON_START_DIALOGUE.dialog_resources
+		
+		EnumCollection.EPhase.COLLINE:
+			match current_state:
+				EPhaseState.START:
+					return COLLINE_START_DIALOGUES.dialog_resources
+				EPhaseState.CHOICE:
+					return COLLINE_CHOICE_DIALOGUES.dialog_resources
+
+		EnumCollection.EPhase.ALLIES:
+			match current_state:
+				EPhaseState.START:
+					match KarmaManager.state:
+						EnumCollection.EKarma.WISE:
+							return ALLIEES_START_DIALOGUES_SAGE.dialog_resources
+						EnumCollection.EKarma.EVIL:
+							return ALLIEES_START_DIALOGUES_CHAOS.dialog_resources
+				EPhaseState.CHOICE:
+					return ALLIEES_CHOICE_DIALOGUES.dialog_resources
+
+		EnumCollection.EPhase.ARBRE:
+			match current_state:
+				EPhaseState.START:
+					match KarmaManager.state:
+						EnumCollection.EKarma.WISE:
+							return ARBRE_START_DIALOGUES_SAGE.dialog_resources
+						EnumCollection.EKarma.EVIL:
+							return ARBRE_START_DIALOGUES_CHAOS.dialog_resources
+				EPhaseState.CHOICE:
+					return ARBRE_CHOICE_DIALOGUES.dialog_resources
+
+		EnumCollection.EPhase.ANIMAL:
+			match current_state:
+				EPhaseState.START:
+					match KarmaManager.state:
+						EnumCollection.EKarma.WISE:
+							return ANIMAL_START_DIALOGUES_SAGE.dialog_resources
+						EnumCollection.EKarma.EVIL:
+							return ANIMAL_START_DIALOGUES_CHAOS.dialog_resources
+				EPhaseState.CHOICE:
+					return ANIMAL_CHOICE_DIALOGUES.dialog_resources
+
+		EnumCollection.EPhase.FRERES:
+			match current_state:
+				EPhaseState.START:
+					match KarmaManager.state:
+						EnumCollection.EKarma.WISE:
+							return FRERES_START_DIALOGUES_SAGE.dialog_resources
+						EnumCollection.EKarma.EVIL:
+							return FRERES_START_DIALOGUES_CHAOS.dialog_resources
+				EPhaseState.CHOICE:
+					return FRERES_CHOICE_DIALOGUES.dialog_resources
 	return []
