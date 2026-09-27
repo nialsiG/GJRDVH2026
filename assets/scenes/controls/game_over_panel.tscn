@@ -81,7 +81,7 @@ offset_top = 856.0
 offset_right = 1252.0
 offset_bottom = 983.0
 theme = ExtResource("2_8kn2v")
-text = "START"
+text = "REJOUER"
 script = ExtResource("3_ussah")
 
 [connection signal="pressed" from="BackToMainButton" to="." method="_on_back_to_main_button_pressed"]
