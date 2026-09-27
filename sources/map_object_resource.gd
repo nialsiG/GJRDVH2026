@@ -10,31 +10,37 @@ class_name MapObjectResource
 		changed.emit()
 
 ## Texture of the object when it's clicked
-@export_group("On Click")
+@export_group("Behavior/OnInteract")
 @export var new_texture: Texture2D:
 	set(new_setting):
 		new_texture = new_setting
 		changed.emit()
 
 ## List of default dialogues to trigger when the object is clicked
-@export_group("On Click")
-@export var on_click_dialogues: Array[DialogueResource]:
+@export_group("Behavior/OnInteract")
+@export var on_interact_dialogues: Array[DialogueResource]:
 	set(new_setting):
-		on_click_dialogues = new_setting
+		on_interact_dialogues = new_setting
 		changed.emit()
 
 ## List of VERY dialogues to trigger when the object is clicked and conditions are checked
-@export_group("On Click")
-@export var on_click_very_dialogues: Array[DialogueResource]:
+@export_group("Behavior/OnInteract")
+@export var on_interact_very_dialogues: Array[DialogueResource]:
 	set(new_setting):
-		on_click_very_dialogues = new_setting
+		on_interact_very_dialogues = new_setting
 		changed.emit()
 
 ## Sound effect played when the object is clicked
-@export_group("On Click")
+@export_group("Behavior/OnInteract")
 @export var sound_effect: SoundManager.sound:
 	set(new_setting):
 		sound_effect = new_setting
+		changed.emit()
+
+@export_group("Behavior/Removal")
+@export var remove_if_choice_is_made: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
+	set(new_setting):
+		remove_if_choice_is_made = new_setting
 		changed.emit()
 
 ## On which phase the object is INTERACTABLE

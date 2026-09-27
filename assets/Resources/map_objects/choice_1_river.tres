@@ -1,27 +1,22 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://c4vjkqhg3vr4"]
 
-[ext_resource type="Texture2D" uid="uid://cl8sbx1kmnfd4" path="res://assets/art/map/hill.png" id="1_3wnlt"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="1_sak0p"]
-[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_6o5hp"]
-[ext_resource type="Texture2D" uid="uid://cj5co2h1ny8ne" path="res://assets/art/map/forest.png" id="2_yigge"]
-[ext_resource type="Texture2D" uid="uid://xvstdbqy8sph" path="res://icon.svg" id="3_lx4av"]
-[ext_resource type="Texture2D" uid="uid://1uvfmwicdrth" path="res://assets/art/cursor/photo_cursor_full.png" id="4_0n6yk"]
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_gd66g"]
+[ext_resource type="Texture2D" uid="uid://ggdok7pf78eb" path="res://assets/art/ASSETS GRAPHIQUES/Decor 2_1920x1080_.png" id="4_t3yd6"]
+[ext_resource type="Texture2D" uid="uid://cnfh3lpv6ogpr" path="res://assets/art/ASSETS GRAPHIQUES/Ui_tout type de boutonselect.png" id="4_un4no"]
 
-[sub_resource type="Resource" id="Resource_o4kb5"]
-script = ExtResource("2_6o5hp")
-loc_key = "Coucou !"
-narrator_begin_texture = ExtResource("3_lx4av")
-narrator_end_texture = ExtResource("4_0n6yk")
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
-
-[sub_resource type="Resource" id="Resource_x1u1r"]
-script = ExtResource("2_6o5hp")
-loc_key = "Ceci est une forêt, tu peux la changer en colline !"
+[sub_resource type="Resource" id="Resource_kbw8x"]
+script = ExtResource("2_gd66g")
+loc_key = "colline_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("1_sak0p")
-texture = ExtResource("2_yigge")
-new_texture = ExtResource("1_3wnlt")
-on_click_dialogue_array = Array[ExtResource("2_6o5hp")]([SubResource("Resource_o4kb5"), SubResource("Resource_x1u1r")])
+texture = ExtResource("4_un4no")
+new_texture = ExtResource("4_t3yd6")
+on_interact_dialogues = Array[ExtResource("2_gd66g")]([SubResource("Resource_kbw8x")])
+remove_if_choice_is_made = 9
+visible_on_phases = Array[int]([0, 1, 2, 3, 4, 5])
+wise_points = 1
+choice_to_add = 10
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"

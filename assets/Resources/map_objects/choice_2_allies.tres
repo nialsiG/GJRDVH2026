@@ -5,12 +5,12 @@
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_83qfl"]
 [ext_resource type="Texture2D" uid="uid://drnbf7hy3r714" path="res://assets/art/ASSETS GRAPHIQUES/village_small_A.png" id="6_h6af1"]
 
-[sub_resource type="Resource" id="Resource_36r2h"]
+[sub_resource type="Resource" id="Resource_o8m1t"]
 script = ExtResource("2_krb2n")
 loc_key = "alliees_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
-[sub_resource type="Resource" id="Resource_2tgj0"]
+[sub_resource type="Resource" id="Resource_xahqk"]
 script = ExtResource("2_krb2n")
 loc_key = "alliees_very_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
@@ -19,8 +19,8 @@ metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 script = ExtResource("5_83qfl")
 texture = ExtResource("6_h6af1")
 new_texture = ExtResource("1_h6af1")
-on_click_dialogues = Array[ExtResource("2_krb2n")]([SubResource("Resource_36r2h")])
-on_click_very_dialogues = Array[ExtResource("2_krb2n")]([SubResource("Resource_2tgj0")])
+on_interact_dialogues = Array[ExtResource("2_krb2n")]([SubResource("Resource_o8m1t")])
+on_interact_very_dialogues = Array[ExtResource("2_krb2n")]([SubResource("Resource_xahqk")])
 sound_effect = 2
 interactable_on_phase = 2
 visible_on_phases = Array[int]([2, 3, 4, 5])

@@ -10,7 +10,7 @@ script = ExtResource("2_qpfb3")
 loc_key = "freres_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
-[sub_resource type="Resource" id="Resource_xsf7p"]
+[sub_resource type="Resource" id="Resource_l4xlb"]
 script = ExtResource("2_qpfb3")
 loc_key = "freres_very_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
@@ -19,8 +19,8 @@ metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 script = ExtResource("5_pygwe")
 texture = ExtResource("6_rw08e")
 new_texture = ExtResource("1_xgn3l")
-on_click_dialogues = Array[ExtResource("2_qpfb3")]([SubResource("Resource_0itpn")])
-on_click_very_dialogues = Array[ExtResource("2_qpfb3")]([SubResource("Resource_xsf7p")])
+on_interact_dialogues = Array[ExtResource("2_qpfb3")]([SubResource("Resource_0itpn")])
+on_interact_very_dialogues = Array[ExtResource("2_qpfb3")]([SubResource("Resource_l4xlb")])
 interactable_on_phase = 5
 visible_on_phases = Array[int]([5])
 wise_points = 1

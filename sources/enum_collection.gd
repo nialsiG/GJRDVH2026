@@ -6,7 +6,8 @@ enum EPhase {
 	ALLIES,
 	ARBRE,
 	ANIMAL,
-	FRERES
+	FRERES,
+	NONE
 }
 
 enum EKarma {
@@ -24,5 +25,7 @@ enum EChoice {
 	WOLF,
 	SHEEP,
 	ROMULUS,
-	REMUS
+	REMUS,
+	LAND,
+	RIVER
 }

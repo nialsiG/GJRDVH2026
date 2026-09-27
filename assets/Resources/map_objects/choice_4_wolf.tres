@@ -5,12 +5,12 @@
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_1j1qu"]
 [ext_resource type="Texture2D" uid="uid://cli1ia34vaxr1" path="res://assets/art/ASSETS GRAPHIQUES/Wolf_solo.png" id="6_gv1m2"]
 
-[sub_resource type="Resource" id="Resource_wm2hi"]
+[sub_resource type="Resource" id="Resource_5n8j8"]
 script = ExtResource("2_rtbg5")
 loc_key = "animal_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
-[sub_resource type="Resource" id="Resource_vagi2"]
+[sub_resource type="Resource" id="Resource_a8bwr"]
 script = ExtResource("2_rtbg5")
 loc_key = "animal_very_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
@@ -19,8 +19,8 @@ metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 script = ExtResource("5_1j1qu")
 texture = ExtResource("6_gv1m2")
 new_texture = ExtResource("1_gv1m2")
-on_click_dialogues = Array[ExtResource("2_rtbg5")]([SubResource("Resource_wm2hi")])
-on_click_very_dialogues = Array[ExtResource("2_rtbg5")]([SubResource("Resource_vagi2")])
+on_interact_dialogues = Array[ExtResource("2_rtbg5")]([SubResource("Resource_5n8j8")])
+on_interact_very_dialogues = Array[ExtResource("2_rtbg5")]([SubResource("Resource_a8bwr")])
 sound_effect = 6
 interactable_on_phase = 4
 visible_on_phases = Array[int]([0, 1, 2, 3, 4, 5])

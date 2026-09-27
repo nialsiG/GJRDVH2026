@@ -11,3 +11,4 @@ extends Node
 @warning_ignore("unused_signal") signal DialogueEnded
 @warning_ignore("unused_signal") signal NextDialogue
 @warning_ignore("unused_signal") signal NewDialogueArray(array: Array[DialogueResource])
+@warning_ignore("unused_signal") signal ChoiceIsMade(choice: EnumCollection.EChoice)
