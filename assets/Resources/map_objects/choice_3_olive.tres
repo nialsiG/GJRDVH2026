@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://cjp8m8bb0b0m5"]
 
-[ext_resource type="Texture2D" uid="uid://cl8sbx1kmnfd4" path="res://assets/art/map/hill.png" id="1_u7loh"]
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_6crh3"]
 [ext_resource type="Texture2D" uid="uid://xvstdbqy8sph" path="res://icon.svg" id="3_ph7jg"]
 [ext_resource type="Texture2D" uid="uid://1uvfmwicdrth" path="res://assets/art/cursor/photo_cursor_full.png" id="4_ps1av"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_o5ek8"]
-[ext_resource type="Texture2D" uid="uid://cj5co2h1ny8ne" path="res://assets/art/map/forest.png" id="6_rw2if"]
+[ext_resource type="Texture2D" uid="uid://dqf4bnsxldan" path="res://assets/art/ASSETS GRAPHIQUES/tree_olive.png" id="6_vagi2"]
 
 [sub_resource type="Resource" id="Resource_o4kb5"]
 script = ExtResource("2_6crh3")
@@ -21,7 +20,9 @@ metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("5_o5ek8")
-texture = ExtResource("6_rw2if")
-new_texture = ExtResource("1_u7loh")
+texture = ExtResource("6_vagi2")
+new_texture = ExtResource("6_vagi2")
 on_click_dialogue_array = Array[ExtResource("2_6crh3")]([SubResource("Resource_o4kb5"), SubResource("Resource_x1u1r")])
+interactable_on_phase = 3
+visible_on_phases = Array[int]([3, 4, 5])
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"

@@ -5,6 +5,14 @@
 [ext_resource type="Resource" uid="uid://c4vjkqhg3vr4" path="res://assets/Resources/map_objects/choice_1_river.tres" id="3_wry2v"]
 [ext_resource type="PackedScene" uid="uid://ddrgqwcmkp3bj" path="res://assets/scenes/nodes2D/map_objects/map_object_variants/interactable_map_object.tscn" id="4_ycnly"]
 [ext_resource type="Resource" uid="uid://ct7q268xxo3yd" path="res://assets/Resources/map_objects/choice_1_land.tres" id="5_1shj3"]
+[ext_resource type="Resource" uid="uid://h2tj3butqccx" path="res://assets/Resources/map_objects/choice_2_allies.tres" id="6_wry2v"]
+[ext_resource type="Resource" uid="uid://18vgr6m5mvin" path="res://assets/Resources/map_objects/choice_2_warriors.tres" id="7_ycnly"]
+[ext_resource type="Resource" uid="uid://bpos2l32osrow" path="res://assets/Resources/map_objects/choice_3_fig.tres" id="8_1shj3"]
+[ext_resource type="Resource" uid="uid://cjp8m8bb0b0m5" path="res://assets/Resources/map_objects/choice_3_olive.tres" id="9_5m40c"]
+[ext_resource type="Resource" uid="uid://dol6itgg0h3p4" path="res://assets/Resources/map_objects/choice_4_sheep.tres" id="10_asd6t"]
+[ext_resource type="Resource" uid="uid://dvde5bpfdxsv8" path="res://assets/Resources/map_objects/choice_4_wolf.tres" id="11_8d0p4"]
+[ext_resource type="Resource" uid="uid://dyb7vketv5ivr" path="res://assets/Resources/map_objects/choice_5_remus.tres" id="12_rrhax"]
+[ext_resource type="Resource" uid="uid://dqb507gwjy6wt" path="res://assets/Resources/map_objects/choice_5_romulus.tres" id="13_evran"]
 
 [node name="Environment" type="Node2D" unique_id=185568254]
 
@@ -26,14 +34,32 @@ map_object_resource = ExtResource("5_1shj3")
 
 [node name="Interactables" type="Node2D" parent="." unique_id=1049042489]
 
-[node name="InteractableMapObject" parent="Interactables" unique_id=954149279 instance=ExtResource("4_ycnly")]
-position = Vector2(587, 336)
-map_object_resource = ExtResource("3_wry2v")
-
-[node name="InteractableMapObject2" parent="Interactables" unique_id=1471992982 instance=ExtResource("4_ycnly")]
-position = Vector2(345, 698)
-map_object_resource = ExtResource("3_wry2v")
-
-[node name="InteractableMapObject3" parent="Interactables" unique_id=2037134544 instance=ExtResource("4_ycnly")]
-position = Vector2(823, 544)
+[node name="Choice1Land" parent="Interactables" unique_id=954149279 instance=ExtResource("4_ycnly")]
 map_object_resource = ExtResource("5_1shj3")
+
+[node name="Choice1River" parent="Interactables" unique_id=1471992982 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("3_wry2v")
+
+[node name="Choice2VillageA" parent="Interactables" unique_id=552423023 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("6_wry2v")
+
+[node name="Choice2VillageB" parent="Interactables" unique_id=1956382867 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("7_ycnly")
+
+[node name="Choice3Fig" parent="Interactables" unique_id=1829900192 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("8_1shj3")
+
+[node name="Choice3Olive" parent="Interactables" unique_id=1037148313 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("9_5m40c")
+
+[node name="Choice4Sheep" parent="Interactables" unique_id=1335726705 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("10_asd6t")
+
+[node name="Choice4Wolf" parent="Interactables" unique_id=522295635 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("11_8d0p4")
+
+[node name="Choice5Remus" parent="Interactables" unique_id=688760363 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("12_rrhax")
+
+[node name="Choice5Romulus" parent="Interactables" unique_id=620759592 instance=ExtResource("4_ycnly")]
+map_object_resource = ExtResource("13_evran")

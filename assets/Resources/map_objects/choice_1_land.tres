@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://ct7q268xxo3yd"]
 
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_14ahb"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="1_y6mio"]
 [ext_resource type="Texture2D" uid="uid://cl8sbx1kmnfd4" path="res://assets/art/map/hill.png" id="2_xxv53"]
 
