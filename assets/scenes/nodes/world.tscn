@@ -14,9 +14,17 @@
 [node name="Dialogue" parent="CanvasLayer" unique_id=293240120 instance=ExtResource("2_x0fat")]
 
 [node name="Overlay" parent="CanvasLayer" unique_id=244840642 instance=ExtResource("1_wm7ve")]
+colline_choice_1_text = ""
+colline_choice_2_text = ""
+colline_choice_1_map_resource = null
+colline_choice_2_map_resource = null
+brother_choice_1_text = ""
+brother_choice_2_text = ""
+brother_choice_1_map_resource = null
+brother_choice_2_map_resource = null
 
 [node name="Main" parent="CanvasLayer" unique_id=158894493 instance=ExtResource("2_evynp")]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1.0
-offset_bottom = 1.0
+offset_left = -53.0
+offset_top = -5.0
+offset_right = -53.0
+offset_bottom = -5.0

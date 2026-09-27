@@ -18,18 +18,20 @@ extends Control
 func _on_main_button_pressed():
 	SignalManager.StopGame.emit()
 
-func OnNextPhase(phase: EnumCollection.EPhase):
+func OnNextPhaseState(phase: EnumCollection.EPhase, state: PhaseManager.EPhaseState):
 	match phase:
 		EnumCollection.EPhase.COLLINE:
-			OnChoiceDisplay(colline_choice_1_map_resource, colline_choice_2_map_resource, colline_choice_1_text, colline_choice_2_text)
+			if state == PhaseManager.EPhaseState.CHOICE:
+				OnChoiceDisplay(colline_choice_1_map_resource, colline_choice_2_map_resource, colline_choice_1_text, colline_choice_2_text)
 		EnumCollection.EPhase.FRERES:
-			OnChoiceDisplay(brother_choice_1_map_resource, brother_choice_2_map_resource, brother_choice_1_text, brother_choice_2_text)
+			if state == PhaseManager.EPhaseState.CHOICE:
+				OnChoiceDisplay(brother_choice_1_map_resource, brother_choice_2_map_resource, brother_choice_1_text, brother_choice_2_text)
 
 
 func _ready():
 	panel_choice_button_1.pressed.connect(HideChoice)
 	panel_choice_button_2.pressed.connect(HideChoice)
-	SignalManager.OnNextPhase.connect(OnNextPhase)
+	SignalManager.NextPhaseState.connect(OnNextPhaseState)
 
 func OnChoiceDisplay(resource_1: MapObjectResource, resource_2: MapObjectResource, choice_text_1: String, choice_text_2: String):
 	panel_choice_button_1.text = choice_text_1

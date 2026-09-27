@@ -103,7 +103,7 @@ func OnMapObjectClicked():
 
 func OnChoiceIsMade(choice: EnumCollection.EChoice):
 	if choice == EnumCollection.EChoice.LAND || choice == EnumCollection.EChoice.RIVER:
-		position = Vector2(940, 540)
+		position = Vector2(960, 540)
 	if map_object_resource.remove_if_choice_is_made == choice:
 		self.hide()
 
@@ -114,14 +114,14 @@ func _GetDialoguesFromRes() -> Array[DialogueResource]:
 			return map_object_resource.on_interact_very_dialogues
 		else:
 			print("wise")
-			return map_object_resource.on_interact_very_dialogues
+			return map_object_resource.on_interact_dialogues
 	elif KarmaManager.state == EnumCollection.EKarma.EVIL:
 		if map_object_resource.on_interact_very_dialogues and KarmaManager.evil_points >= map_object_resource.cond_very_evil:
 			print("very_evil")
 			return map_object_resource.on_interact_very_dialogues
 		else:
 			print("evil")
-			return map_object_resource.on_interact_evil_dialogues
+			return map_object_resource.on_interact_dialogues
 	else:
 		print("default")
 		return map_object_resource.on_interact_dialogues

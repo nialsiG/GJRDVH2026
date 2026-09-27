@@ -12,3 +12,6 @@ extends Node
 @warning_ignore("unused_signal") signal NextDialogue
 @warning_ignore("unused_signal") signal NewDialogueArray(array: Array[DialogueResource])
 @warning_ignore("unused_signal") signal ChoiceIsMade(choice: EnumCollection.EChoice)
+@warning_ignore("unused_signal") signal StartPhase(dialogues: MultilineDialogResource)
+@warning_ignore("unused_signal") signal GameOver()
+@warning_ignore("unused_signal") signal NextPhaseState(phase: EnumCollection.EPhase, state: PhaseManager.EPhaseState)
