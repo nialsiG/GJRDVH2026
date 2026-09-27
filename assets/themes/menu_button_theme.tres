@@ -1,0 +1,30 @@
+[gd_resource type="Theme" format=3 uid="uid://cfe5gu70cpkkw"]
+
+[ext_resource type="Texture2D" uid="uid://dtccnfh3ycqqn" path="res://assets/art/ASSETS GRAPHIQUES/Ui_BG_Bouton.png" id="1_mw4je"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mw4je"]
+load_path = "res://.godot/imported/Ui_BG_Bouton.png-b0303a189fef34a52995a177472c7796.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ptqv"]
+texture = SubResource("CompressedTexture2D_mw4je")
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+modulate_color = Color(1, 0.92, 0.92, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ktof"]
+texture = ExtResource("1_mw4je")
+modulate_color = Color(0.9, 0.828, 0.828, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mda7e"]
+load_path = "res://.godot/imported/Ui_BG_Bouton.png-b0303a189fef34a52995a177472c7796.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2mh4l"]
+texture = SubResource("CompressedTexture2D_mda7e")
+modulate_color = Color(0.76, 0.48905998, 0.2356, 1)
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxTexture_2ptqv")
+Button/styles/normal = SubResource("StyleBoxTexture_8ktof")
+Button/styles/pressed = SubResource("StyleBoxTexture_2mh4l")

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://qmvv7r3wrntq" path="res://sources/main.gd" id="1_hxavu"]
 [ext_resource type="Texture2D" uid="uid://ggdok7pf78eb" path="res://assets/art/ASSETS GRAPHIQUES/Decor 2_1920x1080_.png" id="2_w4gi4"]
+[ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="3_gqqrf"]
+[ext_resource type="Theme" uid="uid://cfe5gu70cpkkw" path="res://assets/themes/menu_button_theme.tres" id="3_psi6a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwy55"]
 texture = ExtResource("2_w4gi4")
@@ -59,7 +61,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="Panel/VBoxContainer" unique_id=1408607751]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+theme = ExtResource("3_psi6a")
 text = "START"
+script = ExtResource("3_gqqrf")
 
 [connection signal="pressed" from="Panel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
