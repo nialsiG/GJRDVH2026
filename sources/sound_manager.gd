@@ -31,8 +31,7 @@ const UI_SURVOL = preload("uid://bi4mqlg0t5mag")
 const SHEEP_STREAM_RANDOMIZER = preload("uid://bwbiv8deohfp3")
 const WOLF_STREAM_RANDOMIZER = preload("uid://cdc6vraeaa4y6")
 const BROTHERS_STREAM_RANDOMIZER = preload("uid://cqwth7feiswn3")
-const VILLAGE_ALLIÉ_A_LAVINUM__FESTIF_ = preload("uid://fl3xx52a1dhx")
-const VILLAGE_ALLIÉ_B_ARDEA__GUERRIER_ = preload("uid://d0asursq6glse")
+
 
 var sound_volume: float = 0.3
 var sound_queue_index: int = 0
@@ -49,9 +48,9 @@ func PlaySound(stream: sound):
 		sound.HOVER:
 			sound_queue[sound_queue_index].stream = UI_SURVOL
 		sound.TOWN_FESTIVE:
-			sound_queue[sound_queue_index].stream = VILLAGE_ALLIÉ_A_LAVINUM__FESTIF_
+			sound_queue[sound_queue_index].stream = UI_CLIC
 		sound.TOWN_WARRIOR:
-			sound_queue[sound_queue_index].stream = VILLAGE_ALLIÉ_B_ARDEA__GUERRIER_
+			sound_queue[sound_queue_index].stream = UI_CLIC
 		sound.TREE:
 			sound_queue[sound_queue_index].stream = FORET
 		sound.SHEEP:
