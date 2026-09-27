@@ -19,12 +19,17 @@ const OUTLINE_SHADER_MATERIAL = preload("uid://desy0lgw0pa8s")
 
 func _ready():
 	OnResourceChange()
+	SignalManager.NewGame.connect(Reset)
 	SignalManager.OnNextPhase.connect(OnPhaseChange)
 	SignalManager.ChoiceIsMade.connect(OnChoiceIsMade)
 	if interactable:
 		interactable.clicked.connect(OnMapObjectClicked)
 		interactable.mouse_entered.connect(OnMapObjectHovered)
 		interactable.mouse_exited.connect(OnMapObjectExited)
+
+func Reset():
+	if map_object_resource.is_map_with_river:
+		hide()
 
 func OnResourceChange():
 	if !sprite_2d:
@@ -102,10 +107,10 @@ func OnMapObjectClicked():
 	KarmaManager.add_evil_points(map_object_resource.evil_points)
 
 func OnChoiceIsMade(choice: EnumCollection.EChoice):
-	#if choice == EnumCollection.EChoice.LAND || choice == EnumCollection.EChoice.RIVER:
-		#position = Vector2(960, 540)
+	if choice == EnumCollection.EChoice.RIVER and map_object_resource.is_map_with_river:
+		Show()
 	if map_object_resource.remove_if_choice_is_made == choice:
-		self.hide()
+		Hide()
 
 func _GetDialoguesFromRes() -> Array[DialogueResource]:
 	if KarmaManager.state == EnumCollection.EKarma.WISE:
