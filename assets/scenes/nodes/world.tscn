@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bfuy2iwlq61ya" path="res://assets/scenes/nodes2D/environment.tscn" id="1_ykpa5"]
 [ext_resource type="PackedScene" uid="uid://rbxd7ihf4e8m" path="res://assets/scenes/controls/main.tscn" id="2_evynp"]
 [ext_resource type="PackedScene" uid="uid://whfr47ef8l2y" path="res://assets/scenes/controls/dialogue.tscn" id="2_x0fat"]
+[ext_resource type="PackedScene" uid="uid://ci55nsk0e1w3w" path="res://assets/scenes/controls/game_over_panel.tscn" id="4_y33ub"]
 
 [node name="World" type="Node" unique_id=1656867005]
 
@@ -22,6 +23,8 @@ brother_choice_1_text = ""
 brother_choice_2_text = ""
 brother_choice_1_map_resource = null
 brother_choice_2_map_resource = null
+
+[node name="GameOverPanel" parent="CanvasLayer" unique_id=506389171 instance=ExtResource("4_y33ub")]
 
 [node name="Main" parent="CanvasLayer" unique_id=158894493 instance=ExtResource("2_evynp")]
 offset_left = -53.0

@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://rbxd7ihf4e8m"]
 
 [ext_resource type="Script" uid="uid://qmvv7r3wrntq" path="res://sources/main.gd" id="1_hxavu"]
-[ext_resource type="Texture2D" uid="uid://ggdok7pf78eb" path="res://assets/art/ASSETS GRAPHIQUES/Decor 2_1920x1080_.png" id="2_w4gi4"]
+[ext_resource type="Texture2D" uid="uid://r5u3jyotjfhq" path="res://assets/art/ASSETS GRAPHIQUES/Menuex.png" id="2_psi6a"]
+[ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="3_gqqrf"]
+[ext_resource type="Theme" uid="uid://cfe5gu70cpkkw" path="res://assets/themes/menu_button_theme.tres" id="3_psi6a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwy55"]
-texture = ExtResource("2_w4gi4")
+texture = ExtResource("2_psi6a")
 
 [sub_resource type="LabelSettings" id="LabelSettings_f61wl"]
 font_size = 60
@@ -34,32 +36,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.5
-offset_top = -333.0
-offset_right = 319.5
-offset_bottom = -250.0
+offset_left = -72.0
+offset_top = -448.0
+offset_right = 567.0
+offset_bottom = -365.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "FONDATION DE ROME"
+text = "Rome ne s'est pas faite
+en un jour"
 label_settings = SubResource("LabelSettings_f61wl")
+horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1481837867]
-custom_minimum_size = Vector2(600, 400)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -200.0
-offset_right = 300.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StartButton" type="Button" parent="Panel/VBoxContainer" unique_id=1408607751]
-layout_mode = 2
+[node name="StartButton" type="Button" parent="Panel" unique_id=1408607751]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 0
+offset_left = 1273.0
+offset_top = 326.0
+offset_right = 1802.0
+offset_bottom = 453.0
+theme = ExtResource("3_psi6a")
 text = "START"
+script = ExtResource("3_gqqrf")
 
-[connection signal="pressed" from="Panel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
