@@ -18,37 +18,16 @@ class_name MapObjectResource
 
 ## List of default dialogues to trigger when the object is clicked
 @export_group("On Click")
-@export var on_click_default_dialogues: Array[DialogueResource]:
+@export var on_click_dialogues: Array[DialogueResource]:
 	set(new_setting):
-		on_click_default_dialogues = new_setting
+		on_click_dialogues = new_setting
 		changed.emit()
 
-## List of wise dialogues to trigger when the object is clicked
+## List of VERY dialogues to trigger when the object is clicked and conditions are checked
 @export_group("On Click")
-@export var on_click_wise_dialogues: Array[DialogueResource]:
+@export var on_click_very_dialogues: Array[DialogueResource]:
 	set(new_setting):
-		on_click_wise_dialogues = new_setting
-		changed.emit()
-
-## List of very_wise dialogues to trigger when the object is clicked
-@export_group("On Click")
-@export var on_click_very_wise_dialogues: Array[DialogueResource]:
-	set(new_setting):
-		on_click_very_wise_dialogues = new_setting
-		changed.emit()
-
-## List of evil dialogues to trigger when the object is clicked
-@export_group("On Click")
-@export var on_click_evil_dialogues: Array[DialogueResource]:
-	set(new_setting):
-		on_click_evil_dialogues = new_setting
-		changed.emit()
-
-## List of very_evil dialogues to trigger when the object is clicked
-@export_group("On Click")
-@export var on_click_very_evil_dialogues: Array[DialogueResource]:
-	set(new_setting):
-		on_click_very_evil_dialogues = new_setting
+		on_click_very_dialogues = new_setting
 		changed.emit()
 
 ## Sound effect played when the object is clicked
@@ -107,21 +86,6 @@ class_name MapObjectResource
 	set(new_setting):
 		choice_to_add = new_setting
 		changed.emit()
-
-## Player must have choosen this choice to trigger very wise dialogue
-@export_group("Karma System")
-@export var cond_choice_very_wise: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
-	set(new_setting):
-		cond_choice_very_wise = new_setting
-		changed.emit()
-
-## Player must have choosen this choice to trigger very evil dialogue
-@export_group("Karma System")
-@export var cond_choice_very_evil: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
-	set(new_setting):
-		cond_choice_very_evil = new_setting
-		changed.emit()
-
 
 # TODO: remove unused property ?
 # @export_group("Phase System")
