@@ -15,6 +15,8 @@ class_name MapObject
 @export var interactable: Interactable
 @onready var sprite_2d: Sprite2D = %Sprite2D
 
+var hide_after_choice: bool = false;
+
 const OUTLINE_SHADER_MATERIAL = preload("uid://desy0lgw0pa8s")
 
 func _ready():
@@ -28,6 +30,7 @@ func _ready():
 		interactable.mouse_exited.connect(OnMapObjectExited)
 
 func Reset():
+	hide_after_choice = false
 	if map_object_resource.is_map_with_river:
 		hide()
 
@@ -43,7 +46,7 @@ func OnPhaseChange(phase: EnumCollection.EPhase):
 		else:
 			Deactivate()
 	if map_object_resource.visible_on_phases.size() > 0:
-		if map_object_resource.visible_on_phases.has(phase) and !visible:
+		if map_object_resource.visible_on_phases.has(phase) and !visible and !hide_after_choice:
 			Show()
 		elif !map_object_resource.visible_on_phases.has(phase) and visible:
 			Hide()
@@ -110,6 +113,7 @@ func OnChoiceIsMade(choice: EnumCollection.EChoice):
 	if choice == EnumCollection.EChoice.RIVER and map_object_resource.is_map_with_river:
 		Show()
 	if map_object_resource.remove_if_choice_is_made == choice:
+		hide_after_choice = true
 		Hide()
 
 func _GetDialoguesFromRes() -> Array[DialogueResource]:
