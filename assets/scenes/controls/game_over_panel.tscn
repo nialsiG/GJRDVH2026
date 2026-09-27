@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://ci55nsk0e1w3w"]
 
 [ext_resource type="Script" uid="uid://dvq20ke34eb57" path="res://sources/game_over_panel.gd" id="1_pujjd"]
+[ext_resource type="Texture2D" uid="uid://cfjjgf1ejpqb" path="res://assets/art/ASSETS GRAPHIQUES/end_ruins.png" id="2_5ipdm"]
 [ext_resource type="Theme" uid="uid://cfe5gu70cpkkw" path="res://assets/themes/menu_button_theme.tres" id="2_8kn2v"]
+[ext_resource type="Texture2D" uid="uid://ubw8xvgdtr3c" path="res://assets/art/ASSETS GRAPHIQUES/end_prosp.png" id="2_ue0y7"]
 [ext_resource type="Theme" uid="uid://c5ui40y4yps16" path="res://assets/themes/rich_text_theme.tres" id="2_ussah"]
 [ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="3_ussah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ipdm"]
+bg_color = Color(0.1, 0.068833336, 0.014999998, 0.8039216)
 
 [node name="GameOverPanel" type="Control" unique_id=506389171]
 layout_mode = 3
@@ -20,29 +25,50 @@ fin_chaos_but_playedchaos = "fin_chaos_but_playedchaos"
 fin_conclusion_sage = "fin_conclusion_sage"
 fin_conclusion_chaos = "fin_conclusion_chaos"
 fin_conclusion_fin = "fin_conclusion_fin"
+texture_bad = ExtResource("2_5ipdm")
+texture_good = ExtResource("2_ue0y7")
 
-[node name="Panel" type="Panel" parent="." unique_id=828173564]
+[node name="BGPanel" type="TextureRect" parent="." unique_id=1516043019]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_5ipdm")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=785577149]
-unique_name_in_owner = true
+[node name="Panel" type="Panel" parent="BGPanel" unique_id=2002370579]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -349.0
-offset_top = -157.0
-offset_right = 349.0
-offset_bottom = 157.0
+offset_left = -401.0
+offset_top = -203.0
+offset_right = 401.0
+offset_bottom = 203.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ipdm")
+
+[node name="MarginContainer" type="MarginContainer" parent="BGPanel/Panel" unique_id=606220892]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BGPanel/Panel/MarginContainer" unique_id=785577149]
+unique_name_in_owner = true
+layout_mode = 2
 theme = ExtResource("2_ussah")
 text = "this is a test test te
 test"

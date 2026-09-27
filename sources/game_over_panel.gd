@@ -10,6 +10,10 @@ extends Control
 @export var fin_conclusion_chaos: String
 @export var fin_conclusion_fin: String
 
+@export var texture_bad: Texture2D
+@export var texture_good: Texture2D
+
+@onready var bg_panel: TextureRect = $BGPanel
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
 
 enum fin {
@@ -45,6 +49,7 @@ func OnGameOver():
 	match current_fin:
 		played.SAGE:
 			MusicManager.PlayMusic(MusicManager.music.GOOD_ENDING)
+			bg_panel.texture = texture_good
 			text += tr(fin_conclusion_sage)
 			text += "\n"
 			match current_played:
@@ -54,6 +59,7 @@ func OnGameOver():
 					text += tr(fin_sage_but_playedchaos)
 		played.CHAOS:
 			MusicManager.PlayMusic(MusicManager.music.BAD_ENDING)
+			bg_panel.texture = texture_bad
 			text += tr(fin_conclusion_chaos)
 			text += "\n"
 			match current_played:
