@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://h2tj3butqccx"]
 
-[ext_resource type="Texture2D" uid="uid://bdkbpxv0m6huv" path="res://assets/art/ASSETS GRAPHIQUES/village_big_A_men.png" id="1_h6af1"]
+[ext_resource type="Texture2D" uid="uid://r204ddci1wdw" path="res://assets/art/ASSETS GRAPHIQUES/village_big_B_men.png" id="1_oaot5"]
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_krb2n"]
 [ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="3_oaot5"]
 [ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_xtigj"]
@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 [resource]
 script = ExtResource("5_83qfl")
 texture = ExtResource("6_h6af1")
-new_texture = ExtResource("1_h6af1")
+new_texture = ExtResource("1_oaot5")
 on_interact_dialogues = Array[ExtResource("2_krb2n")]([SubResource("Resource_o8m1t")])
 on_interact_very_dialogues = Array[ExtResource("2_krb2n")]([SubResource("Resource_xahqk")])
 sound_effect = 2
