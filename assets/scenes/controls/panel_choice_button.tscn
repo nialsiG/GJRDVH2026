@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://besndmljtwcj1"]
+
+[ext_resource type="Script" uid="uid://dp3vkgq04gp3j" path="res://sources/panel_choice_button.gd" id="1_wi13x"]
+
+[node name="PanelChoiceButton" type="Button" unique_id=1696534639]
+offset_right = 279.0
+offset_bottom = 123.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_wi13x")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://whfr47ef8l2y"]
 
 [ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_qg05v"]
-[ext_resource type="Texture2D" uid="uid://xvstdbqy8sph" path="res://icon.svg" id="2_el3px"]
+[ext_resource type="Texture2D" uid="uid://dqpafj1e5tgl4" path="res://assets/art/ASSETS GRAPHIQUES/Ui_TextNarratif_interrogation.png" id="2_h704a"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="3_54ihs"]
+[ext_resource type="Texture2D" uid="uid://l3586hbe0q4t" path="res://assets/art/ASSETS GRAPHIQUES/UI_flèche_text.png" id="4_54ihs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4xlb"]
+texture = ExtResource("2_h704a")
 
 [node name="Dialogue" type="Control" unique_id=293240120]
 layout_mode = 3
@@ -14,27 +19,38 @@ mouse_filter = 2
 script = ExtResource("1_qg05v")
 
 [node name="Panel" type="Panel" parent="." unique_id=287894469]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 781.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_l4xlb")
 
-[node name="NarratorSprite2D" type="Sprite2D" parent="Panel" unique_id=1326365728]
-visible = false
-position = Vector2(107, -74)
-texture = ExtResource("2_el3px")
+[node name="NarratorSprite2D" type="TextureRect" parent="Panel" unique_id=752256303]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_54ihs")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2113243911]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 633.0
+offset_top = 902.0
+offset_right = -555.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -48,8 +64,21 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Arrow" type="TextureRect" parent="Panel" unique_id=47658259]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_54ihs")
+
 [node name="Timer" type="Timer" parent="." unique_id=141432316]
 wait_time = 0.1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1754954341]
+unique_name_in_owner = true
 
 [connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
 [connection signal="timeout" from="Timer" to="." method="_on_defiling_timer_timeout"]

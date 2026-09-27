@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://rbxd7ihf4e8m"]
 
 [ext_resource type="Script" uid="uid://qmvv7r3wrntq" path="res://sources/main.gd" id="1_hxavu"]
+[ext_resource type="Texture2D" uid="uid://ggdok7pf78eb" path="res://assets/art/ASSETS GRAPHIQUES/Decor 2_1920x1080_.png" id="2_w4gi4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwy55"]
+texture = ExtResource("2_w4gi4")
 
 [sub_resource type="LabelSettings" id="LabelSettings_f61wl"]
 font_size = 60
@@ -21,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wwy55")
 
 [node name="Label" type="Label" parent="Panel" unique_id=1651395711]
 layout_mode = 1
