@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://whfr47ef8l2y"]
 
 [ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_qg05v"]
-[ext_resource type="Texture2D" uid="uid://bsb04pmnxbq8v" path="res://assets/art/ASSETS GRAPHIQUES/UI_TextNarratif.png" id="2_54ihs"]
+[ext_resource type="Texture2D" uid="uid://d13a1um04dnxp" path="res://assets/art/ASSETS GRAPHIQUES/UI_TextNarratif_Venus.png" id="2_ks6fi"]
 [ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="3_54ihs"]
 [ext_resource type="Theme" uid="uid://c5ui40y4yps16" path="res://assets/themes/rich_text_theme.tres" id="4_07ddm"]
 [ext_resource type="Texture2D" uid="uid://l3586hbe0q4t" path="res://assets/art/ASSETS GRAPHIQUES/UI_flèche_text.png" id="4_54ihs"]
 [ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="6_ks6fi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4xlb"]
-texture = ExtResource("2_54ihs")
+texture = ExtResource("2_ks6fi")
 
 [node name="Dialogue" type="Control" unique_id=293240120]
 layout_mode = 3
@@ -32,6 +32,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_l4xlb")
 
 [node name="NarratorSprite2D" type="TextureRect" parent="Panel" unique_id=752256303]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

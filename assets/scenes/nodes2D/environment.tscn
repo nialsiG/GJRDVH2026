@@ -21,6 +21,7 @@
 [sub_resource type="Resource" id="Resource_x0fat"]
 script = ExtResource("6_jetj4")
 texture = ExtResource("1_6co5q")
+is_map_with_river = null
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"
 
 [sub_resource type="Resource" id="Resource_kbw8x"]
@@ -68,12 +69,12 @@ scale = Vector2(0.9, 0.9)
 map_object_resource = ExtResource("7_ycnly")
 
 [node name="CollisionShape2D" parent="Interactables/Choice2VillageA/Area2D" parent_id_path=PackedInt32Array(552423023, 365844650) index="0" unique_id=1860196079]
-position = Vector2(-110, -13)
+position = Vector2(-81.111115, -103.33336)
 shape = SubResource("CircleShape2D_6yfuc")
 disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice2VillageA" index="1" unique_id=1630606672]
-position = Vector2(-105, -11.999997)
+position = Vector2(-41.111107, -130.00005)
 scale = Vector2(0.66610557, 0.66610545)
 texture = ExtResource("8_evran")
 
@@ -83,12 +84,12 @@ rotation = -0.018112408
 map_object_resource = ExtResource("6_wry2v")
 
 [node name="CollisionShape2D" parent="Interactables/Choice2VillageB/Area2D" parent_id_path=PackedInt32Array(1956382867, 365844650) index="0" unique_id=1860196079]
-position = Vector2(106, -4)
+position = Vector2(385.81366, 68.998955)
 shape = SubResource("CircleShape2D_evran")
 disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice2VillageB" index="1" unique_id=1630606672]
-position = Vector2(121.15294, 59)
+position = Vector2(410.1538, 50.436745)
 scale = Vector2(0.7019608, 0.7019608)
 texture = ExtResource("8_evran")
 
