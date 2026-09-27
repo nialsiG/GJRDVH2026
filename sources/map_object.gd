@@ -30,6 +30,7 @@ func _ready():
 		interactable.mouse_exited.connect(OnMapObjectExited)
 
 func Reset():
+	ChangeTexture(map_object_resource.texture)
 	hide_after_choice = false
 	if map_object_resource.is_map_with_river:
 		hide()

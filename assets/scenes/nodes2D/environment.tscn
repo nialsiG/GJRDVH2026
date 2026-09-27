@@ -21,7 +21,6 @@
 [sub_resource type="Resource" id="Resource_x0fat"]
 script = ExtResource("6_jetj4")
 texture = ExtResource("1_6co5q")
-is_map_with_river = null
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"
 
 [sub_resource type="Resource" id="Resource_kbw8x"]
