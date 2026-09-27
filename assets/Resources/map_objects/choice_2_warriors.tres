@@ -2,17 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://r204ddci1wdw" path="res://assets/art/ASSETS GRAPHIQUES/village_big_B_men.png" id="1_rgm3m"]
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_36r2h"]
+[ext_resource type="Texture2D" uid="uid://8w3iv3okgej4" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_choqué.png" id="3_vydjp"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_88f6q"]
+[ext_resource type="Texture2D" uid="uid://nclhl68u5wqg" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_soupir.png" id="5_1cw6o"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_6gakj"]
 [ext_resource type="Texture2D" uid="uid://b7l7tikjurah" path="res://assets/art/ASSETS GRAPHIQUES/village_small_B.png" id="6_rgm3m"]
 
 [sub_resource type="Resource" id="Resource_xahqk"]
 script = ExtResource("2_36r2h")
 loc_key = "alliees_chaos"
+narrator_begin_texture = ExtResource("3_vydjp")
+narrator_end_texture = ExtResource("4_88f6q")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_h3bee"]
 script = ExtResource("2_36r2h")
 loc_key = "alliees_very_chaos"
+narrator_begin_texture = ExtResource("5_1cw6o")
+narrator_end_texture = ExtResource("4_88f6q")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
@@ -21,6 +28,7 @@ texture = ExtResource("6_rgm3m")
 new_texture = ExtResource("1_rgm3m")
 on_interact_dialogues = Array[ExtResource("2_36r2h")]([SubResource("Resource_xahqk")])
 on_interact_very_dialogues = Array[ExtResource("2_36r2h")]([SubResource("Resource_h3bee")])
+remove_if_choice_is_made = 1
 evil_points = 1
 cond_very_evil = 1
 choice_to_add = 2

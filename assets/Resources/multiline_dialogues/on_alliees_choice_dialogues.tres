@@ -2,15 +2,22 @@
 
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_nobem"]
 [ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_1gh42"]
+[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="2_ejido"]
+[ext_resource type="Texture2D" uid="uid://dbqed5vnvnlml" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_colère.png" id="3_vimdg"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_yfmn1"]
 
 [sub_resource type="Resource" id="Resource_j237o"]
 script = ExtResource("1_nobem")
 loc_key = "alliees_choice_1"
+narrator_begin_texture = ExtResource("2_ejido")
+narrator_end_texture = ExtResource("2_ejido")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_3qydu"]
 script = ExtResource("1_nobem")
 loc_key = "alliees_choice_2"
+narrator_begin_texture = ExtResource("3_vimdg")
+narrator_end_texture = ExtResource("4_yfmn1")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]

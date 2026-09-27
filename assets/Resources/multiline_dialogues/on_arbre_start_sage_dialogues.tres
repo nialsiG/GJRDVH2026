@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_0k7dl"]
 [ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_bmel2"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="2_o11i0"]
 
 [sub_resource type="Resource" id="Resource_j237o"]
 script = ExtResource("1_0k7dl")
 loc_key = "arbre_start_chaos"
+narrator_begin_texture = ExtResource("2_o11i0")
+narrator_end_texture = ExtResource("2_o11i0")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
