@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://bifn550oowk3h"
+uid="uid://bfydbas1p373y"
 path="res://.godot/imported/Ambiance_fin_reussie.mp3-0c8c50daffb9c8d04892491845427aa2.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Ambiance_fin_reussie.mp3-0c8c50daffb9c8d04892
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

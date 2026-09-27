@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Ambiance_fin_ratee.mp3-a955c1ae941b36a236e0f7
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

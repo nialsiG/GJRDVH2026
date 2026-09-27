@@ -48,8 +48,9 @@ func OnChoiceDisplay(resource_1: MapObjectResource, resource_2: MapObjectResourc
 
 func DisplayChoice():
 	show()
+	MusicManager.PlayMusic(MusicManager.music.CHOIX)
 	animation_player.play("on_choice_display")
 
 func HideChoice():
-	print("test")
+	MusicManager.PlayMusic(MusicManager.music.ENVIRONNEMENT)
 	animation_player.play("on_choice_hide")
