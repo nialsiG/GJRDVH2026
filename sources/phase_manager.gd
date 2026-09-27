@@ -71,6 +71,7 @@ func NextState():
 		current_state = EPhaseState.CHOICE
 	else:
 		current_state = EPhaseState.START
+	SignalManager.NextPhaseState.emit(current_phase, current_state)
 
 func OnChoiceIsMade(_choice: EnumCollection.EChoice):
 	print("end_phase = true")

@@ -10,8 +10,9 @@ enum State {
 @onready var panel: Panel = $Panel
 @onready var label: RichTextLabel = %RichTextLabel
 @onready var timer: Timer = $Timer
-@onready var narrator_sprite_2d: Sprite2D = $Panel/NarratorSprite2D
+@onready var narrator_sprite_2d: TextureRect = %NarratorSprite2D
 var current_state: State = State.Ended
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 @export var dialogue_res: DialogueResource:
 	set(new_resource):

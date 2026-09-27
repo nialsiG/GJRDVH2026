@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bvrx8q7cqhxc7"]
+[gd_scene format=3 uid="uid://besndmljtwcj1"]
 
-[ext_resource type="Script" path="res://sources/panel_choice_button.gd" id="1_wi13x"]
+[ext_resource type="Script" uid="uid://dp3vkgq04gp3j" path="res://sources/panel_choice_button.gd" id="1_wi13x"]
 
 [node name="PanelChoiceButton" type="Button" unique_id=1696534639]
 offset_right = 279.0
