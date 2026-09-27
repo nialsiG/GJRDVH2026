@@ -1,15 +1,13 @@
 ,french
 start_start,Réveille toi...
-start_start_2,"[Prénom], tu me reconnais n’est-ce pas ?"
+start_start_2,"Faustulus, tu me reconnais n’est-ce pas ?"
 start_start_3,"Je suis Vénus, la déesse de la beauté et la mère d’Enée, le héros qui a découvert cette région."
 start_start_4,"Je te connais : c’est toi qui a trouvé mes descendants, Romulus et Rémus, auprès d’une louve."
 start_start_5,Tu as ensuite caché les jumeaux et tu les as protégés des menaces de leur grand-oncle Amulius !
-start_start_6,"Grâce à toi [Prénom], la vérité a été rétablie et Numitor, leur grand-père, le roi légitime, a retrouvé le trône d'Albe-la-longue."
+start_start_6,"Grâce à toi Faustulus, la vérité a été rétablie et Numitor, leur grand-père, le roi légitime, a retrouvé le trône d'Albe-la-longue."
 start_start_7,J’ai besoin de toi pour guider les jumeaux jusqu’à leur destin : fonder une nouvelle cité !
 colline_start_1,Romulus et Rémus sont à la tête d'une foule de jeunes gens après les changements à Albe-la-longue.
 colline_start_2,Où devraient-ils s'installer d'après toi ?
-,
-,
 colline_choice,Guide-les vers le fleuve qui leur offrira une voie pour échanger des marchandises...
 colline_bark,"Je te sens hésitant, mais je crois en toi."
 colline_sage,Tu as fait le bon choix !
@@ -50,7 +48,7 @@ Tu as laissé parler ton âme de berger Faustulus, je me trompe ?"
 animal_very_sage,"Un loup, un bel hommage à la louve qui les a allaités.
 Une nouvelle fois tu fais tes preuves en tant que guide !"
 animal_very_chaos,"Un MOUTON ?! C'est du sabotage Faustulus !
-Tu veux fonder une cité de moutons !"
+Tu veux fonder une cité docile et fragile ?"
 freres_start,C'est l'heure du dernier choix...
 freres_start_sage,Ce n'est pas le moment de déjouer le destin.
 freres_start_chaos,Tu peux encore tisser le destin tel qu'il est écrit.
