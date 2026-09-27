@@ -86,9 +86,10 @@ func OnMapObjectExited():
 func OnMapObjectClicked():
 	Deactivate()
 	# Changes on click
-	var dialogues: Array[DialogueResource] = _GetDialoguesFromRes()
+	KarmaManager.add_choice(map_object_resource.choice_to_add)
 	if map_object_resource.new_texture:
 		ChangeTexture(map_object_resource.new_texture)
+	var dialogues: Array[DialogueResource] = _GetDialoguesFromRes()
 	if dialogues:
 		SignalManager.NewDialogueArray.emit(dialogues)
 		#print("MapObject: map_object_resource.on_click_dialogue_array=", map_object_resource.on_click_dialogue_array)
@@ -101,14 +102,14 @@ func OnMapObjectClicked():
 
 func _GetDialoguesFromRes() -> Array[DialogueResource]:
 	if KarmaManager.state == EnumCollection.EKarma.WISE:
-		if KarmaManager.wise_points >= map_object_resource.cond_very_wise and map_object_resource.on_click_very_wise_dialogues:
+		if map_object_resource.on_click_very_wise_dialogues and KarmaManager.wise_points >= map_object_resource.cond_very_wise and KarmaManager.choices_made.has(map_object_resource.cond_choice_very_wise):
 			print("very_wise")
 			return map_object_resource.on_click_very_wise_dialogues
 		else:
 			print("wise")
 			return map_object_resource.on_click_wise_dialogues
 	elif KarmaManager.state == EnumCollection.EKarma.EVIL:
-		if KarmaManager.evil_points >= map_object_resource.cond_very_evil and map_object_resource.on_click_very_evil_dialogues:
+		if map_object_resource.on_click_very_evil_dialogues and KarmaManager.evil_points >= map_object_resource.cond_very_evil and KarmaManager.choices_made.has(map_object_resource.cond_choice_very_evil):
 			print("very_evil")
 			return map_object_resource.on_click_very_evil_dialogues
 		else:

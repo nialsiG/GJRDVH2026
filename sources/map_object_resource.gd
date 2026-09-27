@@ -101,6 +101,27 @@ class_name MapObjectResource
 		cond_very_evil = new_setting
 		changed.emit()
 
+## Choice to add when user choose it
+@export_group("Karma System")
+@export var choice_to_add: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
+	set(new_setting):
+		choice_to_add = new_setting
+		changed.emit()
+
+## Player must have choosen this choice to trigger very wise dialogue
+@export_group("Karma System")
+@export var cond_choice_very_wise: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
+	set(new_setting):
+		cond_choice_very_wise = new_setting
+		changed.emit()
+
+## Player must have choosen this choice to trigger very evil dialogue
+@export_group("Karma System")
+@export var cond_choice_very_evil: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
+	set(new_setting):
+		cond_choice_very_evil = new_setting
+		changed.emit()
+
 
 # TODO: remove unused property ?
 # @export_group("Phase System")
