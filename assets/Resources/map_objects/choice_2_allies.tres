@@ -2,17 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://bdkbpxv0m6huv" path="res://assets/art/ASSETS GRAPHIQUES/village_big_A_men.png" id="1_h6af1"]
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_krb2n"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="3_oaot5"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_xtigj"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_83qfl"]
+[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="5_g3d46"]
 [ext_resource type="Texture2D" uid="uid://drnbf7hy3r714" path="res://assets/art/ASSETS GRAPHIQUES/village_small_A.png" id="6_h6af1"]
 
 [sub_resource type="Resource" id="Resource_o8m1t"]
 script = ExtResource("2_krb2n")
 loc_key = "alliees_sage"
+narrator_begin_texture = ExtResource("3_oaot5")
+narrator_end_texture = ExtResource("4_xtigj")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_xahqk"]
 script = ExtResource("2_krb2n")
 loc_key = "alliees_very_sage"
+narrator_begin_texture = ExtResource("5_g3d46")
+narrator_end_texture = ExtResource("4_xtigj")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
@@ -22,6 +29,7 @@ new_texture = ExtResource("1_h6af1")
 on_interact_dialogues = Array[ExtResource("2_krb2n")]([SubResource("Resource_o8m1t")])
 on_interact_very_dialogues = Array[ExtResource("2_krb2n")]([SubResource("Resource_xahqk")])
 sound_effect = 2
+remove_if_choice_is_made = 2
 interactable_on_phase = 2
 visible_on_phases = Array[int]([2, 3, 4, 5])
 wise_points = 1
