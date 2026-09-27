@@ -1,10 +1,20 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://ct7q268xxo3yd"]
 
-[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_14ahb"]
+[ext_resource type="Texture2D" uid="uid://bfsef6g4b72d3" path="res://assets/art/ASSETS GRAPHIQUES/tree_figue.png" id="1_14ahb"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="1_y6mio"]
 [ext_resource type="Texture2D" uid="uid://cl8sbx1kmnfd4" path="res://assets/art/map/hill.png" id="2_xxv53"]
 
 [resource]
 script = ExtResource("1_y6mio")
 texture = ExtResource("2_xxv53")
+new_texture = ExtResource("1_14ahb")
+on_click_default_dialogues = null
+on_click_wise_dialogues = null
+on_click_very_wise_dialogues = null
+on_click_evil_dialogues = null
+on_click_very_evil_dialogues = null
+wise_points = null
+evil_points = null
+cond_very_wise = null
+cond_very_evil = null
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"

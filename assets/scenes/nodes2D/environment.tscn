@@ -5,7 +5,12 @@
 [ext_resource type="Resource" uid="uid://c4vjkqhg3vr4" path="res://assets/Resources/map_objects/choice_1_river.tres" id="3_wry2v"]
 [ext_resource type="PackedScene" uid="uid://ddrgqwcmkp3bj" path="res://assets/scenes/nodes2D/map_objects/map_object_variants/interactable_map_object.tscn" id="4_ycnly"]
 [ext_resource type="Resource" uid="uid://ct7q268xxo3yd" path="res://assets/Resources/map_objects/choice_1_land.tres" id="5_1shj3"]
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="5_6yfuc"]
+[ext_resource type="Texture2D" uid="uid://bfsef6g4b72d3" path="res://assets/art/ASSETS GRAPHIQUES/tree_figue.png" id="5_kbw8x"]
+[ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="6_jetj4"]
 [ext_resource type="Resource" uid="uid://h2tj3butqccx" path="res://assets/Resources/map_objects/choice_2_allies.tres" id="6_wry2v"]
+[ext_resource type="Resource" uid="uid://cpclmy286t8c4" path="res://assets/Resources/dialogues/placeholder2.tres" id="7_caus4"]
+[ext_resource type="Texture2D" uid="uid://cs86rtqxfivs2" path="res://assets/art/ASSETS GRAPHIQUES/Sheep_group_of_5_B.png" id="7_jetj4"]
 [ext_resource type="Resource" uid="uid://18vgr6m5mvin" path="res://assets/Resources/map_objects/choice_2_warriors.tres" id="7_ycnly"]
 [ext_resource type="Resource" uid="uid://bpos2l32osrow" path="res://assets/Resources/map_objects/choice_3_fig.tres" id="8_1shj3"]
 [ext_resource type="Resource" uid="uid://cjp8m8bb0b0m5" path="res://assets/Resources/map_objects/choice_3_olive.tres" id="9_5m40c"]
@@ -13,6 +18,41 @@
 [ext_resource type="Resource" uid="uid://dvde5bpfdxsv8" path="res://assets/Resources/map_objects/choice_4_wolf.tres" id="11_8d0p4"]
 [ext_resource type="Resource" uid="uid://dyb7vketv5ivr" path="res://assets/Resources/map_objects/choice_5_remus.tres" id="12_rrhax"]
 [ext_resource type="Resource" uid="uid://dqb507gwjy6wt" path="res://assets/Resources/map_objects/choice_5_romulus.tres" id="13_evran"]
+
+[sub_resource type="Resource" id="Resource_kbw8x"]
+script = ExtResource("5_6yfuc")
+loc_key = "default"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[sub_resource type="Resource" id="Resource_fwvxb"]
+script = ExtResource("5_6yfuc")
+loc_key = "animal_start_chaos"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[sub_resource type="Resource" id="Resource_a7m2m"]
+script = ExtResource("5_6yfuc")
+loc_key = "animal_very_chaos"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[sub_resource type="Resource" id="Resource_caus4"]
+script = ExtResource("5_6yfuc")
+loc_key = "animal_start_sage"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[sub_resource type="Resource" id="Resource_14ahb"]
+script = ExtResource("6_jetj4")
+texture = ExtResource("7_jetj4")
+new_texture = ExtResource("5_kbw8x")
+on_click_default_dialogues = Array[ExtResource("5_6yfuc")]([SubResource("Resource_kbw8x")])
+on_click_wise_dialogues = Array[ExtResource("5_6yfuc")]([SubResource("Resource_caus4")])
+on_click_very_wise_dialogues = Array[ExtResource("5_6yfuc")]([ExtResource("7_caus4")])
+on_click_evil_dialogues = Array[ExtResource("5_6yfuc")]([SubResource("Resource_fwvxb")])
+on_click_very_evil_dialogues = Array[ExtResource("5_6yfuc")]([SubResource("Resource_a7m2m")])
+visible_on_phases = Array[int]([0])
+wise_points = 1
+cond_very_wise = 3
+cond_very_evil = 3
+metadata/_custom_type_script = "uid://chtllnhtbq4jb"
 
 [node name="Environment" type="Node2D" unique_id=185568254]
 
@@ -33,6 +73,14 @@ position = Vector2(1554, 430)
 map_object_resource = ExtResource("5_1shj3")
 
 [node name="Interactables" type="Node2D" parent="." unique_id=1049042489]
+
+[node name="PlaceholderA" parent="Interactables" unique_id=513988545 instance=ExtResource("4_ycnly")]
+position = Vector2(320, 513)
+map_object_resource = SubResource("Resource_14ahb")
+
+[node name="PlaceholderB" parent="Interactables" unique_id=583366683 instance=ExtResource("4_ycnly")]
+position = Vector2(840, 300)
+map_object_resource = ExtResource("5_1shj3")
 
 [node name="Choice1Land" parent="Interactables" unique_id=954149279 instance=ExtResource("4_ycnly")]
 map_object_resource = ExtResource("5_1shj3")

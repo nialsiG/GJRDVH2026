@@ -1,7 +1,7 @@
 extends Node
 
-# Start with neutral state
-var state: EnumCollection.EKarma = EnumCollection.EKarma.Neutral
+# Start with NEUTRAL state
+var state: EnumCollection.EKarma = EnumCollection.EKarma.NEUTRAL
 
 # Counters
 var wise_points = 0

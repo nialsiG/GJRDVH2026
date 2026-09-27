@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_8nmhy")
-loc_key = "test_defiling"
+loc_key = "animal_very_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"

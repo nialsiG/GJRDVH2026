@@ -10,7 +10,7 @@ enum EPhase {
 }
 
 enum EKarma {
-	Neutral,
-	Wise,
-	Evil,
+	NEUTRAL,
+	WISE,
+	EVIL,
 }

@@ -16,11 +16,39 @@ class_name MapObjectResource
 		new_texture = new_setting
 		changed.emit()
 
-## List of dialogues to trigger when the object is clicked
+## List of default dialogues to trigger when the object is clicked
 @export_group("On Click")
-@export var on_click_dialogue_array: Array[DialogueResource]:
+@export var on_click_default_dialogues: Array[DialogueResource]:
 	set(new_setting):
-		on_click_dialogue_array = new_setting
+		on_click_default_dialogues = new_setting
+		changed.emit()
+
+## List of wise dialogues to trigger when the object is clicked
+@export_group("On Click")
+@export var on_click_wise_dialogues: Array[DialogueResource]:
+	set(new_setting):
+		on_click_wise_dialogues = new_setting
+		changed.emit()
+
+## List of very_wise dialogues to trigger when the object is clicked
+@export_group("On Click")
+@export var on_click_very_wise_dialogues: Array[DialogueResource]:
+	set(new_setting):
+		on_click_very_wise_dialogues = new_setting
+		changed.emit()
+
+## List of evil dialogues to trigger when the object is clicked
+@export_group("On Click")
+@export var on_click_evil_dialogues: Array[DialogueResource]:
+	set(new_setting):
+		on_click_evil_dialogues = new_setting
+		changed.emit()
+
+## List of very_evil dialogues to trigger when the object is clicked
+@export_group("On Click")
+@export var on_click_very_evil_dialogues: Array[DialogueResource]:
+	set(new_setting):
+		on_click_very_evil_dialogues = new_setting
 		changed.emit()
 
 ## Sound effect played when the object is clicked
@@ -56,6 +84,21 @@ class_name MapObjectResource
 @export var evil_points: int = 0:
 	set(new_setting):
 		evil_points = new_setting
+		changed.emit()
+
+
+## Minimum of wise_points to trigger very wise dialogue
+@export_group("Karma System")
+@export var cond_very_wise: int = 0:
+	set(new_setting):
+		cond_very_wise = new_setting
+		changed.emit()
+
+## Minimum of evil_points to trigger very wise dialogue
+@export_group("Karma System")
+@export var cond_very_evil: int = 0:
+	set(new_setting):
+		cond_very_evil = new_setting
 		changed.emit()
 
 

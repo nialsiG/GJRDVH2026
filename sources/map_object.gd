@@ -86,10 +86,11 @@ func OnMapObjectExited():
 func OnMapObjectClicked():
 	Deactivate()
 	# Changes on click
+	var dialogues: Array[DialogueResource] = _GetDialoguesFromRes()
 	if map_object_resource.new_texture:
 		ChangeTexture(map_object_resource.new_texture)
-	if map_object_resource.on_click_dialogue_array:
-		SignalManager.NewDialogueArray.emit(map_object_resource.on_click_dialogue_array)
+	if dialogues:
+		SignalManager.NewDialogueArray.emit(dialogues)
 		#print("MapObject: map_object_resource.on_click_dialogue_array=", map_object_resource.on_click_dialogue_array)
 	if map_object_resource.sound_effect:
 		SoundManager.PlaySound(map_object_resource.sound_effect)
@@ -97,3 +98,22 @@ func OnMapObjectClicked():
 		SoundManager.PlaySound(SoundManager.sound.CLICK)
 	KarmaManager.add_wise_points(map_object_resource.wise_points)
 	KarmaManager.add_evil_points(map_object_resource.evil_points)
+
+func _GetDialoguesFromRes() -> Array[DialogueResource]:
+	if KarmaManager.state == EnumCollection.EKarma.WISE:
+		if KarmaManager.wise_points >= map_object_resource.cond_very_wise and map_object_resource.on_click_very_wise_dialogues:
+			print("very_wise")
+			return map_object_resource.on_click_very_wise_dialogues
+		else:
+			print("wise")
+			return map_object_resource.on_click_wise_dialogues
+	elif KarmaManager.state == EnumCollection.EKarma.EVIL:
+		if KarmaManager.evil_points >= map_object_resource.cond_very_evil and map_object_resource.on_click_very_evil_dialogues:
+			print("very_evil")
+			return map_object_resource.on_click_very_evil_dialogues
+		else:
+			print("evil")
+			return map_object_resource.on_click_evil_dialogues
+	else:
+		print("default")
+		return map_object_resource.on_click_default_dialogues
