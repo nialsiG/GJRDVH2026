@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MultilineDialogResource" format=3 uid="uid://b8gmbkkxkshpx"]
+
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_74ory"]
+[ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_ubsth"]
+
+[sub_resource type="Resource" id="Resource_x0fat"]
+script = ExtResource("1_74ory")
+loc_key = "colline_choice"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[resource]
+script = ExtResource("2_ubsth")
+dialog_resources = Array[ExtResource("1_74ory")]([SubResource("Resource_x0fat")])
+metadata/_custom_type_script = "uid://ckqgiaso4q1n4"

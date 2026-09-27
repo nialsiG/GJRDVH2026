@@ -8,12 +8,9 @@ var curr_dialogue_res: DialogueResource:
 		curr_dialogue_res = data
 		SignalManager.NextDialogue.emit()
 		
-const ON_START_DIALOGUE = preload("uid://f66fq3pqvoso")
-
 func _ready() -> void:
 	SignalManager.PlayerClickedOnDialogue.connect(OnPlayerClickedOnDialogue)
 	SignalManager.NewDialogueArray.connect(OnNewDialogueArray)
-	SignalManager.NewGame.connect(OnStartGameDialogue)
 
 func OnNewDialogueArray(array: Array[DialogueResource]):
 	print("DialogueManager: array=", array)
@@ -33,6 +30,3 @@ func OnPlayerClickedOnDialogue():
 		curr_dialogue_res = dialogues.get(dialogues_idx)
 	else:
 		SignalManager.DialogueEnded.emit()
-
-func OnStartGameDialogue():
-	OnNewDialogueArray(ON_START_DIALOGUE.dialog_resources)

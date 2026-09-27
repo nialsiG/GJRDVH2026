@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MultilineDialogResource" format=3 uid="uid://0uskebnyvsre"]
+
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_ibj2s"]
+[ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_1qqll"]
+
+[sub_resource type="Resource" id="Resource_j237o"]
+script = ExtResource("1_ibj2s")
+loc_key = "alliees_start_chaos"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[resource]
+script = ExtResource("2_1qqll")
+dialog_resources = Array[ExtResource("1_ibj2s")]([SubResource("Resource_j237o")])
+metadata/_custom_type_script = "uid://ckqgiaso4q1n4"

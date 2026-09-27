@@ -16,7 +16,7 @@
 [node name="Overlay" parent="CanvasLayer" unique_id=244840642 instance=ExtResource("1_wm7ve")]
 
 [node name="Main" parent="CanvasLayer" unique_id=158894493 instance=ExtResource("2_evynp")]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1.0
-offset_bottom = 1.0
+offset_left = -53.0
+offset_top = -3.0
+offset_right = -53.0
+offset_bottom = -3.0
