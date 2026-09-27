@@ -33,8 +33,13 @@ const WOLF_STREAM_RANDOMIZER = preload("uid://cdc6vraeaa4y6")
 const BROTHERS_STREAM_RANDOMIZER = preload("uid://cqwth7feiswn3")
 
 
-var sound_volume: float = 1.0
+var sound_volume: float = 0.3
 var sound_queue_index: int = 0
+
+func _ready():
+	for child in sound_queue:
+		child.volume_linear = sound_volume
+	ambiance_audio_stream_player.volume_linear = sound_volume
 
 func PlaySound(stream: sound):
 	match stream:

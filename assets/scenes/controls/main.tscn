@@ -10,9 +10,6 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwy55"]
 texture = ExtResource("2_psi6a")
 
-[sub_resource type="LabelSettings" id="LabelSettings_f61wl"]
-font_size = 60
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f61wl"]
 texture = ExtResource("5_oo7b1")
 
@@ -34,31 +31,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_wwy55")
 
-[node name="Label" type="Label" parent="Panel" unique_id=1651395711]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -448.0
-offset_right = 567.0
-offset_bottom = -365.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Rome ne s'est pas faite
-en un jour"
-label_settings = SubResource("LabelSettings_f61wl")
-horizontal_alignment = 1
-
 [node name="StartButton" type="Button" parent="Panel" unique_id=1408607751]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 0
-offset_left = 1273.0
-offset_top = 326.0
-offset_right = 1802.0
-offset_bottom = 453.0
+offset_left = 1184.0
+offset_top = 458.0
+offset_right = 1713.0
+offset_bottom = 585.0
 theme = ExtResource("3_psi6a")
 text = "START"
 script = ExtResource("3_gqqrf")
@@ -66,10 +45,10 @@ script = ExtResource("3_gqqrf")
 [node name="CreditButton" type="Button" parent="Panel" unique_id=460629558]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 0
-offset_left = 1273.0
-offset_top = 506.0
-offset_right = 1802.0
-offset_bottom = 633.0
+offset_left = 1184.0
+offset_top = 638.0
+offset_right = 1713.0
+offset_bottom = 765.0
 theme = ExtResource("3_psi6a")
 text = "CREDITS"
 script = ExtResource("3_gqqrf")
