@@ -19,6 +19,7 @@ const OUTLINE_SHADER_MATERIAL = preload("uid://desy0lgw0pa8s")
 
 func _ready():
 	OnResourceChange()
+	SignalManager.OnNextPhase.connect(OnPhaseChange)
 	if interactable:
 		interactable.clicked.connect(OnMapObjectClicked)
 		interactable.mouse_entered.connect(OnMapObjectHovered)
@@ -28,6 +29,20 @@ func OnResourceChange():
 	if !sprite_2d:
 		return
 	sprite_2d.texture = map_object_resource.texture
+
+func OnPhaseChange(phase: EnumCollection.EPhase):
+	if map_object_resource.interactable_on_phase:
+		if map_object_resource.interactable_on_phase == phase:
+			Activate()
+		else:
+			Deactivate()
+	if map_object_resource.visible_on_phases.size() > 0:
+		if map_object_resource.visible_on_phases.has(phase) and !visible:
+			Show()
+		elif !map_object_resource.visible_on_phases.has(phase) and visible:
+			Hide()
+		else:
+			return
 
 func Activate():
 	if interactable:
@@ -75,7 +90,8 @@ func OnMapObjectClicked():
 		ChangeTexture(map_object_resource.new_texture)
 	if map_object_resource.on_click_dialogue_array:
 		SignalManager.NewDialogueArray.emit(map_object_resource.on_click_dialogue_array)
-		print("MapObject: map_object_resource.on_click_dialogue_array=", map_object_resource.on_click_dialogue_array)
-	# Feedback
-	SoundManager.PlaySound(SoundManager.sound.CLICK)
-	#SignalManager.PlayerClickedOnMe.emit(self)
+		#print("MapObject: map_object_resource.on_click_dialogue_array=", map_object_resource.on_click_dialogue_array)
+	if map_object_resource.sound_effect:
+		SoundManager.PlaySound(map_object_resource.sound_effect)
+	else:
+		SoundManager.PlaySound(SoundManager.sound.CLICK)

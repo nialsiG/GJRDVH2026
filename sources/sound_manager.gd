@@ -6,17 +6,32 @@ extends Node
 
 enum sound {
 	CLICK,
-	HOVER
+	HOVER,
+	TOWN_FESTIVE,
+	TOWN_WARRIOR,
+	TREE,
+	SHEEP,
+	WOLF,
+	DOVE_NARRATOR,
+	TREE_CUT,
+	BROTHERS
 }
 
 enum ambiance {
-	MAIN
+	RIVER
 }
 
-const CLICK = preload("uid://d0bqbl8ql15hp")
-const HOVER = preload("uid://doorb3jtlluwn")
+const ARBRE_COUPE___HACHE_SUR_BOIS = preload("uid://owuego5vs7oj")
+const CHOIX_FRERE_LAME_DE_COUTEAU = preload("uid://ysj3rn1lo7ji")
+const CHOIX_FRÈRE_EPEE_QUI_COUPE = preload("uid://bffw0m7fu72xr")
+const FORET = preload("uid://c8lueewj38xkl")
+const RIVIÈRE_PETIT_TORRENT = preload("uid://bdabvj3qxskmv")
+const UI_CLIC = preload("uid://roy3fmcn1s")
+const UI_SURVOL = preload("uid://bi4mqlg0t5mag")
+const SHEEP_STREAM_RANDOMIZER = preload("uid://bwbiv8deohfp3")
+const WOLF_STREAM_RANDOMIZER = preload("uid://cdc6vraeaa4y6")
+const BROTHERS_STREAM_RANDOMIZER = preload("uid://cqwth7feiswn3")
 
-const AMBIANCE_SANS_MUSIQUE_1 = preload("uid://cvmu4g4wajvgy")
 
 var sound_volume: float = 1.0
 var sound_queue_index: int = 0
@@ -24,20 +39,36 @@ var sound_queue_index: int = 0
 func PlaySound(stream: sound):
 	match stream:
 		sound.CLICK:
-			sound_queue[sound_queue_index].stream = CLICK
+			sound_queue[sound_queue_index].stream = UI_CLIC
 		sound.HOVER:
-			sound_queue[sound_queue_index].stream = HOVER
+			sound_queue[sound_queue_index].stream = UI_SURVOL
+		sound.TOWN_FESTIVE:
+			sound_queue[sound_queue_index].stream = UI_CLIC
+		sound.TOWN_WARRIOR:
+			sound_queue[sound_queue_index].stream = UI_CLIC
+		sound.TREE:
+			sound_queue[sound_queue_index].stream = FORET
+		sound.SHEEP:
+			sound_queue[sound_queue_index].stream = SHEEP_STREAM_RANDOMIZER
+		sound.WOLF:
+			sound_queue[sound_queue_index].stream = WOLF_STREAM_RANDOMIZER
+		sound.DOVE_NARRATOR:
+			sound_queue[sound_queue_index].stream = UI_CLIC
+		sound.TREE_CUT:
+			sound_queue[sound_queue_index].stream = ARBRE_COUPE___HACHE_SUR_BOIS
+		sound.BROTHERS:
+			sound_queue[sound_queue_index].stream = BROTHERS_STREAM_RANDOMIZER
 	sound_queue[sound_queue_index].play()
 	sound_queue_index = (sound_queue_index + 1) % sound_queue.size()
-	print("sound_queue_index=", sound_queue_index, "/", sound_queue.size())
 
 
 func PlayAmbiance(stream: ambiance):
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(ambiance_audio_stream_player,"volume_linear", 0.0, 0.5)
 	match stream:
-		ambiance.MAIN:
-			ambiance_audio_stream_player.stream = AMBIANCE_SANS_MUSIQUE_1
+		ambiance.RIVER:
+			ambiance_audio_stream_player.stream = RIVIÈRE_PETIT_TORRENT
 	await tween.finished
+	ambiance_audio_stream_player.play()
 	tween = get_tree().create_tween()
 	tween.tween_property(ambiance_audio_stream_player,"volume_linear", sound_volume, 0.5)

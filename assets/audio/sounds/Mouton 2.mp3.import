@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://betsv10ms4b4v"
+path="res://.godot/imported/Mouton 2.mp3-43c9834d1c7384b812ace0fad37a4238.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/Mouton 2.mp3"
+dest_files=["res://.godot/imported/Mouton 2.mp3-43c9834d1c7384b812ace0fad37a4238.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://18vgr6m5mvin"]
+
+[ext_resource type="Texture2D" uid="uid://cl8sbx1kmnfd4" path="res://assets/art/map/hill.png" id="1_2fns1"]
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_8hclu"]
+[ext_resource type="Texture2D" uid="uid://xvstdbqy8sph" path="res://icon.svg" id="3_tlvh8"]
+[ext_resource type="Texture2D" uid="uid://1uvfmwicdrth" path="res://assets/art/cursor/photo_cursor_full.png" id="4_8a8db"]
+[ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_6gakj"]
+[ext_resource type="Texture2D" uid="uid://cj5co2h1ny8ne" path="res://assets/art/map/forest.png" id="6_wr72g"]
+
+[sub_resource type="Resource" id="Resource_o4kb5"]
+script = ExtResource("2_8hclu")
+loc_key = "Coucou !"
+narrator_begin_texture = ExtResource("3_tlvh8")
+narrator_end_texture = ExtResource("4_8a8db")
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[sub_resource type="Resource" id="Resource_x1u1r"]
+script = ExtResource("2_8hclu")
+loc_key = "Ceci est une forêt, tu peux la changer en colline !"
+metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
+
+[resource]
+script = ExtResource("5_6gakj")
+texture = ExtResource("6_wr72g")
+new_texture = ExtResource("1_2fns1")
+on_click_dialogue_array = Array[ExtResource("2_8hclu")]([SubResource("Resource_o4kb5"), SubResource("Resource_x1u1r")])
+metadata/_custom_type_script = "uid://chtllnhtbq4jb"
