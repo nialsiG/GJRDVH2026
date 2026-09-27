@@ -18,7 +18,7 @@ func _GetDialoguesFromRes() -> Array[DialogueResource]:
 			return map_object_resource.on_interact_very_dialogues
 		else:
 			print("evil")
-			return map_object_resource.on_interact_evil_dialogues
+			return map_object_resource.on_interact_dialogues
 	else:
 		print("default")
 		return map_object_resource.on_interact_dialogues
