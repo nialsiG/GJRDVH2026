@@ -1,21 +1,31 @@
 [gd_resource type="Resource" script_class="MultilineDialogResource" format=3 uid="uid://dvin46hvbjtts"]
 
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_v0gwi"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="2_emjlg"]
 [ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_gp278"]
+[ext_resource type="Texture2D" uid="uid://8w3iv3okgej4" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_choqué.png" id="3_y3lt5"]
+[ext_resource type="Texture2D" uid="uid://nclhl68u5wqg" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_soupir.png" id="4_1lgew"]
+[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="5_8e1c0"]
 
 [sub_resource type="Resource" id="Resource_j237o"]
 script = ExtResource("1_v0gwi")
 loc_key = "arbre_choice_1"
+narrator_begin_texture = ExtResource("2_emjlg")
+narrator_end_texture = ExtResource("2_emjlg")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_v0gwi"]
 script = ExtResource("1_v0gwi")
 loc_key = "arbre_choice_2"
+narrator_begin_texture = ExtResource("3_y3lt5")
+narrator_end_texture = ExtResource("3_y3lt5")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_gp278"]
 script = ExtResource("1_v0gwi")
 loc_key = "arbre_choice_3"
+narrator_begin_texture = ExtResource("4_1lgew")
+narrator_end_texture = ExtResource("5_8e1c0")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]

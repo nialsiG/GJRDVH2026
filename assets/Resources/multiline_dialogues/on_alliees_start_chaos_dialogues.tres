@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_ibj2s"]
 [ext_resource type="Script" uid="uid://ckqgiaso4q1n4" path="res://sources/multiline_dialog_resource.gd" id="2_1qqll"]
+[ext_resource type="Texture2D" uid="uid://nclhl68u5wqg" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_soupir.png" id="2_tvm0a"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="3_jj1v4"]
 
 [sub_resource type="Resource" id="Resource_j237o"]
 script = ExtResource("1_ibj2s")
 loc_key = "alliees_start_chaos"
+narrator_begin_texture = ExtResource("2_tvm0a")
+narrator_end_texture = ExtResource("3_jj1v4")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
