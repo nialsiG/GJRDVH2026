@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bffw0m7fu72xr"
+path="res://.godot/imported/Choix frère Epee qui coupe.mp3-30e108d8bae01342dd9bc49f8d540248.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/Choix frère Epee qui coupe.mp3"
+dest_files=["res://.godot/imported/Choix frère Epee qui coupe.mp3-30e108d8bae01342dd9bc49f8d540248.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

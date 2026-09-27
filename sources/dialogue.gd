@@ -8,7 +8,7 @@ enum State {
 }
 
 @onready var panel: Panel = $Panel
-@onready var label: RichTextLabel = $Panel/MarginContainer/RichTextLabel
+@onready var label: RichTextLabel = %RichTextLabel
 @onready var timer: Timer = $Timer
 @onready var narrator_sprite_2d: Sprite2D = $Panel/NarratorSprite2D
 var current_state: State = State.Ended
@@ -25,6 +25,7 @@ var current_state: State = State.Ended
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	TranslationServer.set_locale("french")
 	panel.visible = false
 	narrator_sprite_2d.visible = false
 	SignalManager.DialogueStarted.connect(_OnDialogueStarted)
@@ -43,6 +44,7 @@ func _OnDialogueEnded():
 	
 func _OnNextDialogue():
 	dialogue_res = DialogueManager.curr_dialogue_res
+	SoundManager.PlaySound(SoundManager.sound.DOVE_NARRATOR)
 
 
 # --- Handle text defiling ----------------------------------------------------
@@ -66,7 +68,7 @@ func _StopDefiling():
 	_ChangeNarratorTexture(dialogue_res.narrator_end_texture)
 
 # --- When text is clicked ----------------------------------------------------
-func _on_panel_gui_input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if current_state == State.Defiling:
 			_StopDefiling()

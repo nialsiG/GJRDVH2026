@@ -1,0 +1,75 @@
+,french
+start_start,Réveille toi...
+start_start_2,"[Prénom], tu me reconnais n’est-ce pas ?"
+start_start_3,"Je suis Vénus, la déesse de la beauté et la mère d’Enée, le héros qui a découvert cette région."
+start_start_4,"Je te connais : c’est toi qui a trouvé mes descendants, Romulus et Rémus, auprès d’une louve."
+start_start_5,Tu as ensuite caché les jumeaux et tu les as protégés des menaces de leur grand-oncle Amulius !
+start_start_6,"Grâce à toi [Prénom], la vérité a été rétablie et Numitor, leur grand-père, le roi légitime, a retrouvé le trône d'Albe-la-longue."
+start_start_7,J’ai besoin de toi pour guider les jumeaux jusqu’à leur destin : fonder une nouvelle cité !
+colline_start_1,Romulus et Rémus sont à la tête d'une foule de jeunes gens après les changements à Albe-la-longue.
+colline_start_2,Où devraient-ils s'installer d'après toi ?
+,
+,
+colline_choice,Guide-les vers le fleuve qui leur offrira une voie pour échanger des marchandises...
+colline_bark,"Je te sens hésitant, mais je crois en toi."
+colline_sage,Tu as fait le bon choix !
+colline_chaos,Je suis... surprise par ton choix.
+alliees_start_sage,Voilà le Tibre ! Il est temps désormais de trouver un allié.
+alliees_start_chaos,"Voilà la plaine qui sera leur maison...
+Bon, voyons qui acceptera une alliance avec nos deux protégés."
+alliees_choice_1,"A gauche se trouve Lavinium, ville de leur ancêtre Enée."
+alliees_choice_2,"Tandis qu'à droite se trouve Ardea, foyer du trop fier Turnus !"
+alliees_bark,"Choisis vite, mais choisis bien."
+alliees_sage,Célébrons cette alliance ! Voilà des alliés sur lesquels on peut compter.
+alliees_chaos,"Une alliance avec un ennemi de longue date ?
+Un choix... périlleux."
+alliees_very_sage,"Célébrons cette alliance !
+Tu m'honores de ton écoute Faustulus, grâce à toi les jumeaux iront loin."
+alliees_very_chaos,"Faustulus... M'entends-tu ?
+Tu vas me faire douter de tes intentions."
+arbre_start_sage,"La région est bénie des dieux !
+Les plantes poussent facilement grâce à Cérès et le Soleil d’Apollon nous réchauffe chaque jour."
+arbre_start_chaos,"Heureusement pour toi, la région est bénie des dieux, les plantes poussent facilement grâce à Cérès."
+arbre_choice_1,Il est temps de choisir un arbre sacré.
+arbre_choice_2,Te rappelles-tu que tu as trouvé les jumeaux sous un figuier ?
+arbre_choice_3,"Certes, l'olivier d'Athéna aussi est divin, mais que te dis ton cœur ?"
+arbre_bark,Figuier ou olivier... Le choix n'est pas si compliqué !
+arbre_sage,"Très bien, Faustulus ! Tu as bon goût !"
+arbre_chaos,Faustulus... Tu ne serais pas un peu grec sur les bords ?
+arbre_very_sage,"Grâce à toi se dessine un avenir idyllique où hommes et créatures sauvages vivront en harmonie...
+Tu me rends poète !"
+arbre_very_chaos,Traître ! Tu préfères Athéna à moi c'est ça ?!
+animal_start_sage,"Toute cité a droit à son arbre sacré, mais également à un symbole, un blason !"
+animal_start_chaos,"Tout n'est pas perdu !
+La future cité a besoin d'un symbole fort pour perdurer."
+animal_choice,Quel animal sera le symbole de la cité de Rémus et Romulus ?
+animal_bark,Quel... animal... sera le symbole FORT... de la cité ?
+animal_sage,Un loup ! Un bel hommage à la louve qui les a allaités bien sûr !
+animal_chaos,"Un... mouton ?
+Tu as laissé parler ton âme de berger Faustulus, je me trompe ?"
+animal_very_sage,"Un loup, un bel hommage à la louve qui les a allaités.
+Une nouvelle fois tu fais tes preuves en tant que guide !"
+animal_very_chaos,"Un MOUTON ?! C'est du sabotage Faustulus !
+Tu veux fonder une cité de moutons !"
+freres_start,C'est l'heure du dernier choix...
+freres_start_sage,Ce n'est pas le moment de déjouer le destin.
+freres_start_chaos,Tu peux encore tisser le destin tel qu'il est écrit.
+freres_choice_1,Tu le sais n'est-ce pas... Nulle cité n'a connue deux fondateurs.
+freres_choice_2,"Il ne peut rester qu'un seul frère.
+Qui vas-tu sauver ?"
+freres_bark,"Un choix difficile, je sais..."
+freres_sage,"Ainsi, Romulus accomplit son destin..."
+freres_chaos,Qu'est-ce que... Aucun dieu n'avait prévu tel dénouement !
+freres_very_sage,"C'est grâce à toi berger, qu'on retiendra le nom de Romulus dans l'Histoire..."
+freres_very_chaos,"C'était donc là ton projet depuis le début ?!
+Réécrire l'avenir selon tes propres désirs ?"
+fin_sage_but_playedchaos,"Je ne peux pas dire que j'étais confiante...
+Mais tu as finis par m'écouter."
+fin_sage_and_playedsage,J'ai toujours su que je pouvais compter sur toi.
+fin_chaos_but_playedsage,J'y ai cru... Mais tu m'as trompée.
+fin_chaos_but_playedchaos,"Tout ce chaos... Etait-ce volontaire de ta part ?
+Tu as voulu jouer au Dieu ?"
+fin_conclusion_sage,Voilà Rome ! Belle et prospère !
+fin_conclusion_chaos,"Voilà Remuria !
+Qui a connu des jours chaotiques, à l'image de tes choix..."
+fin_conclusion_fin,Mais quelle histoire aurais-tu pu écrire ?

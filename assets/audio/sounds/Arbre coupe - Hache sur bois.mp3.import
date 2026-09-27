@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://owuego5vs7oj"
+path="res://.godot/imported/Arbre coupe - Hache sur bois.mp3-5d412dd722e8fb97ed8cf27dc878f6b8.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/Arbre coupe - Hache sur bois.mp3"
+dest_files=["res://.godot/imported/Arbre coupe - Hache sur bois.mp3-5d412dd722e8fb97ed8cf27dc878f6b8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

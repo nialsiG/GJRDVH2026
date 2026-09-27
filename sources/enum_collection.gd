@@ -1,15 +1,16 @@
 extends Node
 
 enum EPhase {
-    Location,
-    Ally,
-    Tree,
-    Animal,
-    Leader,
+	START,
+	COLLINE,
+	ALLIES,
+	ARBRE,
+	ANIMAL,
+	FRERES
 }
 
 enum EKarma {
-    Neutral,
-    Wise,
-    Evil,
+	Neutral,
+	Wise,
+	Evil,
 }

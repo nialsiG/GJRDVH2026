@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bwbiv8deohfp3"]
+
+[ext_resource type="AudioStream" uid="uid://cnk33xlsfqx43" path="res://assets/audio/sounds/Mouton.mp3" id="1_d5311"]
+[ext_resource type="AudioStream" uid="uid://betsv10ms4b4v" path="res://assets/audio/sounds/Mouton 2.mp3" id="2_gc8af"]
+
+[resource]
+streams_count = 2
+stream_0/stream = ExtResource("1_d5311")
+stream_1/stream = ExtResource("2_gc8af")

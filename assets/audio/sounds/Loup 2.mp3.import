@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sijgp7p8af5l"
+path="res://.godot/imported/Loup 2.mp3-6109749fd7134e69b371ba8abbac722e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sounds/Loup 2.mp3"
+dest_files=["res://.godot/imported/Loup 2.mp3-6109749fd7134e69b371ba8abbac722e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
