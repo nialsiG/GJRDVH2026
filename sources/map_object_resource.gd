@@ -44,6 +44,21 @@ class_name MapObjectResource
 		visible_on_phases = new_setting
 		changed.emit()
 
+## Wise points earned when clicking on it
+@export_group("Karma System")
+@export var wise_points: int = 0:
+	set(new_setting):
+		wise_points = new_setting
+		changed.emit()
+
+## Evils points earned when clicking on it
+@export_group("Karma System")
+@export var evil_points: int = 0:
+	set(new_setting):
+		evil_points = new_setting
+		changed.emit()
+
+
 # TODO: remove unused property ?
 # @export_group("Phase System")
 # @export var change_phase: bool:

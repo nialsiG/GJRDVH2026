@@ -95,3 +95,5 @@ func OnMapObjectClicked():
 		SoundManager.PlaySound(map_object_resource.sound_effect)
 	else:
 		SoundManager.PlaySound(SoundManager.sound.CLICK)
+	KarmaManager.add_wise_points(map_object_resource.wise_points)
+	KarmaManager.add_evil_points(map_object_resource.evil_points)
