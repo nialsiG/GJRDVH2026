@@ -18,7 +18,8 @@ enum sound {
 }
 
 enum ambiance {
-	RIVER
+	RIVER,
+	NONE
 }
 
 const ARBRE_COUPE___HACHE_SUR_BOIS = preload("uid://owuego5vs7oj")
@@ -74,6 +75,9 @@ func PlayAmbiance(stream: ambiance):
 	match stream:
 		ambiance.RIVER:
 			ambiance_audio_stream_player.stream = RIVIÈRE_PETIT_TORRENT
+		ambiance.NONE:
+			ambiance_audio_stream_player.stop()
+			return
 	await tween.finished
 	ambiance_audio_stream_player.play()
 	tween = get_tree().create_tween()

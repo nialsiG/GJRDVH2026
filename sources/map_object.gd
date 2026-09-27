@@ -35,6 +35,7 @@ func Reset():
 	hide_after_choice = false
 	if map_object_resource.is_map_with_river:
 		hide()
+		SoundManager.PlayAmbiance(SoundManager.ambiance.NONE)
 
 func OnResourceChange():
 	if !sprite_2d:
@@ -117,6 +118,7 @@ func OnMapObjectClicked():
 func OnChoiceIsMade(choice: EnumCollection.EChoice):
 	if choice == EnumCollection.EChoice.RIVER and map_object_resource.is_map_with_river:
 		Show()
+		SoundManager.PlayAmbiance(SoundManager.ambiance.RIVER)
 	if map_object_resource.remove_if_choice_is_made == choice:
 		hide_after_choice = true
 		Hide()
