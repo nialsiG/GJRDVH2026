@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ci55nsk0e1w3w"]
+
+[ext_resource type="Script" uid="uid://dvq20ke34eb57" path="res://sources/game_over_panel.gd" id="1_pujjd"]
+[ext_resource type="Theme" uid="uid://cfe5gu70cpkkw" path="res://assets/themes/menu_button_theme.tres" id="2_8kn2v"]
+[ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="3_ussah"]
+
+[node name="GameOverPanel" type="Control" unique_id=506389171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pujjd")
+fin_sage_but_playedchaos = "fin_sage_but_playedchaos"
+fin_sage_and_playedsage = "fin_sage_and_playedsage"
+fin_chaos_but_playedsage = "fin_chaos_but_playedsage"
+fin_chaos_but_playedchaos = "fin_chaos_but_playedchaos"
+fin_conclusion_sage = "fin_conclusion_sage"
+fin_conclusion_chaos = "fin_conclusion_chaos"
+fin_conclusion_fin = "fin_conclusion_fin"
+
+[node name="Panel" type="Panel" parent="." unique_id=828173564]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=785577149]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -157.0
+offset_right = 349.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackToMainButton" type="Button" parent="." unique_id=710657030]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 0
+offset_left = 723.0
+offset_top = 856.0
+offset_right = 1252.0
+offset_bottom = 983.0
+theme = ExtResource("2_8kn2v")
+text = "START"
+script = ExtResource("3_ussah")
+
+[connection signal="pressed" from="BackToMainButton" to="." method="_on_back_to_main_button_pressed"]

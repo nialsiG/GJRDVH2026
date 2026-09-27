@@ -35,6 +35,8 @@ func _GetDialoguesFromRes() -> Array[DialogueResource]:
 
 func _on_pressed():
 	# Changes on click
+	if !map_object_resource:
+		return
 	KarmaManager.add_choice(map_object_resource.choice_to_add)
 	#if map_object_resource.new_texture:
 		#ChangeTexture(map_object_resource.new_texture)
