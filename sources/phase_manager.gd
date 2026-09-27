@@ -1,5 +1,6 @@
 extends Node
 
+
 enum EPhaseState {
 	START,
 	CHOICE,
@@ -31,6 +32,7 @@ const FRERES_START_DIALOGUES_CHAOS = preload("uid://b2o0ga517rvxv")
 const FRERES_CHOICE_DIALOGUES = preload("uid://bud10cmwur2sx")
 const FRERES_BARK_DIALOGUES = preload("uid://ck6sx4o4pg8lp")
 
+var bark_timer_default: float = 20.0
 var bark_timer: float = 0.0
 var barked: bool = false
 var end_phase: bool = true
@@ -47,7 +49,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if current_state == EPhaseState.CHOICE:
-		if bark_timer > 10 && barked == false:
+		if bark_timer > bark_timer_default && barked == false:
 			barked = true
 			SignalManager.NewDialogueArray.emit(_GetBarkDialogues())
 		bark_timer += delta

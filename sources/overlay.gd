@@ -19,6 +19,7 @@ func _on_main_button_pressed():
 	SignalManager.StopGame.emit()
 
 func OnNextPhaseState(phase: EnumCollection.EPhase, state: PhaseManager.EPhaseState):
+	print('phase:', EnumCollection.EPhase.keys()[phase])
 	match phase:
 		EnumCollection.EPhase.COLLINE:
 			if state == PhaseManager.EPhaseState.CHOICE:
@@ -32,13 +33,17 @@ func _ready():
 	panel_choice_button_1.pressed.connect(HideChoice)
 	panel_choice_button_2.pressed.connect(HideChoice)
 	SignalManager.NextPhaseState.connect(OnNextPhaseState)
+	SignalManager.NewGame.connect(HideChoice)
 
 
 func OnChoiceDisplay(resource_1: MapObjectResource, resource_2: MapObjectResource, choice_text_1: String, choice_text_2: String):
+	print("onchoicedisplay")
+	print("choice_text_1", choice_text_1)
 	panel_choice_button_1.text = choice_text_1
 	panel_choice_button_1.map_object_resource = resource_1
 	panel_choice_button_2.text = choice_text_2
 	panel_choice_button_2.map_object_resource = resource_2
+	await get_tree().create_timer(0.2).timeout
 	DisplayChoice()
 
 func DisplayChoice():

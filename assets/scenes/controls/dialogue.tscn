@@ -19,6 +19,7 @@ mouse_filter = 2
 script = ExtResource("1_qg05v")
 
 [node name="Panel" type="Panel" parent="." unique_id=287894469]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,6 +31,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_l4xlb")
 
 [node name="NarratorSprite2D" type="TextureRect" parent="Panel" unique_id=752256303]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

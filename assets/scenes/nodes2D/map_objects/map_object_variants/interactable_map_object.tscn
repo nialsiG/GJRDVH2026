@@ -5,6 +5,7 @@
 
 [node name="InteractableMapObject" unique_id=42803688 node_paths=PackedStringArray("interactable") instance=ExtResource("1_yan75")]
 interactable = NodePath("Area2D")
+radius = 0.0
 
 [node name="Area2D" parent="." index="0" unique_id=365844650 instance=ExtResource("2_d0iag")]
 
