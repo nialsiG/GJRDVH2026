@@ -24,6 +24,7 @@ func _ready():
 	SignalManager.NewGame.connect(Reset)
 	SignalManager.OnNextPhase.connect(OnPhaseChange)
 	SignalManager.ChoiceIsMade.connect(OnChoiceIsMade)
+	SignalManager.NextPhaseState.connect(OnNextPhaseState)
 	if interactable:
 		interactable.clicked.connect(OnMapObjectClicked)
 		interactable.mouse_entered.connect(OnMapObjectHovered)
@@ -40,12 +41,15 @@ func OnResourceChange():
 		return
 	sprite_2d.texture = map_object_resource.texture
 
+func OnNextPhaseState(phase: EnumCollection.EPhase, state: PhaseManager.EPhaseState):
+	if state == PhaseManager.EPhaseState.START:
+		Deactivate()
+	elif state == PhaseManager.EPhaseState.CHOICE:
+		if map_object_resource.interactable_on_phase:
+			if map_object_resource.interactable_on_phase == phase:
+				Activate()
+
 func OnPhaseChange(phase: EnumCollection.EPhase):
-	if map_object_resource.interactable_on_phase:
-		if map_object_resource.interactable_on_phase == phase:
-			Activate()
-		else:
-			Deactivate()
 	if map_object_resource.visible_on_phases.size() > 0:
 		if map_object_resource.visible_on_phases.has(phase) and !visible and !hide_after_choice:
 			Show()
