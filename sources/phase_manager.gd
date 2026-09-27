@@ -58,8 +58,9 @@ func Reset():
 	bark_timer = 0.0
 	barked = false
 	end_phase = true
+	current_phase = EnumCollection.EPhase.START
 	current_state = EPhaseState.START
-	_ChangePhase(EnumCollection.EPhase.START)
+	SignalManager.OnNextPhase.emit(current_phase)
 
 func NextPhase():
 	print("NextPhase")
@@ -75,7 +76,7 @@ func NextState():
 	print("NextState")
 	if current_state == EPhaseState.START:
 		current_state = EPhaseState.CHOICE
-	else:
+	elif end_phase == true:
 		current_state = EPhaseState.START
 	SignalManager.NextPhaseState.emit(current_phase, current_state)
 

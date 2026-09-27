@@ -13,6 +13,7 @@ enum State {
 @onready var narrator_sprite_2d: TextureRect = %NarratorSprite2D
 var current_state: State = State.Ended
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var arrow: TextureRect = $Panel/Arrow
 
 @export var dialogue_res: DialogueResource:
 	set(new_resource):
@@ -37,11 +38,12 @@ func _ready() -> void:
 func _OnDialogueStarted():
 	panel.visible = true
 	dialogue_res = DialogueManager.curr_dialogue_res
+	arrow.visible = true
 	print("Dialogue: _OnDialogueStarted")
 
 func _OnDialogueEnded():
 	print("Dialogue: _OnDialogueEnded")
-	panel.visible = false
+	arrow.visible = false
 	PhaseManager.OnDialogueIsEnded()
 	
 func _OnNextDialogue():
@@ -72,7 +74,7 @@ func _StopDefiling():
 
 # --- When text is clicked ----------------------------------------------------
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") and arrow.visible:
 		if current_state == State.Defiling:
 			_StopDefiling()
 		else:
