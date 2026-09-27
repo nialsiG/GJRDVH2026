@@ -6,11 +6,26 @@ enum EPhase {
 	ALLIES,
 	ARBRE,
 	ANIMAL,
-	FRERES
+	FRERES,
+	NONE
 }
 
 enum EKarma {
-	Neutral,
-	Wise,
-	Evil,
+	NEUTRAL,
+	WISE,
+	EVIL,
+}
+
+enum EChoice {
+	NONE,
+	VILLAGE_A,
+	VILLAGE_B,
+	FIG_TREE,
+	OLIVE_TREE,
+	WOLF,
+	SHEEP,
+	ROMULUS,
+	REMUS,
+	LAND,
+	RIVER
 }

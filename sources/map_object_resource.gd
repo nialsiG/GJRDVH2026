@@ -10,24 +10,37 @@ class_name MapObjectResource
 		changed.emit()
 
 ## Texture of the object when it's clicked
-@export_group("On Click")
+@export_group("Behavior/OnInteract")
 @export var new_texture: Texture2D:
 	set(new_setting):
 		new_texture = new_setting
 		changed.emit()
 
-## List of dialogues to trigger when the object is clicked
-@export_group("On Click")
-@export var on_click_dialogue_array: Array[DialogueResource]:
+## List of default dialogues to trigger when the object is clicked
+@export_group("Behavior/OnInteract")
+@export var on_interact_dialogues: Array[DialogueResource]:
 	set(new_setting):
-		on_click_dialogue_array = new_setting
+		on_interact_dialogues = new_setting
+		changed.emit()
+
+## List of VERY dialogues to trigger when the object is clicked and conditions are checked
+@export_group("Behavior/OnInteract")
+@export var on_interact_very_dialogues: Array[DialogueResource]:
+	set(new_setting):
+		on_interact_very_dialogues = new_setting
 		changed.emit()
 
 ## Sound effect played when the object is clicked
-@export_group("On Click")
+@export_group("Behavior/OnInteract")
 @export var sound_effect: SoundManager.sound:
 	set(new_setting):
 		sound_effect = new_setting
+		changed.emit()
+
+@export_group("Behavior/Removal")
+@export var remove_if_choice_is_made: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
+	set(new_setting):
+		remove_if_choice_is_made = new_setting
 		changed.emit()
 
 ## On which phase the object is INTERACTABLE
@@ -42,6 +55,42 @@ class_name MapObjectResource
 @export var visible_on_phases: Array[EnumCollection.EPhase]:
 	set(new_setting):
 		visible_on_phases = new_setting
+		changed.emit()
+
+## Wise points earned when clicking on it
+@export_group("Karma System")
+@export var wise_points: int = 0:
+	set(new_setting):
+		wise_points = new_setting
+		changed.emit()
+
+## Evils points earned when clicking on it
+@export_group("Karma System")
+@export var evil_points: int = 0:
+	set(new_setting):
+		evil_points = new_setting
+		changed.emit()
+
+
+## Minimum of wise_points to trigger very wise dialogue
+@export_group("Karma System")
+@export var cond_very_wise: int = 0:
+	set(new_setting):
+		cond_very_wise = new_setting
+		changed.emit()
+
+## Minimum of evil_points to trigger very wise dialogue
+@export_group("Karma System")
+@export var cond_very_evil: int = 0:
+	set(new_setting):
+		cond_very_evil = new_setting
+		changed.emit()
+
+## Choice to add when user choose it
+@export_group("Karma System")
+@export var choice_to_add: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
+	set(new_setting):
+		choice_to_add = new_setting
 		changed.emit()
 
 # TODO: remove unused property ?

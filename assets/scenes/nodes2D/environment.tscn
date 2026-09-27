@@ -5,6 +5,8 @@
 [ext_resource type="Resource" uid="uid://c4vjkqhg3vr4" path="res://assets/Resources/map_objects/choice_1_river.tres" id="3_wry2v"]
 [ext_resource type="PackedScene" uid="uid://ddrgqwcmkp3bj" path="res://assets/scenes/nodes2D/map_objects/map_object_variants/interactable_map_object.tscn" id="4_ycnly"]
 [ext_resource type="Resource" uid="uid://ct7q268xxo3yd" path="res://assets/Resources/map_objects/choice_1_land.tres" id="5_1shj3"]
+[ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="6_jetj4"]
+[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="6_kbw8x"]
 [ext_resource type="Resource" uid="uid://h2tj3butqccx" path="res://assets/Resources/map_objects/choice_2_allies.tres" id="6_wry2v"]
 [ext_resource type="Resource" uid="uid://18vgr6m5mvin" path="res://assets/Resources/map_objects/choice_2_warriors.tres" id="7_ycnly"]
 [ext_resource type="Resource" uid="uid://bpos2l32osrow" path="res://assets/Resources/map_objects/choice_3_fig.tres" id="8_1shj3"]
@@ -14,30 +16,43 @@
 [ext_resource type="Resource" uid="uid://dyb7vketv5ivr" path="res://assets/Resources/map_objects/choice_5_remus.tres" id="12_rrhax"]
 [ext_resource type="Resource" uid="uid://dqb507gwjy6wt" path="res://assets/Resources/map_objects/choice_5_romulus.tres" id="13_evran"]
 
+[sub_resource type="Resource" id="Resource_x0fat"]
+script = ExtResource("6_jetj4")
+metadata/_custom_type_script = "uid://chtllnhtbq4jb"
+
+[sub_resource type="Resource" id="Resource_kbw8x"]
+script = ExtResource("6_jetj4")
+metadata/_custom_type_script = "uid://chtllnhtbq4jb"
+
 [node name="Environment" type="Node2D" unique_id=185568254]
 
 [node name="Background" type="Node2D" parent="." unique_id=2082908965]
 
 [node name="MapGround" type="Sprite2D" parent="Background" unique_id=684075070]
+visible = false
 position = Vector2(960, 540)
 texture = ExtResource("1_6co5q")
 
 [node name="NonInteractable" type="Node2D" parent="." unique_id=2004574950]
 
 [node name="IdleMapObject" parent="NonInteractable" unique_id=42803688 instance=ExtResource("2_bv7h8")]
+visible = false
 position = Vector2(1185, 658)
-map_object_resource = ExtResource("5_1shj3")
+map_object_resource = SubResource("Resource_x0fat")
 
 [node name="IdleMapObject2" parent="NonInteractable" unique_id=874411022 instance=ExtResource("2_bv7h8")]
+visible = false
 position = Vector2(1554, 430)
-map_object_resource = ExtResource("5_1shj3")
+map_object_resource = SubResource("Resource_kbw8x")
 
 [node name="Interactables" type="Node2D" parent="." unique_id=1049042489]
 
 [node name="Choice1Land" parent="Interactables" unique_id=954149279 instance=ExtResource("4_ycnly")]
+position = Vector2(438, 572)
 map_object_resource = ExtResource("5_1shj3")
 
 [node name="Choice1River" parent="Interactables" unique_id=1471992982 instance=ExtResource("4_ycnly")]
+position = Vector2(1314, 560)
 map_object_resource = ExtResource("3_wry2v")
 
 [node name="Choice2VillageA" parent="Interactables" unique_id=552423023 instance=ExtResource("4_ycnly")]

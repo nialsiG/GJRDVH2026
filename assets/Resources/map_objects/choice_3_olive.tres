@@ -1,28 +1,30 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://cjp8m8bb0b0m5"]
 
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_6crh3"]
-[ext_resource type="Texture2D" uid="uid://xvstdbqy8sph" path="res://icon.svg" id="3_ph7jg"]
-[ext_resource type="Texture2D" uid="uid://1uvfmwicdrth" path="res://assets/art/cursor/photo_cursor_full.png" id="4_ps1av"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_o5ek8"]
 [ext_resource type="Texture2D" uid="uid://dqf4bnsxldan" path="res://assets/art/ASSETS GRAPHIQUES/tree_olive.png" id="6_vagi2"]
 
-[sub_resource type="Resource" id="Resource_o4kb5"]
+[sub_resource type="Resource" id="Resource_x4luc"]
 script = ExtResource("2_6crh3")
-loc_key = "Coucou !"
-narrator_begin_texture = ExtResource("3_ph7jg")
-narrator_end_texture = ExtResource("4_ps1av")
+loc_key = "arbre_)chaos"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
-[sub_resource type="Resource" id="Resource_x1u1r"]
+[sub_resource type="Resource" id="Resource_jiqgt"]
 script = ExtResource("2_6crh3")
-loc_key = "Ceci est une forêt, tu peux la changer en colline !"
+loc_key = "arbre_very_chaos"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("5_o5ek8")
 texture = ExtResource("6_vagi2")
 new_texture = ExtResource("6_vagi2")
-on_click_dialogue_array = Array[ExtResource("2_6crh3")]([SubResource("Resource_o4kb5"), SubResource("Resource_x1u1r")])
+on_interact_dialogues = Array[ExtResource("2_6crh3")]([SubResource("Resource_x4luc")])
+on_interact_very_dialogues = Array[ExtResource("2_6crh3")]([SubResource("Resource_jiqgt")])
+sound_effect = 8
+remove_if_choice_is_made = 3
 interactable_on_phase = 3
 visible_on_phases = Array[int]([3, 4, 5])
+evil_points = 1
+cond_very_evil = 2
+choice_to_add = 4
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"

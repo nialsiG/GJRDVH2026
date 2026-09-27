@@ -2,29 +2,29 @@
 
 [ext_resource type="Texture2D" uid="uid://d2f2mqq8xex3n" path="res://assets/art/ASSETS GRAPHIQUES/Wolf_group_of_3.png" id="1_gv1m2"]
 [ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_rtbg5"]
-[ext_resource type="Texture2D" uid="uid://xvstdbqy8sph" path="res://icon.svg" id="3_6tcih"]
-[ext_resource type="Texture2D" uid="uid://1uvfmwicdrth" path="res://assets/art/cursor/photo_cursor_full.png" id="4_bxvo4"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_1j1qu"]
 [ext_resource type="Texture2D" uid="uid://cli1ia34vaxr1" path="res://assets/art/ASSETS GRAPHIQUES/Wolf_solo.png" id="6_gv1m2"]
 
-[sub_resource type="Resource" id="Resource_o4kb5"]
+[sub_resource type="Resource" id="Resource_5n8j8"]
 script = ExtResource("2_rtbg5")
-loc_key = "Coucou !"
-narrator_begin_texture = ExtResource("3_6tcih")
-narrator_end_texture = ExtResource("4_bxvo4")
+loc_key = "animal_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
-[sub_resource type="Resource" id="Resource_x1u1r"]
+[sub_resource type="Resource" id="Resource_a8bwr"]
 script = ExtResource("2_rtbg5")
-loc_key = "Ceci est une forêt, tu peux la changer en colline !"
+loc_key = "animal_very_sage"
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("5_1j1qu")
 texture = ExtResource("6_gv1m2")
 new_texture = ExtResource("1_gv1m2")
-on_click_dialogue_array = Array[ExtResource("2_rtbg5")]([SubResource("Resource_o4kb5"), SubResource("Resource_x1u1r")])
+on_interact_dialogues = Array[ExtResource("2_rtbg5")]([SubResource("Resource_5n8j8")])
+on_interact_very_dialogues = Array[ExtResource("2_rtbg5")]([SubResource("Resource_a8bwr")])
 sound_effect = 6
 interactable_on_phase = 4
-visible_on_phases = Array[int]([4, 5])
+visible_on_phases = Array[int]([0, 1, 2, 3, 4, 5])
+wise_points = 1
+cond_very_wise = 3
+choice_to_add = 5
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"
