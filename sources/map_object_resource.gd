@@ -16,20 +16,6 @@ class_name MapObjectResource
 		new_texture = new_setting
 		changed.emit()
 
-## List of default dialogues to trigger when the object is clicked
-@export_group("Behavior/OnInteract")
-@export var on_interact_dialogues: Array[Dialogue]:
-	set(new_setting):
-		on_interact_dialogues = new_setting
-		changed.emit()
-
-## List of VERY dialogues to trigger when the object is clicked and conditions are checked
-@export_group("Behavior/OnInteract")
-@export var on_interact_very_dialogues: Array[Dialogue]:
-	set(new_setting):
-		on_interact_very_dialogues = new_setting
-		changed.emit()
-
 ## Sound effect played when the object is clicked
 @export_group("Behavior/OnInteract")
 @export var sound_effect: SoundManager.sound:
@@ -50,14 +36,14 @@ class_name MapObjectResource
 
 ## On which phase the object is INTERACTABLE
 @export_group("Phase System")
-@export var interactable_on_phase: EnumCollection.EPhase:
+@export var interactable_on_phase_stage: Phase.EStage:
 	set(new_setting):
-		interactable_on_phase = new_setting
+		interactable_on_phase_stage = new_setting
 		changed.emit()
 
 ## List of phases when the object is visible
 @export_group("Phase System")
-@export var visible_on_phases: Array[EnumCollection.EPhase]:
+@export var visible_on_phases: Array[Phase.EStage]:
 	set(new_setting):
 		visible_on_phases = new_setting
 		changed.emit()
@@ -97,10 +83,3 @@ class_name MapObjectResource
 	set(new_setting):
 		choice_to_add = new_setting
 		changed.emit()
-
-# TODO: remove unused property ?
-# @export_group("Phase System")
-# @export var change_phase: bool:
-# 	set(new_setting):
-# 		change_phase = new_setting
-# 		changed.emit()

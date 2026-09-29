@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Game" format=3 uid="uid://cm3kxciuxce8f"]
+
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="1_63whv"]
+[ext_resource type="Resource" uid="uid://bnfmltahlks2l" path="res://assets/Resources/phases/phase_start_start.tres" id="2_63whv"]
+[ext_resource type="Resource" uid="uid://cqe23ww0syh31" path="res://assets/Resources/phases/phase_hill_start.tres" id="3_qf8ww"]
+[ext_resource type="Resource" uid="uid://d27vpxqkevxw8" path="res://assets/Resources/phases/phase_hill_choice.tres" id="4_n1b1g"]
+[ext_resource type="Resource" uid="uid://c8eqk755h2kle" path="res://assets/Resources/phases/phase_hill_end_wise.tres" id="5_lbwlo"]
+[ext_resource type="Resource" uid="uid://cdiye5b477x3p" path="res://assets/Resources/phases/phase_hill_end_evil.tres" id="6_02f2a"]
+[ext_resource type="Script" uid="uid://d1w4vd7klu22q" path="res://sources/game.gd" id="6_fjyxq"]
+[ext_resource type="Resource" uid="uid://c3xcy6nwsye1y" path="res://assets/Resources/phases/phase_alliees_start_wise.tres" id="7_fjyxq"]
+[ext_resource type="Resource" uid="uid://c72ppw4xfol5b" path="res://assets/Resources/phases/phase_alliees_start_chaos.tres" id="8_lbwlo"]
+[ext_resource type="Resource" uid="uid://grtfe0x7qt47" path="res://assets/Resources/phases/phase_alliees_choice.tres" id="9_pjhfv"]
+[ext_resource type="Resource" uid="uid://dxxdmamflakj8" path="res://assets/Resources/phases/phase_alliees_end_very_wise.tres" id="10_td158"]
+[ext_resource type="Resource" uid="uid://xlpktflho21b" path="res://assets/Resources/phases/phase_alliees_end_very_chaos.tres" id="11_uq2bm"]
+[ext_resource type="Resource" uid="uid://dpfvc0631ti6y" path="res://assets/Resources/phases/phase_alliees_end_wise.tres" id="12_pjhfv"]
+[ext_resource type="Resource" uid="uid://xx137f5ykcca" path="res://assets/Resources/phases/phase_alliees_end_chaos.tres" id="13_td158"]
+[ext_resource type="Resource" uid="uid://dqkxr6i64kftl" path="res://assets/Resources/phases/phase_tree_start_wise.tres" id="14_kew2o"]
+[ext_resource type="Resource" uid="uid://bfjg3walnioue" path="res://assets/Resources/phases/phase_tree_start_chaos.tres" id="15_23o6v"]
+
+[resource]
+script = ExtResource("6_fjyxq")
+phases = Array[ExtResource("1_63whv")]([ExtResource("2_63whv"), ExtResource("3_qf8ww"), ExtResource("4_n1b1g"), ExtResource("5_lbwlo"), ExtResource("6_02f2a"), ExtResource("7_fjyxq"), ExtResource("8_lbwlo"), ExtResource("9_pjhfv"), ExtResource("10_td158"), ExtResource("11_uq2bm"), ExtResource("12_pjhfv"), ExtResource("13_td158"), ExtResource("14_kew2o"), ExtResource("15_23o6v")])
+metadata/_custom_type_script = "uid://d1w4vd7klu22q"

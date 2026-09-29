@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://whfr47ef8l2y"]
 
-[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_qg05v"]
+[ext_resource type="Script" uid="uid://b3tmftm1x4h8a" path="res://sources/dialogue_ui.gd" id="1_ks6fi"]
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="2_47vju"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="2_ji86m"]
 [ext_resource type="Texture2D" uid="uid://d13a1um04dnxp" path="res://assets/art/ASSETS GRAPHIQUES/UI_TextNarratif_Venus.png" id="2_ks6fi"]
 [ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="3_54ihs"]
 [ext_resource type="Theme" uid="uid://c5ui40y4yps16" path="res://assets/themes/rich_text_theme.tres" id="4_07ddm"]
 [ext_resource type="Texture2D" uid="uid://l3586hbe0q4t" path="res://assets/art/ASSETS GRAPHIQUES/UI_flèche_text.png" id="4_54ihs"]
+[ext_resource type="AudioStream" uid="uid://cnk33xlsfqx43" path="res://assets/audio/sounds/Mouton.mp3" id="4_w2ful"]
 [ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="6_ks6fi"]
+
+[sub_resource type="Resource" id="Resource_g4xvb"]
+script = ExtResource("2_47vju")
+loc_key = "start_start"
+sound = ExtResource("4_w2ful")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4xlb"]
 texture = ExtResource("2_ks6fi")
 
-[node name="Dialogue" type="Control" unique_id=293240120]
+[node name="Dialogue_UI" type="Control" unique_id=293240120]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,10 +27,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_qg05v")
+script = ExtResource("1_ks6fi")
+dialogue = SubResource("Resource_g4xvb")
 
 [node name="Panel" type="Panel" parent="." unique_id=287894469]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +42,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_l4xlb")
 
 [node name="NarratorSprite2D" type="TextureRect" parent="Panel" unique_id=752256303]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +76,6 @@ layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("4_07ddm")
 bbcode_enabled = true
-text = "testetretee ezt te(ryrth"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1

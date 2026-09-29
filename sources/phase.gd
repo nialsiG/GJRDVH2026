@@ -17,49 +17,46 @@ enum EState {
     CHOICE,
     END
 }
-
-@export var default_stage: EStage = EStage.START:
+@export var dialogues: Array[Dialogue]:
     set(new_value):
-        default_stage = new_value
+        dialogues = new_value
         changed.emit()
 
-@export var default_state: EState = EState.START:
-    set(new_value):
-        default_state = new_value
-        changed.emit()
+@export var stage: EStage = EStage.START
+@export var state: EState = EState.START
+@export var cond_choices: Array[EnumCollection.EChoice] = []
+@export var cond_wise_points: int = 0
+@export var cond_evil_points: int = 0
 
-var _stage: EStage
-var _state: EState
+var dialogue_idx: int = 0
 
-func default() -> Phase:
-    _stage = default_stage
-    _state = default_state
+func on_new_game() -> void:
+    dialogue_idx = 0
 
-    return self
+func on_choice_is_made(_choice: EnumCollection.EChoice) -> void:
+    SignalManager.PhaseEnd.emit()
 
+func load_new_dialogue() -> void:
+        _emit_dialogue()
 
-func next_state() -> Phase:
-    match self._state:
-        EState.START:
-            self._state = EState.CHOICE
-        EState.CHOICE:
-            self._state = EState.END
-        EState.END:
-            self._state = EState.START
-    
-    return self
+func _emit_dialogue() -> void:
+    if dialogue_idx < dialogues.size():
+        var dialogue: Dialogue = dialogues[dialogue_idx]
+        print("dialogue=", dialogue)
+        SignalManager.PhaseNewDialogue.emit(dialogue)
+        dialogue_idx += 1
+    elif state != EState.CHOICE:
+        SignalManager.PhaseEnd.emit()
 
-func next_stage() -> Phase:
-    match self._stage:
-        EStage.START:
-            self._stage = EStage.HILL
-        EStage.HILL:
-            self._stage = EStage.ALLIES
-        EStage.ALLIES:
-            self._stage = EStage.TREE
-        EStage.TREE:
-            self._stage = EStage.ANIMAL
-        EStage.ANIMAL:
-            self._stage = EStage.BROTHERS
+func _check_conditions() -> bool:
+    if KarmaManager.wise_points < cond_wise_points:
+        print_debug("not enough wise_points: ", KarmaManager.wise_points, " <", cond_wise_points)
+        return false
+    if KarmaManager.evil_points < cond_evil_points:
+        print_debug("not enough evil_points: ", KarmaManager.evil_points, " <", cond_evil_points)
+        return false
 
-    return self
+    for c in cond_choices:
+        if !KarmaManager.choices_made.has(c):
+            return false
+    return true

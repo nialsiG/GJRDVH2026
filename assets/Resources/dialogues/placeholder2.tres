@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cpclmy286t8c4"]
-
-[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="1_8nmhy"]
-
-[resource]
-script = ExtResource("1_8nmhy")
-loc_key = "animal_very_sage"
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"

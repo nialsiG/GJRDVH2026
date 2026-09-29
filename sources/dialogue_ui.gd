@@ -3,7 +3,7 @@ extends Control
 class_name DialogueUI
 
 enum State {
-	Defiling,
+	Scrolling,
 	Ended
 }
 
@@ -14,81 +14,65 @@ enum State {
 var current_state: State = State.Ended
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
-@export var dialogue_res: Dialogue:
-	set(new_resource):
-		if dialogue_res != null and dialogue_res.changed.has_connections():
-			dialogue_res.changed.disconnect(_OnResourceChanged)
-		dialogue_res = new_resource
-		_OnResourceChanged()
-		if dialogue_res != null:
-			dialogue_res.changed.connect(_OnResourceChanged)
+@export var dialogue: Dialogue:
+	set(new_value):
+		dialogue = new_value
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	TranslationServer.set_locale("french")
-	panel.visible = false
-	narrator_sprite_2d.visible = false
-	SignalManager.DialogueStarted.connect(_OnDialogueStarted)
-	SignalManager.DialogueEnded.connect(_OnDialogueEnded)
-	SignalManager.NextDialogue.connect(_OnNextDialogue)
+	SignalManager.PhaseNewDialogue.connect(on_phase_new_dialogue)
 
-# --- OnDialogue handlers -----------------------------------------------------
-func _OnDialogueStarted():
-	panel.visible = true
-	dialogue_res = DialogueManager.curr_dialogue_res
-	print("Dialogue: _OnDialogueStarted")
-
-func _OnDialogueEnded():
-	print("Dialogue: _OnDialogueEnded")
-	panel.visible = false
-	PhaseManager.OnDialogueIsEnded()
-	
-func _OnNextDialogue():
-	dialogue_res = DialogueManager.curr_dialogue_res
+func on_phase_new_dialogue(new_dialogue: Dialogue) -> void:
+	print_debug("on_phase_new_dialogue=", dialogue)
+	dialogue = new_dialogue
+	set_process_unhandled_input(true)
+	_change_narrator_texture(dialogue.narrator_begin_texture)
 	SoundManager.PlaySound(SoundManager.sound.DOVE_NARRATOR)
+	_display_dialogue()
+	_start_scrolling()
 
+func _display_dialogue() -> void:
+	print("dialogue_ui: display dialogue")
+	panel.visible = true
+	label.clear()
+	label.append_text(tr(dialogue.loc_key))
+
+func _change_narrator_texture(new_texture: Texture2D):
+	if !narrator_sprite_2d:
+		return
+	narrator_sprite_2d.texture = new_texture
+	narrator_sprite_2d.visible = new_texture != null
 
 # --- Handle text defiling ----------------------------------------------------
 func _on_defiling_timer_timeout() -> void:
 	if label.visible_characters < label.get_parsed_text().length():
 		label.visible_characters += 1
 	else:
-		_StopDefiling()
+		_stop_scrolling()
 
-func _StartDefiling():
-	print("Started defiling")
-	current_state = State.Defiling
+func _start_scrolling() -> void:
+	print_debug("started scrolling")
+	current_state = State.Scrolling
 	label.visible_characters = 0
 	timer.start()
-	_ChangeNarratorTexture(dialogue_res._narrator_begin_texture)
+	_change_narrator_texture(dialogue.narrator_begin_texture)
 
-func _StopDefiling():
+func _stop_scrolling() -> void:
+	print("stop scrolling")
 	current_state = State.Ended
 	label.visible_characters = -1
 	timer.stop()
-	_ChangeNarratorTexture(dialogue_res._narrator_end_texture)
-	print("Stop defiling")
+	_change_narrator_texture(dialogue.narrator_end_texture)
 
 # --- When text is clicked ----------------------------------------------------
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		if current_state == State.Defiling:
-			_StopDefiling()
+		if current_state == State.Scrolling:
+			print("stop scrolling")
+			_stop_scrolling()
 		else:
-			SignalManager.PlayerClickedOnDialogue.emit()
-
-
-# --- Helpers -----------------------------------------------------------------
-func _ChangeNarratorTexture(new_texture: Texture2D):
-	narrator_sprite_2d.texture = new_texture
-	narrator_sprite_2d.visible = new_texture != null
-
-# When dialogue_res is set
-func _OnResourceChanged():
-	if !label:
-		return
-	label.clear()
-	var loc_str = tr(dialogue_res._loc_key)
-	label.append_text(loc_str)
-	_StartDefiling()
+			print("dialogue_ui: _unhandled_input else")
+			set_process_unhandled_input(false)
+			panel.visible = false
+			SignalManager.DialogueUIClickedOnDialogue.emit()

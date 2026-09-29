@@ -2,34 +2,22 @@
 extends Resource
 class_name Dialogue
 
-@export var default_loc_key: String:
+@export var loc_key: String:
 	set(new_value):
-		default_loc_key = new_value
+		loc_key = new_value
 		changed.emit()
 
-@export var default_narrator_begin_texture: Texture2D:
+@export var narrator_begin_texture: Texture2D = preload("uid://r24goacbox5c"):
 	set(new_value):
-		default_narrator_begin_texture = new_value
+		narrator_begin_texture = new_value
 		changed.emit()
 
-@export var default_narrator_end_texture: Texture2D:
+@export var narrator_end_texture: Texture2D = preload("uid://b7cg8wa6j0q8m"):
 	set(new_value):
-		default_narrator_end_texture = new_value
+		narrator_end_texture = new_value
 		changed.emit()
 
-@export var default_sound: AudioStream:
+@export var sound: AudioStream:
 	set(new_value):
-		default_sound = new_value
+		sound = new_value
 		changed.emit()
-
-var _loc_key: String
-var _narrator_begin_texture: Texture2D
-var _narrator_end_texture: Texture2D
-var _sound: AudioStream
-
-func default() -> Dialogue:
-	_loc_key = ""
-	_narrator_begin_texture = Texture2D.new()
-	_narrator_end_texture = Texture2D.new()
-	_sound = AudioStream.new()
-	return self

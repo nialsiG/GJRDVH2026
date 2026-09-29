@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://c3xcy6nwsye1y"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_ero4w"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="2_qhhil"]
+
+[resource]
+script = ExtResource("2_qhhil")
+stage = 2
+cond_wise_points = 1
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

@@ -1,6 +1,5 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://cjp8m8bb0b0m5"]
 
-[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_6crh3"]
 [ext_resource type="Texture2D" uid="uid://nclhl68u5wqg" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_soupir.png" id="3_vagi2"]
 [ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_pc7po"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_o5ek8"]
@@ -8,14 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dqf4bnsxldan" path="res://assets/art/ASSETS GRAPHIQUES/tree_olive.png" id="6_vagi2"]
 
 [sub_resource type="Resource" id="Resource_x4luc"]
-script = ExtResource("2_6crh3")
 loc_key = "arbre_chaos"
 narrator_begin_texture = ExtResource("3_vagi2")
 narrator_end_texture = ExtResource("4_pc7po")
 metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [sub_resource type="Resource" id="Resource_jiqgt"]
-script = ExtResource("2_6crh3")
 loc_key = "arbre_very_chaos"
 narrator_begin_texture = ExtResource("5_r5xwu")
 narrator_end_texture = ExtResource("4_pc7po")
@@ -25,8 +22,6 @@ metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 script = ExtResource("5_o5ek8")
 texture = ExtResource("6_vagi2")
 new_texture = ExtResource("6_vagi2")
-on_interact_dialogues = Array[ExtResource("2_6crh3")]([SubResource("Resource_x4luc")])
-on_interact_very_dialogues = Array[ExtResource("2_6crh3")]([SubResource("Resource_jiqgt")])
 sound_effect = 8
 remove_if_choice_is_made = 3
 interactable_on_phase = 3
