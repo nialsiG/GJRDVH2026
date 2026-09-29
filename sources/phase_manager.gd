@@ -39,7 +39,7 @@ extends Node
 # var current_state: EPhaseState = EPhaseState.START:
 # 	set(new_state):
 # 		current_state = new_state
-# 		var dialogues: Array[DialogueResource] = _GetDialoguesFromPhaseAndState()
+# 		var dialogues: Array[Dialogue] = _GetDialoguesFromPhaseAndState()
 # 		SignalManager.NewDialogueArray.emit(dialogues)
 
 # @export var _phase: Phase
@@ -96,7 +96,7 @@ extends Node
 # 	end_phase = false
 # 	SignalManager.OnNextPhase.emit(_phase)
 
-# func _GetDialoguesFromPhaseAndState() -> Array[DialogueResource]:
+# func _GetDialoguesFromPhaseAndState() -> Array[Dialogue]:
 # 	match current_phase:
 # 		EnumCollection.EPhase.START:
 # 			match current_state:
@@ -155,7 +155,7 @@ extends Node
 # 					return FRERES_CHOICE_DIALOGUES.dialog_resources
 # 	return []
 
-# func _GetBarkDialogues() -> Array[DialogueResource]:
+# func _GetBarkDialogues() -> Array[Dialogue]:
 # 	match current_phase:
 # 		EnumCollection.EPhase.COLLINE:
 # 			print("BARK ON COLINE")
@@ -174,8 +174,8 @@ extends Node
 # 			return FRERES_BARK_DIALOGUES.dialog_resources
 # 	return []
 
-signal PhaseStageChanged(stage: Phase.EStage)
-signal PhaseStateChanged(state: Phase.EState)
+signal phase_stage_changed(stage: Phase.EStage)
+signal phase_state_changed(state: Phase.EState)
 
 @export var _phase: Phase
 
@@ -188,8 +188,8 @@ func init() -> void:
 
 func next_stage() -> void:
 	_phase.next_stage()
-	PhaseStageChanged.emit(_phase._stage)
+	phase_stage_changed.emit(_phase._stage)
 
 func next_state() -> void:
 	_phase.next_state()
-	PhaseStateChanged.emit(_phase._state)
+	phase_state_changed.emit(_phase._state)

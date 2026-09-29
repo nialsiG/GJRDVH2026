@@ -18,8 +18,15 @@ enum EState {
     END
 }
 
-@export var default_stage: EStage = EStage.START
-@export var default_state: EState = EState.START
+@export var default_stage: EStage = EStage.START:
+    set(new_value):
+        default_stage = new_value
+        changed.emit()
+
+@export var default_state: EState = EState.START:
+    set(new_value):
+        default_state = new_value
+        changed.emit()
 
 var _stage: EStage
 var _state: EState

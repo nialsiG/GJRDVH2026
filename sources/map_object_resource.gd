@@ -18,14 +18,14 @@ class_name MapObjectResource
 
 ## List of default dialogues to trigger when the object is clicked
 @export_group("Behavior/OnInteract")
-@export var on_interact_dialogues: Array[DialogueResource]:
+@export var on_interact_dialogues: Array[Dialogue]:
 	set(new_setting):
 		on_interact_dialogues = new_setting
 		changed.emit()
 
 ## List of VERY dialogues to trigger when the object is clicked and conditions are checked
 @export_group("Behavior/OnInteract")
-@export var on_interact_very_dialogues: Array[DialogueResource]:
+@export var on_interact_very_dialogues: Array[Dialogue]:
 	set(new_setting):
 		on_interact_very_dialogues = new_setting
 		changed.emit()

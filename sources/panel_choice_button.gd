@@ -4,7 +4,7 @@ class_name PanelChoiceButton
 
 @export var map_object_resource: MapObjectResource
 
-func _GetDialoguesFromRes() -> Array[DialogueResource]:
+func _GetDialoguesFromRes() -> Array[Dialogue]:
 	if KarmaManager.state == EnumCollection.EKarma.WISE:
 		if map_object_resource.on_interact_very_dialogues and KarmaManager.wise_points >= map_object_resource.cond_very_wise:
 			print("very_wise")
@@ -30,7 +30,7 @@ func _on_pressed():
 	KarmaManager.add_choice(map_object_resource.choice_to_add)
 	#if map_object_resource.new_texture:
 		#ChangeTexture(map_object_resource.new_texture)
-	var dialogues: Array[DialogueResource] = _GetDialoguesFromRes()
+	var dialogues: Array[Dialogue] = _GetDialoguesFromRes()
 	if dialogues:
 		SignalManager.NewDialogueArray.emit(dialogues)
 		#print("MapObject: map_object_resource.on_interact_dialogue_array=", map_object_resource.on_interact_dialogue_array)
