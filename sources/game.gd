@@ -38,6 +38,7 @@ func on_choice_is_made(choice: EnumCollection.EChoice) -> void:
 func load_new_phase() -> void:
     var tmp = phases.get(phase_idx)
     if !tmp:
+        SignalManager.GameOver.emit()
         return
     tmp.reset()
     phase_idx += 1
