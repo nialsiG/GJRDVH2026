@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://dxxdmamflakj8"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_mmnml"]
+[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="2_mmnml"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_0uidx"]
+
+[sub_resource type="Resource" id="Resource_8425a"]
+script = ExtResource("1_mmnml")
+loc_key = "alliees_very_sage"
+narrator_begin_texture = ExtResource("2_mmnml")
+narrator_end_texture = ExtResource("2_mmnml")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_0uidx")
+dialogues = Array[ExtResource("1_mmnml")]([SubResource("Resource_8425a")])
+stage = 2
+state = 2
+cond_choices = Array[int]([1])
+cond_wise_points = 1
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

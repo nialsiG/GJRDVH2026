@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://cqe23ww0syh31"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_og24w"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="2_4x8sc"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="3_gq8ry"]
+[ext_resource type="Texture2D" uid="uid://8w3iv3okgej4" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_choqué.png" id="4_4x8sc"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_olxh0"]
+
+[sub_resource type="Resource" id="Resource_63whv"]
+script = ExtResource("1_og24w")
+loc_key = "colline_start_1"
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[sub_resource type="Resource" id="Resource_qf8ww"]
+script = ExtResource("1_og24w")
+loc_key = "colline_start_2"
+narrator_begin_texture = ExtResource("4_4x8sc")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_olxh0")
+dialogues = Array[ExtResource("1_og24w")]([SubResource("Resource_63whv"), SubResource("Resource_qf8ww")])
+stage = 1
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

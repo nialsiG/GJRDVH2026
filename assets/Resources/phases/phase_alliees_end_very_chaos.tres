@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://xlpktflho21b"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_2kn6m"]
+[ext_resource type="Texture2D" uid="uid://dbqed5vnvnlml" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_colère.png" id="2_2kn6m"]
+[ext_resource type="Texture2D" uid="uid://b1omd8mj74ye2" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_tristesse.png" id="3_2kn6m"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_uhisa"]
+
+[sub_resource type="Resource" id="Resource_voysv"]
+script = ExtResource("1_2kn6m")
+loc_key = "alliees_very_chaos"
+narrator_begin_texture = ExtResource("2_2kn6m")
+narrator_end_texture = ExtResource("3_2kn6m")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_uhisa")
+dialogues = Array[ExtResource("1_2kn6m")]([SubResource("Resource_voysv")])
+stage = 2
+state = 2
+cond_choices = Array[int]([2])
+cond_evil_points = 1
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

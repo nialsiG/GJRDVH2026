@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://grtfe0x7qt47"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_xo7kt"]
+[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="2_twcqt"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="3_twcqt"]
+[ext_resource type="Texture2D" uid="uid://dbqed5vnvnlml" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_colère.png" id="4_fiayt"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_pfuc6"]
+
+[sub_resource type="Resource" id="Resource_fjyxq"]
+script = ExtResource("1_xo7kt")
+loc_key = "alliees_choice_1"
+narrator_begin_texture = ExtResource("2_twcqt")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[sub_resource type="Resource" id="Resource_vrlni"]
+script = ExtResource("1_xo7kt")
+loc_key = "alliees_choice_2"
+narrator_begin_texture = ExtResource("4_fiayt")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_pfuc6")
+dialogues = Array[ExtResource("1_xo7kt")]([SubResource("Resource_fjyxq"), SubResource("Resource_vrlni")])
+stage = 2
+state = 1
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

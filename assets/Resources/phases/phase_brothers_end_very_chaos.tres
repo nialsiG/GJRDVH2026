@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://dsnlt6q8puhjq"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_wxlwi"]
+[ext_resource type="Texture2D" uid="uid://8w3iv3okgej4" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_choqué.png" id="2_3ksm0"]
+[ext_resource type="Texture2D" uid="uid://b1omd8mj74ye2" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_tristesse.png" id="2_wxlwi"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_ydm8o"]
+
+[sub_resource type="Resource" id="Resource_smpe8"]
+script = ExtResource("1_wxlwi")
+loc_key = "freres_very_chaos"
+narrator_begin_texture = ExtResource("2_3ksm0")
+narrator_end_texture = ExtResource("2_wxlwi")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_ydm8o")
+dialogues = Array[ExtResource("1_wxlwi")]([SubResource("Resource_smpe8")])
+stage = 5
+state = 2
+cond_choices = Array[int]([8])
+cond_evil_points = 4
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

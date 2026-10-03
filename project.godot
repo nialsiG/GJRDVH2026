@@ -20,11 +20,10 @@ config/icon="res://icon.svg"
 SignalManager="*uid://d0t83px0lai0u"
 MouseManager="*uid://cogk30ekinqdo"
 EnumCollection="*uid://pj644pktvlrq"
-PhaseManager="*uid://c53w58pg3c2fw"
 MusicManager="*uid://d0wuf4mkwcbk5"
 SoundManager="*uid://b5k4gjh0klwcs"
-DialogueManager="*uid://bsdt8xq3aw5a2"
 KarmaManager="*uid://dbbtot1by7jd"
+GameManager="*uid://o0lus513itb5"
 
 [display]
 

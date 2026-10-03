@@ -1,5 +1,5 @@
 ,french
-start_start,Réveille toi...
+start_start,Réveille-toi...
 start_start_2,"Faustulus, tu me reconnais n’est-ce pas ?"
 start_start_3,"Je suis Vénus, la déesse de la beauté et la mère d’Enée, le héros qui a découvert cette région."
 start_start_4,"Je te connais : c’est toi qui a trouvé mes descendants, Romulus et Rémus, auprès d’une louve."
@@ -30,7 +30,7 @@ Les plantes poussent facilement grâce à Cérès et le Soleil d’Apollon nous 
 arbre_start_chaos,"Heureusement pour toi, la région est bénie des dieux, les plantes poussent facilement grâce à Cérès."
 arbre_choice_1,Il est temps de choisir un arbre sacré.
 arbre_choice_2,Te rappelles-tu que tu as trouvé les jumeaux sous un figuier ?
-arbre_choice_3,"Certes, l'olivier d'Athéna aussi est divin, mais que te dis ton cœur ?"
+arbre_choice_3,"Certes, l'olivier d'Athéna aussi est divin, mais que te dis ton coeur ?"
 arbre_bark,Figuier ou olivier... Le choix n'est pas si compliqué !
 arbre_sage,"Très bien, Faustulus ! Tu as bon goût !"
 arbre_chaos,Faustulus... Tu ne serais pas un peu grec sur les bords ?

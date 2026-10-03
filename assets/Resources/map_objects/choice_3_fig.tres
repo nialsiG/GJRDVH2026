@@ -1,35 +1,15 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://bpos2l32osrow"]
 
-[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_0h1qd"]
-[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="3_gwk0h"]
-[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_wdt4w"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_h5brc"]
-[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="5_li8qg"]
 [ext_resource type="Texture2D" uid="uid://bfsef6g4b72d3" path="res://assets/art/ASSETS GRAPHIQUES/tree_figue.png" id="6_gwk0h"]
-
-[sub_resource type="Resource" id="Resource_kbw8x"]
-script = ExtResource("2_0h1qd")
-loc_key = "arbre_sage"
-narrator_begin_texture = ExtResource("3_gwk0h")
-narrator_end_texture = ExtResource("4_wdt4w")
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
-
-[sub_resource type="Resource" id="Resource_bll3l"]
-script = ExtResource("2_0h1qd")
-loc_key = "arbre_very_sage"
-narrator_begin_texture = ExtResource("5_li8qg")
-narrator_end_texture = ExtResource("4_wdt4w")
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("5_h5brc")
 texture = ExtResource("6_gwk0h")
 new_texture = ExtResource("6_gwk0h")
-on_interact_dialogues = Array[ExtResource("2_0h1qd")]([SubResource("Resource_kbw8x")])
-on_interact_very_dialogues = Array[ExtResource("2_0h1qd")]([SubResource("Resource_bll3l")])
 sound_effect = 8
 remove_if_choice_is_made = 4
-interactable_on_phase = 3
+interactable_on_phase_stage = 3
 visible_on_phases = Array[int]([3, 4, 5])
 wise_points = 1
 cond_very_wise = 2
