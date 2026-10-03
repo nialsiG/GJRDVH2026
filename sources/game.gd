@@ -11,6 +11,11 @@ var phase_idx: int = 0
         phases = new_value
         changed.emit()
 
+var played_phases: Array[Phase]:
+    set(new_value):
+        played_phases = new_value
+        changed.emit()
+
 var phase: Phase:
     set(new_value):
         phase = new_value
@@ -20,6 +25,7 @@ var phase: Phase:
 func on_new_game() -> void:
     print("phase: on_new_game")
     phase_idx = 0
+    played_phases = []
     load_new_phase()
     if phase == null:
         printerr("phase is null")
@@ -42,9 +48,21 @@ func load_new_phase() -> void:
         return
     tmp.reset()
     phase_idx += 1
-    if tmp._check_conditions():
+    if !has_phase_already_been_played(tmp) && tmp._check_conditions():
             phase = tmp
+            played_phases.append(phase)
             phase.load_new_dialogue()
     else:
         print("phase could not be loaded")
         load_new_phase()
+
+func has_phase_already_been_played(ph: Phase) -> bool:
+    if !ph:
+        printerr("ph is null")
+        return false
+    
+    for p in played_phases:
+        if p.stage == ph.stage && p.state == ph.state:
+            return true
+
+    return false
