@@ -1,15 +1,10 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://dqb507gwjy6wt"]
 
-[ext_resource type="Texture2D" uid="uid://cl8sbx1kmnfd4" path="res://assets/art/map/hill.png" id="1_xgn3l"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_pygwe"]
-[ext_resource type="Texture2D" uid="uid://cj5co2h1ny8ne" path="res://assets/art/map/forest.png" id="6_rw08e"]
 
 [resource]
 script = ExtResource("5_pygwe")
-texture = ExtResource("6_rw08e")
-new_texture = ExtResource("1_xgn3l")
 sound_effect = 9
-interactable_on_phase = 5
 visible_on_phases = Array[int]([5])
 wise_points = 1
 cond_very_wise = 4
