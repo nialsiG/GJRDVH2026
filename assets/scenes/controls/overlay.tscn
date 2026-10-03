@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="5_621us"]
 [ext_resource type="Resource" uid="uid://dyb7vketv5ivr" path="res://assets/Resources/map_objects/choice_5_remus.tres" id="5_jlok2"]
 [ext_resource type="Theme" uid="uid://bw5tdablfnphv" path="res://assets/themes/exit_button_theme.tres" id="8_64nt8"]
+[ext_resource type="Texture2D" uid="uid://c0ufws32sdm4q" path="res://assets/art/ASSETS GRAPHIQUES/blason_empty.png" id="8_dt4cb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f61wl"]
 texture = ExtResource("2_namfy")
@@ -200,5 +201,11 @@ script = ExtResource("5_621us")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=69513696]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_wwy55")
+
+[node name="Blason" type="TextureRect" parent="." unique_id=558447605]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_dt4cb")
 
 [connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]
