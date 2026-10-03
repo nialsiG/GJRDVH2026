@@ -1,31 +1,18 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://dvde5bpfdxsv8"]
 
 [ext_resource type="Texture2D" uid="uid://d2f2mqq8xex3n" path="res://assets/art/ASSETS GRAPHIQUES/Wolf_group_of_3.png" id="1_gv1m2"]
-[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="3_gmle7"]
-[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_tmy5r"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_1j1qu"]
-[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="5_w5qjx"]
 [ext_resource type="Texture2D" uid="uid://cli1ia34vaxr1" path="res://assets/art/ASSETS GRAPHIQUES/Wolf_solo.png" id="6_gv1m2"]
-
-[sub_resource type="Resource" id="Resource_5n8j8"]
-loc_key = "animal_sage"
-narrator_begin_texture = ExtResource("3_gmle7")
-narrator_end_texture = ExtResource("4_tmy5r")
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
-
-[sub_resource type="Resource" id="Resource_a8bwr"]
-loc_key = "animal_very_sage"
-narrator_begin_texture = ExtResource("5_w5qjx")
-narrator_end_texture = ExtResource("4_tmy5r")
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("5_1j1qu")
 texture = ExtResource("6_gv1m2")
+default_visible = null
 new_texture = ExtResource("1_gv1m2")
 sound_effect = 6
-interactable_on_phase = 4
-visible_on_phases = Array[int]([0, 1, 2, 3, 4, 5])
+remove_if_choice_is_made = 6
+interactable_on_phase_stage = 4
+visible_on_phases = Array[int]([4, 5])
 wise_points = 1
 cond_very_wise = 3
 choice_to_add = 5

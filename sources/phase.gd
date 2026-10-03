@@ -30,7 +30,7 @@ enum EState {
 
 var dialogue_idx: int = 0
 
-func on_new_game() -> void:
+func reset() -> void:
     dialogue_idx = 0
 
 func on_choice_is_made(_choice: EnumCollection.EChoice) -> void:

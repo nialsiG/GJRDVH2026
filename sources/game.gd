@@ -39,6 +39,7 @@ func load_new_phase() -> void:
     var tmp = phases.get(phase_idx)
     if !tmp:
         return
+    tmp.reset()
     phase_idx += 1
     if tmp._check_conditions():
             phase = tmp

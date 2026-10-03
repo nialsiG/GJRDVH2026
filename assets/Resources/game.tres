@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cqe23ww0syh31" path="res://assets/Resources/phases/phase_hill_start.tres" id="3_qf8ww"]
 [ext_resource type="Resource" uid="uid://d27vpxqkevxw8" path="res://assets/Resources/phases/phase_hill_choice.tres" id="4_n1b1g"]
 [ext_resource type="Resource" uid="uid://c8eqk755h2kle" path="res://assets/Resources/phases/phase_hill_end_wise.tres" id="5_lbwlo"]
-[ext_resource type="Resource" uid="uid://cdiye5b477x3p" path="res://assets/Resources/phases/phase_hill_end_evil.tres" id="6_02f2a"]
+[ext_resource type="Resource" uid="uid://cdiye5b477x3p" path="res://assets/Resources/phases/phase_hill_end_chaos.tres" id="6_02f2a"]
 [ext_resource type="Script" uid="uid://d1w4vd7klu22q" path="res://sources/game.gd" id="6_fjyxq"]
 [ext_resource type="Resource" uid="uid://c3xcy6nwsye1y" path="res://assets/Resources/phases/phase_alliees_start_wise.tres" id="7_fjyxq"]
 [ext_resource type="Resource" uid="uid://c72ppw4xfol5b" path="res://assets/Resources/phases/phase_alliees_start_chaos.tres" id="8_lbwlo"]
@@ -16,8 +16,28 @@
 [ext_resource type="Resource" uid="uid://xx137f5ykcca" path="res://assets/Resources/phases/phase_alliees_end_chaos.tres" id="13_td158"]
 [ext_resource type="Resource" uid="uid://dqkxr6i64kftl" path="res://assets/Resources/phases/phase_tree_start_wise.tres" id="14_kew2o"]
 [ext_resource type="Resource" uid="uid://bfjg3walnioue" path="res://assets/Resources/phases/phase_tree_start_chaos.tres" id="15_23o6v"]
+[ext_resource type="Resource" uid="uid://dw5ay16pq5plt" path="res://assets/Resources/phases/phase_tree_choice.tres" id="16_3uxsr"]
+[ext_resource type="Resource" uid="uid://cg3lbng1fulyv" path="res://assets/Resources/phases/phase_tree_end_very_wise.tres" id="17_3uxsr"]
+[ext_resource type="Resource" uid="uid://dqjaufuyy7nou" path="res://assets/Resources/phases/phase_tree_end_very_chaos.tres" id="18_wwttf"]
+[ext_resource type="Resource" uid="uid://c5dt6gm3tmcbf" path="res://assets/Resources/phases/phase_tree_end_wise.tres" id="19_3uxsr"]
+[ext_resource type="Resource" uid="uid://1g0ifrm7bhpl" path="res://assets/Resources/phases/phase_tree_end_chaos.tres" id="20_wwttf"]
+[ext_resource type="Resource" uid="uid://cg5n4qqhjwss4" path="res://assets/Resources/phases/phase_animal_start_wise.tres" id="21_asckf"]
+[ext_resource type="Resource" uid="uid://dd4nsifvlx018" path="res://assets/Resources/phases/phase_animal_start_chaos.tres" id="22_6kh36"]
+[ext_resource type="Resource" uid="uid://dygpj6qhhg4x4" path="res://assets/Resources/phases/phase_animal_choice.tres" id="23_0trsv"]
+[ext_resource type="Resource" uid="uid://o7u2su2shsr1" path="res://assets/Resources/phases/phase_animal_end_very_wise.tres" id="24_ok38h"]
+[ext_resource type="Resource" uid="uid://cslpay18umyye" path="res://assets/Resources/phases/phase_animal_end_very_chaos.tres" id="25_bu6a2"]
+[ext_resource type="Resource" uid="uid://bsyqs0s8o46os" path="res://assets/Resources/phases/phase_animal_end_wise.tres" id="26_o0lr8"]
+[ext_resource type="Resource" uid="uid://bh8yeh1tdcrt8" path="res://assets/Resources/phases/phase_animal_end_chaos.tres" id="27_o0lr8"]
+[ext_resource type="Resource" uid="uid://b4ob22cbfxr4h" path="res://assets/Resources/phases/phase_brothers_start.tres" id="28_fnwsd"]
+[ext_resource type="Resource" uid="uid://pxv2gm21yrbe" path="res://assets/Resources/phases/phase_brothers_start_wise.tres" id="29_q5olv"]
+[ext_resource type="Resource" uid="uid://chjjl25plo832" path="res://assets/Resources/phases/phase_brothers_start_chaos.tres" id="30_pfhdp"]
+[ext_resource type="Resource" uid="uid://ds64dh6ccw6sr" path="res://assets/Resources/phases/phase_brothers_choice.tres" id="31_x35jf"]
+[ext_resource type="Resource" uid="uid://bfc3ct2om1oea" path="res://assets/Resources/phases/phase_brothers_end_very_wise.tres" id="32_qnhth"]
+[ext_resource type="Resource" uid="uid://dje65bynuf1id" path="res://assets/Resources/phases/phase_brothers_end_wise.tres" id="33_us1j3"]
+[ext_resource type="Resource" uid="uid://dsnlt6q8puhjq" path="res://assets/Resources/phases/phase_brothers_end_very_chaos.tres" id="34_xese7"]
+[ext_resource type="Resource" uid="uid://gnrmnhhato2l" path="res://assets/Resources/phases/phase_brothers_end_chaos.tres" id="35_smpe8"]
 
 [resource]
 script = ExtResource("6_fjyxq")
-phases = Array[ExtResource("1_63whv")]([ExtResource("2_63whv"), ExtResource("3_qf8ww"), ExtResource("4_n1b1g"), ExtResource("5_lbwlo"), ExtResource("6_02f2a"), ExtResource("7_fjyxq"), ExtResource("8_lbwlo"), ExtResource("9_pjhfv"), ExtResource("10_td158"), ExtResource("11_uq2bm"), ExtResource("12_pjhfv"), ExtResource("13_td158"), ExtResource("14_kew2o"), ExtResource("15_23o6v")])
+phases = Array[ExtResource("1_63whv")]([ExtResource("2_63whv"), ExtResource("3_qf8ww"), ExtResource("4_n1b1g"), ExtResource("5_lbwlo"), ExtResource("6_02f2a"), ExtResource("7_fjyxq"), ExtResource("8_lbwlo"), ExtResource("9_pjhfv"), ExtResource("10_td158"), ExtResource("12_pjhfv"), ExtResource("11_uq2bm"), ExtResource("13_td158"), ExtResource("14_kew2o"), ExtResource("15_23o6v"), ExtResource("16_3uxsr"), ExtResource("17_3uxsr"), ExtResource("19_3uxsr"), ExtResource("18_wwttf"), ExtResource("20_wwttf"), ExtResource("21_asckf"), ExtResource("22_6kh36"), ExtResource("23_0trsv"), ExtResource("24_ok38h"), ExtResource("26_o0lr8"), ExtResource("25_bu6a2"), ExtResource("27_o0lr8"), ExtResource("28_fnwsd"), ExtResource("29_q5olv"), ExtResource("30_pfhdp"), ExtResource("31_x35jf"), ExtResource("32_qnhth"), ExtResource("33_us1j3"), ExtResource("34_xese7"), ExtResource("35_smpe8")])
 metadata/_custom_type_script = "uid://d1w4vd7klu22q"

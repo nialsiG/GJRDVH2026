@@ -1,31 +1,18 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://dol6itgg0h3p4"]
 
 [ext_resource type="Texture2D" uid="uid://knqsii4k78hn" path="res://assets/art/ASSETS GRAPHIQUES/Sheep_group_of_3.png" id="1_8q3ok"]
-[ext_resource type="Texture2D" uid="uid://8w3iv3okgej4" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_choqué.png" id="3_8ptpn"]
-[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_jsxys"]
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="5_2byrf"]
-[ext_resource type="Texture2D" uid="uid://dbqed5vnvnlml" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_colère.png" id="5_u2ogv"]
 [ext_resource type="Texture2D" uid="uid://cu37teqkk1kvh" path="res://assets/art/ASSETS GRAPHIQUES/Sheep_solo.png" id="6_8q3ok"]
-
-[sub_resource type="Resource" id="Resource_smvnf"]
-loc_key = "animal_chaos"
-narrator_begin_texture = ExtResource("3_8ptpn")
-narrator_end_texture = ExtResource("4_jsxys")
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
-
-[sub_resource type="Resource" id="Resource_6whjm"]
-loc_key = "animal_very_chaos"
-narrator_begin_texture = ExtResource("5_u2ogv")
-narrator_end_texture = ExtResource("4_jsxys")
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("5_2byrf")
 texture = ExtResource("6_8q3ok")
+default_visible = null
 new_texture = ExtResource("1_8q3ok")
 sound_effect = 5
-interactable_on_phase = 4
-visible_on_phases = Array[int]([0, 1, 2, 3, 4, 5])
+remove_if_choice_is_made = 5
+interactable_on_phase_stage = 4
+visible_on_phases = Array[int]([4, 5])
 evil_points = 1
 cond_very_evil = 3
 choice_to_add = 6

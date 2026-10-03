@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://cslpay18umyye"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_lt4y0"]
+[ext_resource type="Texture2D" uid="uid://dbqed5vnvnlml" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_colère.png" id="2_r1ik2"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_g4yib"]
+
+[sub_resource type="Resource" id="Resource_c8d7e"]
+script = ExtResource("1_lt4y0")
+loc_key = "animal_very_chaos"
+narrator_begin_texture = ExtResource("2_r1ik2")
+narrator_end_texture = ExtResource("2_r1ik2")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_g4yib")
+dialogues = Array[ExtResource("1_lt4y0")]([SubResource("Resource_c8d7e")])
+stage = 4
+state = 2
+cond_choices = Array[int]([6])
+cond_evil_points = 3
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

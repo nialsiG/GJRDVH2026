@@ -14,13 +14,13 @@ metadata/_custom_type_script = "uid://bxtfgu7yon538"
 [sub_resource type="Resource" id="Resource_w2xug"]
 script = ExtResource("1_ygsm7")
 loc_key = "start_start_2"
-metadata/_custom_type_script = "uid://bxtfgu7yon538"
-
-[sub_resource type="Resource" id="Resource_mdyig"]
-script = ExtResource("1_ygsm7")
-loc_key = "start_start_3"
 narrator_begin_texture = ExtResource("4_pvp7b")
 narrator_end_texture = ExtResource("4_pvp7b")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[sub_resource type="Resource" id="Resource_ygsm7"]
+script = ExtResource("1_ygsm7")
+loc_key = "start_start_3"
 metadata/_custom_type_script = "uid://bxtfgu7yon538"
 
 [sub_resource type="Resource" id="Resource_umnqq"]
@@ -43,11 +43,9 @@ metadata/_custom_type_script = "uid://bxtfgu7yon538"
 [sub_resource type="Resource" id="Resource_ap4qy"]
 script = ExtResource("1_ygsm7")
 loc_key = "start_start_7"
-narrator_begin_texture = ExtResource("4_pvp7b")
-narrator_end_texture = ExtResource("4_pvp7b")
 metadata/_custom_type_script = "uid://bxtfgu7yon538"
 
 [resource]
 script = ExtResource("5_1xdbv")
-dialogues = Array[ExtResource("1_ygsm7")]([SubResource("Resource_bdjkj"), SubResource("Resource_w2xug"), SubResource("Resource_mdyig"), SubResource("Resource_umnqq"), SubResource("Resource_s8vgi"), SubResource("Resource_32kqe"), SubResource("Resource_ap4qy")])
+dialogues = Array[ExtResource("1_ygsm7")]([SubResource("Resource_bdjkj"), SubResource("Resource_w2xug"), SubResource("Resource_ygsm7"), SubResource("Resource_umnqq"), SubResource("Resource_s8vgi"), SubResource("Resource_32kqe"), SubResource("Resource_ap4qy")])
 metadata/_custom_type_script = "uid://cq858dxy1q7vb"

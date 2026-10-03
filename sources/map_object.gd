@@ -31,15 +31,20 @@ func _ready():
         interactable.mouse_exited.connect(on_map_object_exited)
 
 func Reset():
-    print("map_object: reset")
     hide_after_choice = false
+    hide()
+    SoundManager.PlayAmbiance(SoundManager.ambiance.NONE)
     if !map_object_resource:
         return
 
+    if map_object_resource.default_visible:
+        show()
+
     ChangeTexture(map_object_resource.texture)
-    if map_object_resource.is_map_with_river:
-        hide()
-        SoundManager.PlayAmbiance(SoundManager.ambiance.NONE)
+
+    # if map_object_resource.is_map_with_river:
+    #     hide()
+    #     SoundManager.PlayAmbiance(SoundManager.ambiance.NONE)
 
 func OnResourceChange():
     if !sprite_2d || !map_object_resource:
@@ -61,6 +66,7 @@ func on_game_phase_changed(phase: Phase):
         return
     if !phase:
         printerr("phase is null")
+        return
 
     if map_object_resource.visible_on_phases.size() > 0:
         # print("visible=", visible, " hide_after_choice=", hide_after_hoice)
@@ -72,6 +78,8 @@ func on_game_phase_changed(phase: Phase):
     if map_object_resource.interactable_on_phase_stage:
         if map_object_resource.interactable_on_phase_stage == phase.stage && phase.state == Phase.EState.CHOICE:
             Activate()
+        else:
+            Deactivate()
 
 
 func Activate():

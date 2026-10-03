@@ -34,7 +34,7 @@ func on_phase_new_dialogue(new_dialogue: Dialogue) -> void:
 
 func _display_dialogue() -> void:
 	print("dialogue_ui: display dialogue")
-	panel.visible = true
+	show()
 	label.clear()
 	label.append_text(tr(dialogue.loc_key))
 
@@ -74,5 +74,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			print("dialogue_ui: _unhandled_input else")
 			set_process_unhandled_input(false)
-			panel.visible = false
+			hide()
 			SignalManager.DialogueUIClickedOnDialogue.emit()

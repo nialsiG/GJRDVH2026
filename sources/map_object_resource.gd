@@ -9,6 +9,9 @@ class_name MapObjectResource
 		texture = new_setting
 		changed.emit()
 
+@export_group("Default")
+@export var default_visible: bool = false
+
 ## Texture of the object when it's clicked
 @export_group("Behavior/OnInteract")
 @export var new_texture: Texture2D:

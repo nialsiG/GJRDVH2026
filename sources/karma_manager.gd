@@ -1,12 +1,11 @@
 extends Node
 
-# Start with NEUTRAL state
-var state: EnumCollection.EKarma = EnumCollection.EKarma.NEUTRAL
-var choices_made: Array[EnumCollection.EChoice] = [EnumCollection.EChoice.NONE]
+var state: EnumCollection.EKarma
+var choices_made: Array[EnumCollection.EChoice]
 
 # Counters
-var wise_points = 0
-var evil_points = 0
+var wise_points
+var evil_points
 
 func _ready() -> void:
 	SignalManager.NewGame.connect(on_new_game)

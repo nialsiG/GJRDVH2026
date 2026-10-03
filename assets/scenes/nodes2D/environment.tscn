@@ -20,6 +20,7 @@
 [sub_resource type="Resource" id="Resource_8d0p4"]
 script = ExtResource("3_rrhax")
 texture = ExtResource("4_rrhax")
+default_visible = true
 remove_if_choice_is_made = 10
 visible_on_phases = Array[int]([0, 1, 2, 3, 4, 5])
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"
@@ -27,6 +28,7 @@ metadata/_custom_type_script = "uid://chtllnhtbq4jb"
 [sub_resource type="Resource" id="Resource_5m40c"]
 script = ExtResource("3_rrhax")
 texture = ExtResource("5_evran")
+default_visible = null
 remove_if_choice_is_made = 9
 is_map_with_river = true
 visible_on_phases = Array[int]([2, 3, 4, 5])
@@ -66,16 +68,14 @@ map_object_resource = SubResource("Resource_5m40c")
 
 [node name="Interactables" type="Node2D" parent="." unique_id=1049042489]
 
-[node name="Choice2VillageA" parent="Interactables" unique_id=552423023 instance=ExtResource("4_ycnly")]
+[node name="Choice2VillageA" parent="Interactables" unique_id=552423023 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(1779, 449.00003)
 scale = Vector2(0.9, 0.9)
-map_object_resource = ExtResource("3_1shj3")
+map_object_resource = ExtResource("5_5m40c")
+interactable = NodePath("Area2D")
 
-[node name="Area2D" parent="Interactables/Choice2VillageA" index="0" unique_id=365844650]
-visible = false
-
-[node name="CollisionShape2D" parent="Interactables/Choice2VillageA/Area2D" index="0" unique_id=1860196079]
+[node name="CollisionShape2D" parent="Interactables/Choice2VillageA/Area2D" parent_id_path=PackedInt32Array(552423023, 365844650) index="0" unique_id=1860196079]
 position = Vector2(-81.111115, -103.33336)
 shape = SubResource("CircleShape2D_6yfuc")
 disabled = true
@@ -85,11 +85,12 @@ position = Vector2(-41.111107, -130.00005)
 scale = Vector2(0.66610557, 0.66610545)
 texture = ExtResource("8_evran")
 
-[node name="Choice2VillageB" parent="Interactables" unique_id=1956382867 instance=ExtResource("4_ycnly")]
+[node name="Choice2VillageB" parent="Interactables" unique_id=1956382867 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(295, 102)
 rotation = -0.018112408
-map_object_resource = ExtResource("5_5m40c")
+map_object_resource = ExtResource("3_1shj3")
+interactable = NodePath("Area2D")
 
 [node name="CollisionShape2D" parent="Interactables/Choice2VillageB/Area2D" parent_id_path=PackedInt32Array(1956382867, 365844650) index="0" unique_id=1860196079]
 position = Vector2(385.81366, 68.998955)
@@ -101,10 +102,11 @@ position = Vector2(410.1538, 50.436745)
 scale = Vector2(0.7019608, 0.7019608)
 texture = ExtResource("8_evran")
 
-[node name="Choice3Fig" parent="Interactables" unique_id=1829900192 instance=ExtResource("4_ycnly")]
+[node name="Choice3Fig" parent="Interactables" unique_id=1829900192 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(990, 536)
 map_object_resource = ExtResource("9_evran")
+interactable = NodePath("Area2D")
 
 [node name="CollisionShape2D" parent="Interactables/Choice3Fig/Area2D" parent_id_path=PackedInt32Array(1829900192, 365844650) index="0" unique_id=1860196079]
 shape = SubResource("CircleShape2D_jetj4")
@@ -114,10 +116,11 @@ disabled = true
 position = Vector2(17, -7)
 texture = ExtResource("12_6yfuc")
 
-[node name="Choice3Olive" parent="Interactables" unique_id=1037148313 instance=ExtResource("4_ycnly")]
+[node name="Choice3Olive" parent="Interactables" unique_id=1037148313 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(1522, 736)
 map_object_resource = ExtResource("11_ppa74")
+interactable = NodePath("Area2D")
 
 [node name="CollisionShape2D" parent="Interactables/Choice3Olive/Area2D" parent_id_path=PackedInt32Array(1037148313, 365844650) index="0" unique_id=1860196079]
 shape = SubResource("CircleShape2D_y33ub")
@@ -126,10 +129,11 @@ disabled = true
 [node name="Sprite2D" parent="Interactables/Choice3Olive" index="1" unique_id=1630606672]
 texture = ExtResource("14_jetj4")
 
-[node name="Choice4Sheep" parent="Interactables" unique_id=1335726705 instance=ExtResource("4_ycnly")]
+[node name="Choice4Sheep" parent="Interactables" unique_id=1335726705 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(1331, 588)
 map_object_resource = ExtResource("13_6yfuc")
+interactable = NodePath("Area2D")
 
 [node name="CollisionShape2D" parent="Interactables/Choice4Sheep/Area2D" parent_id_path=PackedInt32Array(1335726705, 365844650) index="0" unique_id=1860196079]
 shape = SubResource("CircleShape2D_kbw8x")
@@ -138,10 +142,11 @@ disabled = true
 [node name="Sprite2D" parent="Interactables/Choice4Sheep" index="1" unique_id=1630606672]
 texture = ExtResource("16_caus4")
 
-[node name="Choice4Wolf" parent="Interactables" unique_id=522295635 instance=ExtResource("4_ycnly")]
+[node name="Choice4Wolf" parent="Interactables" unique_id=522295635 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(123, 830)
 map_object_resource = ExtResource("15_jetj4")
+interactable = NodePath("Area2D")
 
 [node name="CollisionShape2D" parent="Interactables/Choice4Wolf/Area2D" parent_id_path=PackedInt32Array(522295635, 365844650) index="0" unique_id=1860196079]
 shape = SubResource("CircleShape2D_caus4")
