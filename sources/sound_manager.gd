@@ -65,6 +65,10 @@ func PlaySound(stream: sound):
     sound_queue[sound_queue_index].play()
     sound_queue_index = (sound_queue_index + 1) % sound_queue.size()
 
+func stop_all_sounds_effect() -> void:
+    for s in sound_queue:
+        if s:
+            s.stop()
 
 func PlayAmbiance(stream: ambiance):
     if stream == ambiance_playing:

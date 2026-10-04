@@ -16,5 +16,6 @@ func _ready() -> void:
     
 func on_new_phase(phase: Phase) -> void:
     print("game_manager: on_new_phase")
+    SoundManager.stop_all_sounds_effect()
     SoundManager.stop_ambiance()
     game_phase_changed.emit(phase)

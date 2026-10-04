@@ -112,6 +112,7 @@ func on_map_object_exited():
 func on_map_object_clicked():
     print("on_map_object_clicked")
     Deactivate()
+    KarmaManager.add_choice(map_object_resource.choice_to_add)
     # Changes on click
     if map_object_resource.new_texture:
         ChangeTexture(map_object_resource.new_texture)
@@ -121,7 +122,6 @@ func on_map_object_clicked():
         SoundManager.PlaySound(SoundManager.sound.CLICK)
     if map_object_resource.ambiance_sound:
         SoundManager.PlayAmbiance(map_object_resource.ambiance_sound)
-    KarmaManager.add_choice(map_object_resource.choice_to_add)
     KarmaManager.add_wise_points(map_object_resource.wise_points)
     KarmaManager.add_evil_points(map_object_resource.evil_points)
 
