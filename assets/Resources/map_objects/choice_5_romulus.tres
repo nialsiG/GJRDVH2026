@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("5_pygwe")
-sound_effect = 9
+sound_effect = 7
 visible_on_phases = Array[int]([5])
 wise_points = 1
 cond_very_wise = 4

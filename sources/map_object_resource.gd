@@ -26,6 +26,13 @@ class_name MapObjectResource
 		sound_effect = new_setting
 		changed.emit()
 
+## Ambiance played when the object is clicked
+@export_group("Behavior/OnInteract")
+@export var ambiance_sound: SoundManager.ambiance = SoundManager.ambiance.NONE:
+	set(new_setting):
+		ambiance_sound = new_setting
+		changed.emit()
+
 @export_group("Behavior/Removal")
 @export var remove_if_choice_is_made: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
 	set(new_setting):

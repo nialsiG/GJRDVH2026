@@ -33,7 +33,6 @@ func _ready():
 func Reset():
     hide_after_choice = false
     hide()
-    SoundManager.PlayAmbiance(SoundManager.ambiance.NONE)
     if !map_object_resource:
         return
 
@@ -49,6 +48,7 @@ func OnResourceChange():
 
 func on_game_phase_changed(phase: Phase):
     print("map_object: on_game_phase_changed")
+    SoundManager.PlayAmbiance(SoundManager.ambiance.NONE)
     if !map_object_resource:
         printerr("map_object_resource is null")
         return
@@ -77,7 +77,6 @@ func Deactivate():
     if interactable:
         interactable.collision_shape_2d.disabled = true
 
-    
 func Show():
     print("map_object: show")
     sprite_2d.modulate = Color.TRANSPARENT
@@ -122,6 +121,8 @@ func on_map_object_clicked():
         SoundManager.PlaySound(map_object_resource.sound_effect)
     else:
         SoundManager.PlaySound(SoundManager.sound.CLICK)
+    if map_object_resource.ambiance_sound:
+        SoundManager.PlayAmbiance(map_object_resource.ambiance_sound)
     KarmaManager.add_wise_points(map_object_resource.wise_points)
     KarmaManager.add_evil_points(map_object_resource.evil_points)
 

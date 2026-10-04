@@ -29,7 +29,7 @@ func _ready():
 
 func PlayMusic(stream: music):
 	var tween: Tween = get_tree().create_tween()
-	tween.tween_property(audio_stream_player,"volume_linear", 0.0, 0.5)
+	tween.tween_property(audio_stream_player, "volume_linear", 0.0, 0.5)
 	await tween.finished
 	match stream:
 		music.DEFAULT:
@@ -48,4 +48,7 @@ func PlayMusic(stream: music):
 			audio_stream_player.stream = BONUS_AMBIANCE_TENSION
 	audio_stream_player.play()
 	tween = get_tree().create_tween()
-	tween.tween_property(audio_stream_player,"volume_linear", music_volume, 0.5)
+	tween.tween_property(audio_stream_player, "volume_linear", music_volume, 0.5)
+
+func stop_music() -> void:
+	audio_stream_player.stop()

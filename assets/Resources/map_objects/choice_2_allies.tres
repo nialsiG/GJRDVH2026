@@ -7,9 +7,8 @@
 [resource]
 script = ExtResource("5_83qfl")
 texture = ExtResource("6_h6af1")
-default_visible = null
 new_texture = ExtResource("1_oaot5")
-sound_effect = 2
+ambiance_sound = 2
 remove_if_choice_is_made = 2
 interactable_on_phase_stage = 2
 visible_on_phases = Array[int]([2, 3, 4, 5])
