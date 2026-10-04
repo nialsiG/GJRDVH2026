@@ -25,7 +25,6 @@ func _ready():
     GameManager.game_phase_changed.connect(on_game_phase_changed)
     SignalManager.PhaseEndChoiceDialogue.connect(on_phase_end_choice_dialogue)
     SignalManager.ChoiceIsMade.connect(on_choice_is_made)
-    # SignalManager.NextPhaseState.connect(OnNextPhaseState)
     if interactable:
         interactable.clicked.connect(on_map_object_clicked)
         interactable.mouse_entered.connect(on_map_object_hovered)
@@ -43,22 +42,10 @@ func Reset():
 
     ChangeTexture(map_object_resource.texture)
 
-    # if map_object_resource.is_map_with_river:
-    #     hide()
-    #     SoundManager.PlayAmbiance(SoundManager.ambiance.NONE)
-
 func OnResourceChange():
     if !sprite_2d || !map_object_resource:
         return
     sprite_2d.texture = map_object_resource.texture
-
-# func OnNextPhaseState(phase: EnumCollection.EPhase, state: PhaseManager.EPhaseState):
-# 	if state == PhaseManager.EPhaseState.START:
-# 		Deactivate()
-# 	elif state == PhaseManager.EPhaseState.CHOICE:
-# 		if map_object_resource.interactable_on_phase:
-# 			if map_object_resource.interactable_on_phase == phase:
-# 				Activate()
 
 func on_game_phase_changed(phase: Phase):
     print("map_object: on_game_phase_changed")
@@ -70,7 +57,6 @@ func on_game_phase_changed(phase: Phase):
         return
 
     if map_object_resource.visible_on_phases.size() > 0:
-        # print("visible=", visible, " hide_after_choice=", hide_after_hoice)
         if map_object_resource.visible_on_phases.has(phase.stage) and !visible and !hide_after_choice:
             Show()
         elif !map_object_resource.visible_on_phases.has(phase.stage) and visible:
@@ -146,22 +132,3 @@ func on_choice_is_made(choice: EnumCollection.EChoice):
     if map_object_resource.remove_if_choice_is_made == choice:
         hide_after_choice = true
         Hide()
-
-# func _GetDialoguesFromRes() -> Array[Dialogue]:
-# 	if KarmaManager.state == EnumCollection.EKarma.WISE:
-# 		if map_object_resource.on_interact_very_dialogues and KarmaManager.wise_points >= map_object_resource.cond_very_wise:
-# 			print("very_wise")
-# 			return map_object_resource.on_interact_very_dialogues
-# 		else:
-# 			print("wise")
-# 			return map_object_resource.on_interact_dialogues
-# 	elif KarmaManager.state == EnumCollection.EKarma.EVIL:
-# 		if map_object_resource.on_interact_very_dialogues and KarmaManager.evil_points >= map_object_resource.cond_very_evil:
-# 			print("very_evil")
-# 			return map_object_resource.on_interact_very_dialogues
-# 		else:
-# 			print("evil")
-# 			return map_object_resource.on_interact_dialogues
-# 	else:
-# 		print("default")
-# 		return map_object_resource.on_interact_dialogues
