@@ -23,6 +23,7 @@ func _ready():
     print("map_object: ready")
     SignalManager.NewGame.connect(Reset)
     GameManager.game_phase_changed.connect(on_game_phase_changed)
+    SignalManager.PhaseEndChoiceDialogue.connect(on_phase_end_choice_dialogue)
     SignalManager.ChoiceIsMade.connect(on_choice_is_made)
     # SignalManager.NextPhaseState.connect(OnNextPhaseState)
     if interactable:
@@ -75,12 +76,10 @@ func on_game_phase_changed(phase: Phase):
         elif !map_object_resource.visible_on_phases.has(phase.stage) and visible:
             Hide()
 
-    if map_object_resource.interactable_on_phase_stage:
-        if map_object_resource.interactable_on_phase_stage == phase.stage && phase.state == Phase.EState.CHOICE:
-            Activate()
-        else:
-            Deactivate()
-
+func on_phase_end_choice_dialogue(phase: Phase):
+    print_debug("map_object: on_phase_end_choice_dialogue [stage= ", phase.stage, "] [state= ", phase.state, "]")
+    if phase && map_object_resource.interactable_on_phase_stage && map_object_resource.interactable_on_phase_stage == phase.stage:
+        Activate()
 
 func Activate():
     print("map_object: activate")
