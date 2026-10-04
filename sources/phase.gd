@@ -22,6 +22,8 @@ enum EState {
         dialogues = new_value
         changed.emit()
 
+@export var music: MusicManager.music = MusicManager.music.ENVIRONNEMENT
+
 @export var stage: EStage = EStage.START
 @export var state: EState = EState.START
 @export var cond_choices: Array[EnumCollection.EChoice] = []
@@ -62,3 +64,6 @@ func _check_conditions() -> bool:
         if !KarmaManager.choices_made.has(c):
             return false
     return true
+
+func play_phase_music() -> void:
+    MusicManager.PlayMusic(self.music)

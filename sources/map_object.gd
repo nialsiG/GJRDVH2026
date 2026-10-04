@@ -48,7 +48,6 @@ func OnResourceChange():
 
 func on_game_phase_changed(phase: Phase):
     print("map_object: on_game_phase_changed")
-    SoundManager.PlayAmbiance(SoundManager.ambiance.NONE)
     if !map_object_resource:
         printerr("map_object_resource is null")
         return
@@ -114,7 +113,6 @@ func on_map_object_clicked():
     print("on_map_object_clicked")
     Deactivate()
     # Changes on click
-    KarmaManager.add_choice(map_object_resource.choice_to_add)
     if map_object_resource.new_texture:
         ChangeTexture(map_object_resource.new_texture)
     if map_object_resource.sound_effect:
@@ -123,6 +121,7 @@ func on_map_object_clicked():
         SoundManager.PlaySound(SoundManager.sound.CLICK)
     if map_object_resource.ambiance_sound:
         SoundManager.PlayAmbiance(map_object_resource.ambiance_sound)
+    KarmaManager.add_choice(map_object_resource.choice_to_add)
     KarmaManager.add_wise_points(map_object_resource.wise_points)
     KarmaManager.add_evil_points(map_object_resource.evil_points)
 

@@ -80,7 +80,7 @@ func PlayAmbiance(stream: ambiance):
             ambiance_audio_stream_player.stream = VILLAGE_ALLIÉ_A_LAVINUM__FESTIF_
         ambiance.VILLAGE_ALLIÉ_B_ARDEA__GUERRIER_:
             ambiance_audio_stream_player.stream = VILLAGE_ALLIÉ_B_ARDEA__GUERRIER_
-        _:
+        ambiance.NONE:
             print_debug("sound_manager: stop playing ambiance")
             ambiance_audio_stream_player.stop()
             return
@@ -88,3 +88,7 @@ func PlayAmbiance(stream: ambiance):
     ambiance_audio_stream_player.play()
     tween = get_tree().create_tween()
     tween.tween_property(ambiance_audio_stream_player, "volume_linear", sound_volume, 0.5)
+
+func stop_ambiance() -> void:
+    print_debug("sound_manager: stop playing ambiance")
+    ambiance_audio_stream_player.stop()

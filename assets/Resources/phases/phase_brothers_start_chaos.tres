@@ -21,6 +21,7 @@ metadata/_custom_type_script = "uid://bxtfgu7yon538"
 [resource]
 script = ExtResource("4_ykwo2")
 dialogues = Array[ExtResource("1_h4v80")]([SubResource("Resource_ykwo2"), SubResource("Resource_x35jf")])
+music = 6
 stage = 5
 cond_choices = Array[int]([9])
 metadata/_custom_type_script = "uid://cq858dxy1q7vb"

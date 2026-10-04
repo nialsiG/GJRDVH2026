@@ -51,6 +51,7 @@ func load_new_phase() -> void:
     if !has_phase_already_been_played(tmp) && tmp._check_conditions():
             phase = tmp
             played_phases.append(phase)
+            phase.play_phase_music()
             phase.load_new_dialogue()
     else:
         print("phase could not be loaded")

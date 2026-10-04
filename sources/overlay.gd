@@ -90,9 +90,9 @@ func on_choice_is_made(choice: EnumCollection.EChoice) -> void:
 
 func display_choice():
     show()
-    MusicManager.PlayMusic(MusicManager.music.CHOIX)
+    # MusicManager.PlayMusic(MusicManager.music.CHOIX)
     animation_player.play("on_choice_display")
 
 func hide_choice():
-    MusicManager.PlayMusic(MusicManager.music.ENVIRONNEMENT)
+    # MusicManager.PlayMusic(MusicManager.music.ENVIRONNEMENT)
     animation_player.play("on_choice_hide")
