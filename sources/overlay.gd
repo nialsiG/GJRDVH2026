@@ -33,7 +33,7 @@ func _ready():
         printerr("brother_choice_2_map_resource is null")
     panel_choice_button_1.pressed.connect(hide_choice)
     panel_choice_button_2.pressed.connect(hide_choice)
-    GameManager.game_phase_changed.connect(on_game_phase_changed)
+    SignalManager.PhaseEndChoiceDialogue.connect(on_phase_end_choice_dialogue)
     SignalManager.NewGame.connect(on_new_game)
     SignalManager.ChoiceIsMade.connect(on_choice_is_made)
 
@@ -47,14 +47,12 @@ func on_new_game() -> void:
 func _on_main_button_pressed():
     SignalManager.StopGame.emit()
 
-func on_game_phase_changed(phase: Phase):
-    print("overlay: on_game_phase_changed")
+func on_phase_end_choice_dialogue(phase: Phase):
+    print("overlay: on_phase_end_choice_dialogue")
     match phase.stage:
         Phase.EStage.HILL:
-            if phase.state == Phase.EState.CHOICE:
                 on_choice_display(hill_choice_1_map_resource, hill_choice_2_map_resource, hill_choice_1_text, hill_choice_2_text)
         Phase.EStage.BROTHERS:
-            if phase.state == Phase.EState.CHOICE:
                 on_choice_display(brother_choice_1_map_resource, brother_choice_2_map_resource, brother_choice_1_text, brother_choice_2_text)
 
 func on_choice_display(resource_1: MapObjectResource, resource_2: MapObjectResource, choice_text_1: String, choice_text_2: String):
@@ -70,7 +68,7 @@ func on_choice_display(resource_1: MapObjectResource, resource_2: MapObjectResou
     panel_choice_button_1.map_object_resource = resource_1
     panel_choice_button_2.text = choice_text_2
     panel_choice_button_2.map_object_resource = resource_2
-    await get_tree().create_timer(0.6).timeout
+    await get_tree().create_timer(0.2).timeout
     display_choice()
 
 func on_choice_is_made(choice: EnumCollection.EChoice) -> void:

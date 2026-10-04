@@ -47,6 +47,8 @@ func _emit_dialogue() -> void:
         dialogue_idx += 1
     elif state != EState.CHOICE:
         SignalManager.PhaseEnd.emit()
+    else:
+        SignalManager.PhaseEndChoiceDialogue.emit(self)
 
 func _check_conditions() -> bool:
     if KarmaManager.wise_points < cond_wise_points:
