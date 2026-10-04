@@ -15,7 +15,8 @@ extends Control
 @onready var panel_choice_button_2: PanelChoiceButton = %PanelChoiceButton2
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
-@onready var blason: TextureRect = $Blason
+@onready var blason: Sprite2D = $Blason
+@export var blason_default_visibility: bool = false
 
 const BLASON_EMPTY: Texture2D = preload("uid://c0ufws32sdm4q")
 const BLASON_WOLF: Texture2D = preload("uid://bdiyb3skqnmcf")
@@ -40,6 +41,7 @@ func on_new_game() -> void:
     hide()
     if !blason:
         printerr("blason is null")
+    blason.visible = blason_default_visibility
     blason.texture = BLASON_EMPTY
 
 func _on_main_button_pressed():
@@ -75,8 +77,16 @@ func on_choice_is_made(choice: EnumCollection.EChoice) -> void:
     match choice:
         EnumCollection.EChoice.WOLF:
             blason.texture = BLASON_WOLF
+            blason.modulate = Color.TRANSPARENT
+            blason.visible = true
+            var tween: Tween = get_tree().create_tween()
+            tween.tween_property(blason, "modulate", Color.WHITE, 0.5)
         EnumCollection.EChoice.SHEEP:
             blason.texture = BLASON_SHEEP
+            blason.modulate = Color.TRANSPARENT
+            blason.visible = true
+            var tween: Tween = get_tree().create_tween()
+            tween.tween_property(blason, "modulate", Color.WHITE, 0.5)
         _:
             pass
 
