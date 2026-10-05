@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://xx137f5ykcca"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_i1ivg"]
+[ext_resource type="Texture2D" uid="uid://nclhl68u5wqg" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_soupir.png" id="2_rsgwq"]
+[ext_resource type="Texture2D" uid="uid://b1omd8mj74ye2" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_tristesse.png" id="3_i1ivg"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_cy5te"]
+
+[sub_resource type="Resource" id="Resource_yh1em"]
+script = ExtResource("1_i1ivg")
+loc_key = "alliees_chaos"
+narrator_begin_texture = ExtResource("2_rsgwq")
+narrator_end_texture = ExtResource("3_i1ivg")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_cy5te")
+dialogues = Array[ExtResource("1_i1ivg")]([SubResource("Resource_yh1em")])
+music = 7
+stage = 2
+state = 2
+cond_choices = Array[int]([2])
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

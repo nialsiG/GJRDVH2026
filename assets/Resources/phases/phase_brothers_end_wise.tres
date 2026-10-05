@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://dje65bynuf1id"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_cxv7v"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="2_el73y"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="3_ww25o"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_ts5qi"]
+
+[sub_resource type="Resource" id="Resource_xese7"]
+script = ExtResource("1_cxv7v")
+loc_key = "freres_sage"
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_ts5qi")
+dialogues = Array[ExtResource("1_cxv7v")]([SubResource("Resource_xese7")])
+music = 6
+stage = 5
+state = 2
+cond_choices = Array[int]([7])
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

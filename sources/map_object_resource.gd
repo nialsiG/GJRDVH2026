@@ -9,6 +9,9 @@ class_name MapObjectResource
 		texture = new_setting
 		changed.emit()
 
+@export_group("Default")
+@export var default_visible: bool = false
+
 ## Texture of the object when it's clicked
 @export_group("Behavior/OnInteract")
 @export var new_texture: Texture2D:
@@ -16,25 +19,18 @@ class_name MapObjectResource
 		new_texture = new_setting
 		changed.emit()
 
-## List of default dialogues to trigger when the object is clicked
-@export_group("Behavior/OnInteract")
-@export var on_interact_dialogues: Array[DialogueResource]:
-	set(new_setting):
-		on_interact_dialogues = new_setting
-		changed.emit()
-
-## List of VERY dialogues to trigger when the object is clicked and conditions are checked
-@export_group("Behavior/OnInteract")
-@export var on_interact_very_dialogues: Array[DialogueResource]:
-	set(new_setting):
-		on_interact_very_dialogues = new_setting
-		changed.emit()
-
 ## Sound effect played when the object is clicked
 @export_group("Behavior/OnInteract")
 @export var sound_effect: SoundManager.sound:
 	set(new_setting):
 		sound_effect = new_setting
+		changed.emit()
+
+## Ambiance played when the object is clicked
+@export_group("Behavior/OnInteract")
+@export var ambiance_sound: SoundManager.ambiance = SoundManager.ambiance.NONE:
+	set(new_setting):
+		ambiance_sound = new_setting
 		changed.emit()
 
 @export_group("Behavior/Removal")
@@ -50,14 +46,14 @@ class_name MapObjectResource
 
 ## On which phase the object is INTERACTABLE
 @export_group("Phase System")
-@export var interactable_on_phase: EnumCollection.EPhase:
+@export var interactable_on_phase_stage: Phase.EStage:
 	set(new_setting):
-		interactable_on_phase = new_setting
+		interactable_on_phase_stage = new_setting
 		changed.emit()
 
 ## List of phases when the object is visible
 @export_group("Phase System")
-@export var visible_on_phases: Array[EnumCollection.EPhase]:
+@export var visible_on_phases: Array[Phase.EStage]:
 	set(new_setting):
 		visible_on_phases = new_setting
 		changed.emit()
@@ -97,10 +93,3 @@ class_name MapObjectResource
 	set(new_setting):
 		choice_to_add = new_setting
 		changed.emit()
-
-# TODO: remove unused property ?
-# @export_group("Phase System")
-# @export var change_phase: bool:
-# 	set(new_setting):
-# 		change_phase = new_setting
-# 		changed.emit()

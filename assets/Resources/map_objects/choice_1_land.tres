@@ -1,24 +1,13 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://ct7q268xxo3yd"]
 
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="1_y6mio"]
-[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_14ahb"]
 [ext_resource type="Texture2D" uid="uid://cnfh3lpv6ogpr" path="res://assets/art/ASSETS GRAPHIQUES/Ui_tout type de boutonselect.png" id="3_14ahb"]
-[ext_resource type="Texture2D" uid="uid://8w3iv3okgej4" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_choqué.png" id="3_akygi"]
-[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_5ohig"]
 [ext_resource type="Texture2D" uid="uid://ddua1epw865lw" path="res://assets/art/ASSETS GRAPHIQUES/Decor 1_1920x1080_.png" id="4_i7m8l"]
-
-[sub_resource type="Resource" id="Resource_kbw8x"]
-script = ExtResource("2_14ahb")
-loc_key = "colline_chaos"
-narrator_begin_texture = ExtResource("3_akygi")
-narrator_end_texture = ExtResource("4_5ohig")
-metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 
 [resource]
 script = ExtResource("1_y6mio")
 texture = ExtResource("3_14ahb")
 new_texture = ExtResource("4_i7m8l")
-on_interact_dialogues = Array[ExtResource("2_14ahb")]([SubResource("Resource_kbw8x")])
 remove_if_choice_is_made = 10
 interactable_on_phase = 1
 visible_on_phases = Array[int]([1, 2, 3, 4, 5])

@@ -17,10 +17,12 @@ enum music {
 	BAD_ENDING,
 	GOOD_ENDING,
 	MENU,
-	BONUS_TENSION
+	BONUS_TENSION,
+	NONE
 }
 
 var music_volume: float = 0.3
+var music_playing: music = music.NONE
 
 func _ready():
 	PlayMusic(MusicManager.music.MENU)
@@ -28,8 +30,12 @@ func _ready():
 	SignalManager.NewGame.connect(PlayMusic.bind(music.ENVIRONNEMENT))
 
 func PlayMusic(stream: music):
+	if music_playing == stream:
+		return
+
+	music_playing = stream
 	var tween: Tween = get_tree().create_tween()
-	tween.tween_property(audio_stream_player,"volume_linear", 0.0, 0.5)
+	tween.tween_property(audio_stream_player, "volume_linear", 0.0, 0.5)
 	await tween.finished
 	match stream:
 		music.DEFAULT:
@@ -46,6 +52,13 @@ func PlayMusic(stream: music):
 			audio_stream_player.stream = AMBIANCE_MENU
 		music.BONUS_TENSION:
 			audio_stream_player.stream = BONUS_AMBIANCE_TENSION
+		music.NONE:
+			audio_stream_player.stop()
+			return
 	audio_stream_player.play()
 	tween = get_tree().create_tween()
-	tween.tween_property(audio_stream_player,"volume_linear", music_volume, 0.5)
+	tween.tween_property(audio_stream_player, "volume_linear", music_volume, 0.5)
+	print_debug("music_manager: playing_music = ", music_playing)
+
+func stop_music() -> void:
+	audio_stream_player.stop()

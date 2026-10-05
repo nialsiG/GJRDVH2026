@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://ds64dh6ccw6sr"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_mn4xr"]
+[ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="2_plqje"]
+[ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="3_3or7f"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_aw0nc"]
+
+[sub_resource type="Resource" id="Resource_qnhth"]
+script = ExtResource("1_mn4xr")
+loc_key = "freres_choice_1"
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[sub_resource type="Resource" id="Resource_us1j3"]
+script = ExtResource("1_mn4xr")
+loc_key = "freres_choice_2"
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_aw0nc")
+dialogues = Array[ExtResource("1_mn4xr")]([SubResource("Resource_qnhth"), SubResource("Resource_us1j3")])
+music = 6
+stage = 5
+state = 1
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

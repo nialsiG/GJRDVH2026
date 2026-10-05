@@ -1,14 +1,12 @@
 [gd_resource type="Resource" script_class="MapObjectResource" format=3 uid="uid://c4vjkqhg3vr4"]
 
 [ext_resource type="Script" uid="uid://chtllnhtbq4jb" path="res://sources/map_object_resource.gd" id="1_sak0p"]
-[ext_resource type="Script" uid="uid://cqdwlyhe1dxc4" path="res://sources/dialogue_resource.gd" id="2_gd66g"]
 [ext_resource type="Texture2D" uid="uid://r24goacbox5c" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_parle.png" id="3_o8m1t"]
 [ext_resource type="Texture2D" uid="uid://b7cg8wa6j0q8m" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_normal.png" id="4_4wld5"]
 [ext_resource type="Texture2D" uid="uid://ggdok7pf78eb" path="res://assets/art/ASSETS GRAPHIQUES/Decor 2_1920x1080_.png" id="4_t3yd6"]
 [ext_resource type="Texture2D" uid="uid://cnfh3lpv6ogpr" path="res://assets/art/ASSETS GRAPHIQUES/Ui_tout type de boutonselect.png" id="4_un4no"]
 
 [sub_resource type="Resource" id="Resource_kbw8x"]
-script = ExtResource("2_gd66g")
 loc_key = "colline_sage"
 narrator_begin_texture = ExtResource("3_o8m1t")
 narrator_end_texture = ExtResource("4_4wld5")
@@ -18,7 +16,6 @@ metadata/_custom_type_script = "uid://cqdwlyhe1dxc4"
 script = ExtResource("1_sak0p")
 texture = ExtResource("4_un4no")
 new_texture = ExtResource("4_t3yd6")
-on_interact_dialogues = Array[ExtResource("2_gd66g")]([SubResource("Resource_kbw8x")])
 remove_if_choice_is_made = 9
 interactable_on_phase = 1
 visible_on_phases = Array[int]([1, 2, 3, 4, 5])

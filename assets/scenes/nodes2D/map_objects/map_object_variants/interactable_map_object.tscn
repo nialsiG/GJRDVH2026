@@ -3,9 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bwpxf5xmthjqf" path="res://assets/scenes/nodes2D/map_objects/map_object.tscn" id="1_yan75"]
 [ext_resource type="PackedScene" uid="uid://c4qep6w5w8p2j" path="res://assets/scenes/interactable/interactable.tscn" id="2_d0iag"]
 
-[node name="InteractableMapObject" unique_id=42803688 node_paths=PackedStringArray("interactable") instance=ExtResource("1_yan75")]
-interactable = NodePath("Area2D")
-radius = 0.0
+[node name="InteractableMapObject" unique_id=42803688 instance=ExtResource("1_yan75")]
 
 [node name="Area2D" parent="." index="0" unique_id=365844650 instance=ExtResource("2_d0iag")]
 

@@ -1,15 +1,5 @@
 extends Node
 
-enum EPhase {
-	START,
-	COLLINE,
-	ALLIES,
-	ARBRE,
-	ANIMAL,
-	FRERES,
-	NONE
-}
-
 enum EKarma {
 	NEUTRAL,
 	WISE,

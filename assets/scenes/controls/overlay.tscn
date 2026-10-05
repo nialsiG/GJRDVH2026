@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c3j6yo6f65m32" path="res://assets/art/ASSETS GRAPHIQUES/Ui_BG_Choix.png" id="2_namfy"]
 [ext_resource type="PackedScene" uid="uid://besndmljtwcj1" path="res://assets/scenes/controls/panel_choice_button.tscn" id="4_07il0"]
 [ext_resource type="Resource" uid="uid://dqb507gwjy6wt" path="res://assets/Resources/map_objects/choice_5_romulus.tres" id="4_64nt8"]
-[ext_resource type="Resource" uid="uid://ct7q268xxo3yd" path="res://assets/Resources/map_objects/choice_1_land.tres" id="4_wwy55"]
 [ext_resource type="Script" uid="uid://dfmda07u6wxa6" path="res://sources/custom_button.gd" id="5_621us"]
 [ext_resource type="Resource" uid="uid://dyb7vketv5ivr" path="res://assets/Resources/map_objects/choice_5_remus.tres" id="5_jlok2"]
-[ext_resource type="Resource" uid="uid://c4vjkqhg3vr4" path="res://assets/Resources/map_objects/choice_1_river.tres" id="5_jlrlr"]
 [ext_resource type="Theme" uid="uid://bw5tdablfnphv" path="res://assets/themes/exit_button_theme.tres" id="8_64nt8"]
+[ext_resource type="Texture2D" uid="uid://c0ufws32sdm4q" path="res://assets/art/ASSETS GRAPHIQUES/blason_empty.png" id="8_dt4cb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f61wl"]
 texture = ExtResource("2_namfy")
@@ -148,10 +147,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_mc74m")
-colline_choice_1_text = "Ils devraient s'installer près du Tibre"
-colline_choice_2_text = "Ils devraient s'installer dans les terres"
-colline_choice_1_map_resource = ExtResource("5_jlrlr")
-colline_choice_2_map_resource = ExtResource("4_wwy55")
 brother_choice_1_text = "Sauver Romulus"
 brother_choice_2_text = "Sauver Rémus"
 brother_choice_1_map_resource = ExtResource("4_64nt8")
@@ -206,5 +201,9 @@ script = ExtResource("5_621us")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=69513696]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_wwy55")
+
+[node name="Blason" type="Sprite2D" parent="." unique_id=2017648541]
+position = Vector2(90, 96)
+texture = ExtResource("8_dt4cb")
 
 [connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://bfc3ct2om1oea"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_u6w7t"]
+[ext_resource type="Texture2D" uid="uid://dtg58vjiwgh36" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_rougis.png" id="2_u6w7t"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_8maiy"]
+
+[sub_resource type="Resource" id="Resource_us1j3"]
+script = ExtResource("1_u6w7t")
+loc_key = "freres_very_sage"
+narrator_begin_texture = ExtResource("2_u6w7t")
+narrator_end_texture = ExtResource("2_u6w7t")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_8maiy")
+dialogues = Array[ExtResource("1_u6w7t")]([SubResource("Resource_us1j3")])
+music = 6
+stage = 4
+state = 2
+cond_choices = Array[int]([7])
+cond_wise_points = 4
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"

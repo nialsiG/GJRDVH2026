@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Phase" format=3 uid="uid://gnrmnhhato2l"]
+
+[ext_resource type="Script" uid="uid://bxtfgu7yon538" path="res://sources/dialogue.gd" id="1_jeq7y"]
+[ext_resource type="Texture2D" uid="uid://dbqed5vnvnlml" path="res://assets/art/ASSETS GRAPHIQUES/Colombe_colère.png" id="2_jeq7y"]
+[ext_resource type="Script" uid="uid://cq858dxy1q7vb" path="res://sources/phase.gd" id="4_mhda7"]
+
+[sub_resource type="Resource" id="Resource_u6ys0"]
+script = ExtResource("1_jeq7y")
+loc_key = "freres_chaos"
+narrator_begin_texture = ExtResource("2_jeq7y")
+narrator_end_texture = ExtResource("2_jeq7y")
+metadata/_custom_type_script = "uid://bxtfgu7yon538"
+
+[resource]
+script = ExtResource("4_mhda7")
+dialogues = Array[ExtResource("1_jeq7y")]([SubResource("Resource_u6ys0")])
+music = 6
+stage = 5
+state = 2
+cond_choices = Array[int]([8])
+metadata/_custom_type_script = "uid://cq858dxy1q7vb"
