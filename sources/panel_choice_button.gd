@@ -7,6 +7,17 @@ class_name PanelChoiceButton
 @onready var texture_rect: TextureRect = %TextureRect
 @onready var label: Label = %Label
 
+func _ready():
+	mouse_entered.connect(OnMouseEnter)
+	mouse_exited.connect(OnMouseExit)
+
+func OnMouseEnter():
+	MouseManager.ChangeCursor(MouseManager.CURSOR2)
+	SoundManager.PlaySound(SoundManager.sound.HOVER)
+
+func OnMouseExit():
+	MouseManager.ChangeCursor(MouseManager.CURSOR1)
+
 func _on_pressed():
 	print("panel_choice_button: _on_pressed")
 	# Changes on click

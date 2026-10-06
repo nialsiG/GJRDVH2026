@@ -9,9 +9,18 @@ font_size = 28
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua0r0"]
 bg_color = Color(0, 0, 0, 0.6862745)
-expand_margin_left = 5.0
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.4475, 0.14999998, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 10.0
 expand_margin_top = 5.0
-expand_margin_right = 5.0
+expand_margin_right = 10.0
 expand_margin_bottom = 5.0
 
 [node name="MapObject" type="Node2D" unique_id=42803688]
@@ -24,8 +33,6 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 max_distance = 800.0
 attenuation = 2.5
-max_polyphony = 2
-area_mask = 1
 playback_type = 1
 
 [node name="TooltipLabel" type="Label" parent="." unique_id=991914836]
