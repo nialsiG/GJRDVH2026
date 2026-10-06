@@ -2,16 +2,52 @@
 
 [ext_resource type="Script" uid="uid://dp3vkgq04gp3j" path="res://sources/panel_choice_button.gd" id="1_wi13x"]
 [ext_resource type="Theme" uid="uid://bloc3c6x4j05w" path="res://assets/themes/choice_button_theme.tres" id="1_yh003"]
+[ext_resource type="Texture2D" uid="uid://5pnd15m8pgfb" path="res://assets/art/ASSETS GRAPHIQUES/choice_remus.png" id="3_3rjef"]
+[ext_resource type="FontFile" uid="uid://cmy3k58gp5015" path="res://assets/art/font/Aetherius.ttf" id="4_rckws"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yh003"]
+font = ExtResource("4_rckws")
+font_size = 32
 
 [node name="PanelChoiceButton" type="Button" unique_id=1696534639]
+custom_minimum_size = Vector2(455, 275)
 offset_right = 279.0
 offset_bottom = 123.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_yh003")
-text = "this is a test this is a test this is a test
-tetsst"
 autowrap_mode = 2
 script = ExtResource("1_wi13x")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2094892284]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1630310691]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1483784325]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+texture = ExtResource("3_3rjef")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=642711502]
+unique_name_in_owner = true
+layout_mode = 2
+text = "this is a test this is a test this is a test"
+label_settings = SubResource("LabelSettings_yh003")
+autowrap_mode = 2
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -7,20 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://ddrgqwcmkp3bj" path="res://assets/scenes/nodes2D/map_objects/map_object_variants/interactable_map_object.tscn" id="4_ycnly"]
 [ext_resource type="Resource" uid="uid://18vgr6m5mvin" path="res://assets/Resources/map_objects/choice_2_warriors.tres" id="5_5m40c"]
 [ext_resource type="Texture2D" uid="uid://bftrqsgxf625q" path="res://assets/art/map/map_background_river.png" id="5_evran"]
+[ext_resource type="AudioStream" uid="uid://bdabvj3qxskmv" path="res://assets/audio/sounds/Rivière Petit torrent.mp3" id="5_fwvxb"]
 [ext_resource type="Texture2D" uid="uid://drnbf7hy3r714" path="res://assets/art/ASSETS GRAPHIQUES/village_small_A.png" id="8_evran"]
+[ext_resource type="AudioStream" uid="uid://d0asursq6glse" path="res://assets/audio/sounds/Village allié B Ardea (guerrier).mp3" id="8_i3aq8"]
 [ext_resource type="Resource" uid="uid://bpos2l32osrow" path="res://assets/Resources/map_objects/choice_3_fig.tres" id="9_evran"]
+[ext_resource type="AudioStream" uid="uid://fl3xx52a1dhx" path="res://assets/audio/sounds/Village allié A lavinum (festif).mp3" id="10_fwvxb"]
 [ext_resource type="Resource" uid="uid://cjp8m8bb0b0m5" path="res://assets/Resources/map_objects/choice_3_olive.tres" id="11_ppa74"]
 [ext_resource type="Texture2D" uid="uid://bfsef6g4b72d3" path="res://assets/art/ASSETS GRAPHIQUES/tree_figue.png" id="12_6yfuc"]
 [ext_resource type="Resource" uid="uid://dol6itgg0h3p4" path="res://assets/Resources/map_objects/choice_4_sheep.tres" id="13_6yfuc"]
 [ext_resource type="Texture2D" uid="uid://dqf4bnsxldan" path="res://assets/art/ASSETS GRAPHIQUES/tree_olive.png" id="14_jetj4"]
 [ext_resource type="Resource" uid="uid://dvde5bpfdxsv8" path="res://assets/Resources/map_objects/choice_4_wolf.tres" id="15_jetj4"]
 [ext_resource type="Texture2D" uid="uid://cu37teqkk1kvh" path="res://assets/art/ASSETS GRAPHIQUES/Sheep_solo.png" id="16_caus4"]
+[ext_resource type="Script" uid="uid://ctcokc8r82n26" path="res://sources/mouse_audio_listener_2d.gd" id="17_kbw8x"]
 [ext_resource type="Texture2D" uid="uid://cli1ia34vaxr1" path="res://assets/art/ASSETS GRAPHIQUES/Wolf_solo.png" id="18_i3aq8"]
 
 [sub_resource type="Resource" id="Resource_8d0p4"]
 script = ExtResource("3_rrhax")
 texture = ExtResource("4_rrhax")
 default_visible = true
+tooltip_text = null
 remove_if_choice_is_made = 10
 visible_on_phases = Array[int]([0, 1, 2, 3, 4, 5])
 metadata/_custom_type_script = "uid://chtllnhtbq4jb"
@@ -28,7 +33,7 @@ metadata/_custom_type_script = "uid://chtllnhtbq4jb"
 [sub_resource type="Resource" id="Resource_5m40c"]
 script = ExtResource("3_rrhax")
 texture = ExtResource("5_evran")
-default_visible = null
+tooltip_text = null
 remove_if_choice_is_made = 9
 is_map_with_river = true
 visible_on_phases = Array[int]([2, 3, 4, 5])
@@ -62,9 +67,12 @@ position = Vector2(960, 540)
 map_object_resource = SubResource("Resource_8d0p4")
 
 [node name="IdleMapObject2" parent="NonInteractable" unique_id=874411022 instance=ExtResource("2_bv7h8")]
-visible = false
 position = Vector2(960, 540)
 map_object_resource = SubResource("Resource_5m40c")
+
+[node name="AudioStreamPlayer2D" parent="NonInteractable/IdleMapObject2" index="1" unique_id=2039085953]
+position = Vector2(-836, 302)
+stream = ExtResource("5_fwvxb")
 
 [node name="Interactables" type="Node2D" parent="." unique_id=1049042489]
 
@@ -85,10 +93,19 @@ position = Vector2(-41.111107, -130.00005)
 scale = Vector2(0.66610557, 0.66610545)
 texture = ExtResource("8_evran")
 
+[node name="AudioStreamPlayer2D" parent="Interactables/Choice2VillageA" index="2" unique_id=2039085953]
+position = Vector2(-78.88889, -104.44449)
+stream = ExtResource("8_i3aq8")
+
+[node name="TooltipLabel" parent="Interactables/Choice2VillageA" index="3" unique_id=991914836]
+offset_left = -164.44446
+offset_top = -288.88895
+offset_right = -102.44446
+offset_bottom = -258.88895
+
 [node name="Choice2VillageB" parent="Interactables" unique_id=1956382867 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(295, 102)
-rotation = -0.018112408
 map_object_resource = ExtResource("3_1shj3")
 interactable = NodePath("Area2D")
 
@@ -101,6 +118,16 @@ disabled = true
 position = Vector2(410.1538, 50.436745)
 scale = Vector2(0.7019608, 0.7019608)
 texture = ExtResource("8_evran")
+
+[node name="AudioStreamPlayer2D" parent="Interactables/Choice2VillageB" index="2" unique_id=2039085953]
+position = Vector2(386.8316, 68.017235)
+stream = ExtResource("10_fwvxb")
+
+[node name="TooltipLabel" parent="Interactables/Choice2VillageB" index="3" unique_id=991914836]
+offset_left = 352.84787
+offset_top = -43.616577
+offset_right = 414.84787
+offset_bottom = -13.616577
 
 [node name="Choice3Fig" parent="Interactables" unique_id=1829900192 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
@@ -116,6 +143,12 @@ disabled = true
 position = Vector2(17, -7)
 texture = ExtResource("12_6yfuc")
 
+[node name="TooltipLabel" parent="Interactables/Choice3Fig" index="3" unique_id=991914836]
+offset_left = -15.0
+offset_top = -143.0
+offset_right = 47.0
+offset_bottom = -113.0
+
 [node name="Choice3Olive" parent="Interactables" unique_id=1037148313 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(1522, 736)
@@ -128,6 +161,12 @@ disabled = true
 
 [node name="Sprite2D" parent="Interactables/Choice3Olive" index="1" unique_id=1630606672]
 texture = ExtResource("14_jetj4")
+
+[node name="TooltipLabel" parent="Interactables/Choice3Olive" index="3" unique_id=991914836]
+offset_left = -30.0
+offset_top = -128.0
+offset_right = 32.0
+offset_bottom = -98.0
 
 [node name="Choice4Sheep" parent="Interactables" unique_id=1335726705 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
@@ -142,6 +181,12 @@ disabled = true
 [node name="Sprite2D" parent="Interactables/Choice4Sheep" index="1" unique_id=1630606672]
 texture = ExtResource("16_caus4")
 
+[node name="TooltipLabel" parent="Interactables/Choice4Sheep" index="3" unique_id=991914836]
+offset_left = -25.0
+offset_top = -81.0
+offset_right = 37.0
+offset_bottom = -51.0
+
 [node name="Choice4Wolf" parent="Interactables" unique_id=522295635 node_paths=PackedStringArray("interactable") instance=ExtResource("4_ycnly")]
 visible = false
 position = Vector2(123, 830)
@@ -155,6 +200,17 @@ disabled = true
 [node name="Sprite2D" parent="Interactables/Choice4Wolf" index="1" unique_id=1630606672]
 texture = ExtResource("18_i3aq8")
 
+[node name="TooltipLabel" parent="Interactables/Choice4Wolf" index="3" unique_id=991914836]
+offset_left = -25.0
+offset_top = -76.0
+offset_right = 37.0
+offset_bottom = -46.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=963185428]
+current = true
+script = ExtResource("17_kbw8x")
+
+[editable path="NonInteractable/IdleMapObject2"]
 [editable path="Interactables/Choice2VillageA"]
 [editable path="Interactables/Choice2VillageA/Area2D"]
 [editable path="Interactables/Choice2VillageB"]

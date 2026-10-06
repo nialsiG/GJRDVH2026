@@ -8,3 +8,5 @@ extends Node
 @warning_ignore("unused_signal") signal PhaseEndChoiceDialogue(phase: Phase)
 @warning_ignore("unused_signal") signal PhaseEnd
 @warning_ignore("unused_signal") signal DialogueUIClickedOnDialogue
+@warning_ignore("unused_signal") signal ShowVenus
+@warning_ignore("unused_signal") signal HideVenus

@@ -18,10 +18,15 @@ var current_state: State = State.Ended
 	set(new_value):
 		dialogue = new_value
 
+@export var show_venus_phases: Array[Phase]
+@export var hide_venus_phases: Array[Phase]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalManager.PhaseNewDialogue.connect(on_phase_new_dialogue)
+	SignalManager.ShowVenus.connect(OnShowVenus)
+	SignalManager.HideVenus.connect(OnHideVenus)
+	GameManager.game_phase_changed.connect(OnNewPhase)
 
 func on_phase_new_dialogue(new_dialogue: Dialogue) -> void:
 	print_debug("on_phase_new_dialogue=", dialogue)
@@ -31,6 +36,20 @@ func on_phase_new_dialogue(new_dialogue: Dialogue) -> void:
 	SoundManager.PlaySound(SoundManager.sound.DOVE_NARRATOR)
 	_display_dialogue()
 	_start_scrolling()
+
+func OnNewPhase(phase: Phase):
+	if show_venus_phases.has(phase):
+		OnShowVenus()
+	elif hide_venus_phases.has(phase):
+		await SignalManager.PhaseEndChoiceDialogue
+		OnHideVenus()
+
+func OnShowVenus():
+	animation_player.play("show_narrator")
+
+func OnHideVenus():
+	animation_player.play("hide_narrator")
+
 
 func _display_dialogue() -> void:
 	print("dialogue_ui: display dialogue")
@@ -74,5 +93,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			print("dialogue_ui: _unhandled_input else")
 			set_process_unhandled_input(false)
-			hide()
+			#hide()
 			SignalManager.DialogueUIClickedOnDialogue.emit()

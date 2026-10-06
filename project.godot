@@ -47,6 +47,10 @@ folder_colors={
 "res://sources/": "red"
 }
 
+[gui]
+
+timers/tooltip_delay_sec=0.2
+
 [input]
 
 interact={
