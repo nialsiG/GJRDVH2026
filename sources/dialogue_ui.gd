@@ -13,6 +13,7 @@ enum State {
 @onready var narrator_sprite_2d: TextureRect = %NarratorSprite2D
 var current_state: State = State.Ended
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var narrator_animation_player: AnimationPlayer = %NarratorAnimationPlayer
 
 @export var dialogue: Dialogue:
 	set(new_value):
@@ -45,9 +46,13 @@ func OnNewPhase(phase: Phase):
 		OnHideVenus()
 
 func OnShowVenus():
+	if animation_player.is_playing():
+		await animation_player.animation_finished
 	animation_player.play("show_narrator")
 
 func OnHideVenus():
+	if animation_player.is_playing():
+		await animation_player.animation_finished
 	animation_player.play("hide_narrator")
 
 
@@ -57,11 +62,13 @@ func _display_dialogue() -> void:
 	label.clear()
 	label.append_text(tr(dialogue.loc_key))
 
-func _change_narrator_texture(new_texture: Texture2D):
+func _change_narrator_texture(new_texture: Texture2D, squeeze: bool = false):
 	if !narrator_sprite_2d:
 		return
 	narrator_sprite_2d.texture = new_texture
 	narrator_sprite_2d.visible = new_texture != null
+	if squeeze:
+		narrator_animation_player.play("squeeze")
 
 # --- Handle text defiling ----------------------------------------------------
 func _on_defiling_timer_timeout() -> void:
@@ -75,14 +82,14 @@ func _start_scrolling() -> void:
 	current_state = State.Scrolling
 	label.visible_characters = 0
 	timer.start()
-	_change_narrator_texture(dialogue.narrator_begin_texture)
+	_change_narrator_texture(dialogue.narrator_begin_texture, true)
 
 func _stop_scrolling() -> void:
 	print("stop scrolling")
 	current_state = State.Ended
 	label.visible_characters = -1
 	timer.stop()
-	_change_narrator_texture(dialogue.narrator_end_texture)
+	#_change_narrator_texture(dialogue.narrator_end_texture)
 
 # --- When text is clicked ----------------------------------------------------
 func _unhandled_input(event: InputEvent) -> void:

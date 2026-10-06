@@ -104,6 +104,10 @@ func on_choice_is_made(choice: EnumCollection.EChoice) -> void:
 			blason.visible = true
 			var tween: Tween = get_tree().create_tween()
 			tween.tween_property(blason, "modulate", Color.WHITE, 0.5)
+		EnumCollection.EChoice.ROMULUS:
+			KarmaManager.change_state(EnumCollection.EKarma.WISE)
+		EnumCollection.EChoice.REMUS:
+			KarmaManager.change_state(EnumCollection.EKarma.EVIL)
 		_:
 			pass
 

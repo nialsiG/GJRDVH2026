@@ -27,6 +27,7 @@ func _ready():
 	GameManager.game_phase_changed.connect(on_game_phase_changed)
 	SignalManager.PhaseEndChoiceDialogue.connect(on_phase_end_choice_dialogue)
 	SignalManager.ChoiceIsMade.connect(on_choice_is_made)
+	SignalManager.GameOver.connect(Reset)
 	if interactable:
 		interactable.clicked.connect(on_map_object_clicked)
 		interactable.mouse_entered.connect(on_map_object_hovered)
@@ -39,8 +40,10 @@ func Reset():
 		return
 	if map_object_resource.default_visible:
 		show()
+	Deactivate()
+	
 	ChangeTexture(map_object_resource.texture)
-	if !audio_stream_player_2d.stream:
+	if audio_stream_player_2d.stream:
 		audio_stream_player_2d.stop()
 	tooltip_label.hide()
 
