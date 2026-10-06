@@ -3,5 +3,5 @@
 [ext_resource type="FontFile" uid="uid://cmy3k58gp5015" path="res://assets/art/font/Aetherius.ttf" id="1_3v1ty"]
 
 [resource]
-RichTextLabel/font_sizes/normal_font_size = 35
+RichTextLabel/font_sizes/normal_font_size = 36
 RichTextLabel/fonts/normal_font = ExtResource("1_3v1ty")

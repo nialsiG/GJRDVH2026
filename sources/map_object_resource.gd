@@ -33,6 +33,12 @@ class_name MapObjectResource
 		ambiance_sound = new_setting
 		changed.emit()
 
+@export_group("Behavior/OnInteract")
+@export var tooltip_text: String:
+	set(new_setting):
+		tooltip_text = new_setting
+		changed.emit()
+
 @export_group("Behavior/Removal")
 @export var remove_if_choice_is_made: EnumCollection.EChoice = EnumCollection.EChoice.NONE:
 	set(new_setting):

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Village allié A lavinum (festif).mp3-9f071e
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -67,8 +67,8 @@ func OnGameOver():
 					text += tr(fin_chaos_but_playedsage)
 				fin.CHAOS:
 					text += tr(fin_chaos_but_playedchaos)
-	text += "\n"
-	text += tr(fin_conclusion_fin)
+	#text += "\n"
+	#text += tr(fin_conclusion_fin)
 	rich_text_label.append_text(text)
 	Show()
 

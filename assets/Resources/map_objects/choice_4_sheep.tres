@@ -9,6 +9,7 @@ script = ExtResource("5_2byrf")
 texture = ExtResource("6_8q3ok")
 new_texture = ExtResource("1_8q3ok")
 sound_effect = 3
+tooltip_text = "Mouton"
 remove_if_choice_is_made = 5
 interactable_on_phase_stage = 4
 visible_on_phases = Array[int]([4, 5])

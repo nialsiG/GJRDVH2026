@@ -8,7 +8,7 @@
 script = ExtResource("5_83qfl")
 texture = ExtResource("6_h6af1")
 new_texture = ExtResource("1_oaot5")
-ambiance_sound = 2
+tooltip_text = "Lavinium"
 remove_if_choice_is_made = 2
 interactable_on_phase_stage = 2
 visible_on_phases = Array[int]([2, 3, 4, 5])

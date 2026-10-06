@@ -4,6 +4,9 @@ class_name PanelChoiceButton
 
 @export var map_object_resource: MapObjectResource
 
+@onready var texture_rect: TextureRect = %TextureRect
+@onready var label: Label = %Label
+
 func _on_pressed():
 	print("panel_choice_button: _on_pressed")
 	# Changes on click

@@ -1,9 +1,56 @@
 [gd_scene format=3 uid="uid://bwpxf5xmthjqf"]
 
 [ext_resource type="Script" uid="uid://citis2ct0o84g" path="res://sources/map_object.gd" id="1_y1og6"]
+[ext_resource type="FontFile" uid="uid://cmy3k58gp5015" path="res://assets/art/font/Aetherius.ttf" id="2_b8p0v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h0ivt"]
+font = ExtResource("2_b8p0v")
+font_size = 28
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua0r0"]
+bg_color = Color(0, 0, 0, 0.6862745)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [node name="MapObject" type="Node2D" unique_id=42803688]
 script = ExtResource("1_y1og6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1630606672]
 unique_name_in_owner = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2039085953]
+unique_name_in_owner = true
+max_distance = 800.0
+attenuation = 2.5
+max_polyphony = 2
+area_mask = 1
+playback_type = 1
+
+[node name="TooltipLabel" type="Label" parent="." unique_id=991914836]
+unique_name_in_owner = true
+offset_right = 62.0
+offset_bottom = 30.0
+text = "tooltip"
+label_settings = SubResource("LabelSettings_h0ivt")
+
+[node name="Control" type="Control" parent="TooltipLabel" unique_id=1629495818]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="TooltipLabel/Control" unique_id=1935698303]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ua0r0")
